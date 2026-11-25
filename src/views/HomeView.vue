@@ -1,15 +1,15 @@
 <template>
   <div>
-    <!-- HERO BANNER SECTION (Matching Screenshot) -->
+    <!-- HERO BANNER SECTION -->
     <section class="rg-screenshot-hero position-relative pt-8 pt-md-12 pb-16 pb-md-20">
       <!-- Decorative Background Orbs -->
       <div class="rg-hero-orb-left" aria-hidden="true"></div>
       <div class="rg-hero-orb-right" aria-hidden="true"></div>
 
-      <div class="max-width-xl mx-auto px-4 px-sm-6 position-relative z-1">
+      <div class="hero-container mx-auto px-6 px-sm-10 px-md-14 position-relative z-1">
         <v-row align="center" no-gutters>
           <!-- Left Column: Copy & Interactive Phone Pill -->
-          <v-col cols="12" md="7" lg="7" class="pr-md-4 pb-6 pb-md-0">
+          <v-col cols="12" md="7" lg="6" class="pr-md-6 pr-lg-8 pb-6 pb-md-0">
             <h1 class="hero-title mb-3">
               Bimbel Online &amp; Offline Terbesar,<br class="d-none d-sm-inline" />
               Terlengkap, dan Terbukti di Indonesia
@@ -43,12 +43,15 @@
           </v-col>
 
           <!-- Right Column: Student Illustration -->
-          <v-col cols="12" md="5" lg="5" class="d-flex justify-center justify-md-end align-end">
+          <v-col cols="12" md="5" lg="6" class="d-flex justify-center justify-md-end align-end">
             <img
               src="/hero-students.png"
               alt="Siswa Berprestasi LPK Wordish"
+              width="1536"
+              height="1024"
               class="hero-students-img"
               loading="eager"
+              fetchpriority="high"
             />
           </v-col>
         </v-row>
@@ -1080,10 +1083,16 @@ function enrollDirect(prog) {
 </script>
 
 <style scoped>
-/* HERO BANNER SECTION (Matching Screenshot) */
+/* HERO BANNER SECTION */
 .rg-screenshot-hero {
   background: linear-gradient(90deg, #004eb2 0%, #0665d8 30%, #0d87d6 58%, #169cae 82%, #35a7b4 100%);
   color: #ffffff;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1280px;
+  width: 100%;
 }
 
 .rg-hero-orb-left {
@@ -1234,9 +1243,10 @@ function enrollDirect(prog) {
 /* Student Illustration */
 .hero-students-img {
   display: block;
+  width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 420px;
+  max-height: 400px;
   object-fit: contain;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
 }
