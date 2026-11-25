@@ -41,9 +41,9 @@
               class="w-100 d-flex"
             >
               <v-btn value="all" class="text-none flex-grow-1 font-weight-bold">Semua</v-btn>
-              <v-btn value="mandarin" class="text-none flex-grow-1 font-weight-bold">🇨🇳 Mandarin</v-btn>
-              <v-btn value="korean" class="text-none flex-grow-1 font-weight-bold">🇰🇷 Korea</v-btn>
-              <v-btn value="english" class="text-none flex-grow-1 font-weight-bold">🇬🇧 Inggris</v-btn>
+              <v-btn value="mandarin" class="text-none flex-grow-1 font-weight-bold">Mandarin</v-btn>
+              <v-btn value="korean" class="text-none flex-grow-1 font-weight-bold">Korea</v-btn>
+              <v-btn value="english" class="text-none flex-grow-1 font-weight-bold">Inggris</v-btn>
             </v-btn-toggle>
           </v-col>
         </v-row>

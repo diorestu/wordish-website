@@ -13,7 +13,10 @@
                 style="display: block; object-fit: contain;"
               />
             </div>
-            <div class="text-caption text-teal-lighten-3 font-weight-bold mt-2">
+            <div class="text-subtitle-2 font-weight-bold text-white mt-3" style="letter-spacing: 0.3px;">
+              Connecting World with Words
+            </div>
+            <div class="text-caption text-teal-lighten-3 font-weight-bold mt-1">
               Lembaga Pelatihan Kerja (LPK) Bahasa Asing
             </div>
           </div>
@@ -70,9 +73,9 @@
         <v-col cols="6" sm="4" md="2">
           <div class="text-subtitle-2 font-weight-bold text-accent mb-3 text-uppercase">Program Bahasa</div>
           <ul class="list-unstyled text-body-2 pa-0 ma-0">
-            <li class="mb-2"><router-link to="/products?lang=mandarin" class="footer-link">🇨🇳 Bahasa Mandarin (HSK)</router-link></li>
-            <li class="mb-2"><router-link to="/products?lang=korean" class="footer-link">🇰🇷 Bahasa Korea (EPS-TOPIK)</router-link></li>
-            <li class="mb-2"><router-link to="/products?lang=english" class="footer-link">🇬🇧 Bahasa Inggris (Speaking & IELTS)</router-link></li>
+            <li class="mb-2"><router-link to="/products?lang=mandarin" class="footer-link">Bahasa Mandarin (HSK)</router-link></li>
+            <li class="mb-2"><router-link to="/products?lang=korean" class="footer-link">Bahasa Korea (EPS-TOPIK)</router-link></li>
+            <li class="mb-2"><router-link to="/products?lang=english" class="footer-link">Bahasa Inggris (Speaking & IELTS)</router-link></li>
             <li class="mb-2"><router-link to="/tryout" class="footer-link">Tes Level Online Gratis</router-link></li>
           </ul>
         </v-col>

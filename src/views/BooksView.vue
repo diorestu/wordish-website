@@ -78,7 +78,6 @@
                 >
                   <div class="pa-3 book-cover-overlay d-flex justify-space-between align-center w-100">
                     <span class="text-caption font-weight-bold text-white">{{ book.language }}</span>
-                    <span class="text-h6">{{ book.flag }}</span>
                   </div>
                 </v-img>
               </div>

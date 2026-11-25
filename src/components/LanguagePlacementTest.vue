@@ -27,7 +27,7 @@
             :class="{ 'border-primary bg-blue-lighten-5': selectedLang === lang.id }"
             @click="selectedLang = lang.id"
           >
-            <div class="text-h4 mb-2">{{ lang.flag }}</div>
+            <v-icon :icon="lang.icon" size="34" :color="lang.color" class="mb-2"></v-icon>
             <div class="font-weight-bold text-body-1 text-secondary">{{ lang.name }}</div>
             <div class="text-caption text-grey">{{ lang.standard }}</div>
           </v-card>
@@ -50,7 +50,7 @@
       <!-- Progress and Language indicator -->
       <div class="d-flex justify-space-between align-center mb-3">
         <span class="font-weight-bold text-body-2 text-primary">
-          {{ currentLangObj.flag }} {{ currentLangObj.name }}
+          {{ currentLangObj.name }}
         </span>
         <span class="text-caption font-weight-medium text-grey">
           Pertanyaan {{ currentQIndex + 1 }} dari {{ currentQuestions.length }}

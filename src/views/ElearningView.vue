@@ -31,9 +31,9 @@
             rounded="xl"
             class="shadow-sm"
           >
-            <v-btn value="mandarin" class="text-none font-weight-bold px-4">🇨🇳 Mandarin</v-btn>
-            <v-btn value="korean" class="text-none font-weight-bold px-4">🇰🇷 Korea</v-btn>
-            <v-btn value="english" class="text-none font-weight-bold px-4">🇬🇧 Inggris</v-btn>
+            <v-btn value="mandarin" class="text-none font-weight-bold px-4">Mandarin</v-btn>
+            <v-btn value="korean" class="text-none font-weight-bold px-4">Korea</v-btn>
+            <v-btn value="english" class="text-none font-weight-bold px-4">Inggris</v-btn>
           </v-btn-toggle>
         </div>
       </v-card>
@@ -48,7 +48,7 @@
               <!-- Top bar in video -->
               <div class="d-flex justify-space-between align-center">
                 <span class="text-caption font-weight-bold">
-                  {{ activeModule.flag }} {{ activeModule.title }}
+                  {{ activeModule.title }}
                 </span>
                 <span class="text-caption text-grey-lighten-2">HD 1080p • E-Learning Resmi Wordish</span>
               </div>

@@ -108,7 +108,7 @@
           <div class="text-caption font-weight-bold text-secondary mb-1">Pilihan Bahasa Utama</div>
           <v-select
             v-model="registerForm.language"
-            :items="['🇨🇳 Bahasa Mandarin', '🇰🇷 Bahasa Korea (EPS-TOPIK)', '🇬🇧 Bahasa Inggris']"
+            :items="['Bahasa Mandarin', 'Bahasa Korea (EPS-TOPIK)', 'Bahasa Inggris']"
             prepend-inner-icon="mdi-translate"
             class="mb-1"
           ></v-select>
@@ -157,7 +157,7 @@ const loginForm = ref({
 const registerForm = ref({
   fullName: '',
   phone: '',
-  language: '🇰🇷 Bahasa Korea (EPS-TOPIK)',
+  language: 'Bahasa Korea (EPS-TOPIK)',
   password: ''
 })
 

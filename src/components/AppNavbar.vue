@@ -18,27 +18,31 @@
           <v-btn to="/products" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
             Program & Layanan
           </v-btn>
-          <v-btn to="/elearning" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
-            E-Learning
-          </v-btn>
           <v-btn to="/books" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
             Buku Pelajaran
           </v-btn>
           <v-btn to="/tryout" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
             Tes Level
           </v-btn>
-          <v-btn href="#jadwal" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
-            Jadwal Batch
-          </v-btn>
         </div>
 
         <v-spacer></v-spacer>
 
-        <!-- Right Side: Cart, WhatsApp, CTA -->
+        <!-- Right Side: Cart, CTA, WhatsApp -->
         <div class="d-flex align-center ga-2 ga-sm-3">
           <!-- Cart Button -->
           <v-btn icon variant="text" @click="cartStore.drawerOpen = true" class="text-white" title="Keranjang Pendaftaran">
             <v-icon icon="mdi-cart-outline" size="22"></v-icon>
+          </v-btn>
+
+          <!-- Daftar CTA (Accent Orange) -->
+          <v-btn
+            variant="flat"
+            color="accent"
+            class="text-none font-weight-bold px-4 px-sm-5 text-white shadow-sm"
+            to="/products"
+          >
+            Daftar Kelas
           </v-btn>
 
           <!-- WhatsApp Chat -->
@@ -51,15 +55,6 @@
             target="_blank"
           >
             Konsultasi
-          </v-btn>
-
-          <!-- Daftar CTA (Accent Orange) -->
-          <v-btn
-            color="accent"
-            class="text-none font-weight-bold px-4 px-sm-5 text-white shadow-sm"
-            to="/products"
-          >
-            Daftar Kelas
           </v-btn>
 
           <!-- Mobile Hamburger -->
@@ -82,10 +77,8 @@
       <v-list nav class="pa-3">
         <v-list-item prepend-icon="mdi-home-outline" title="Beranda" to="/" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-school-outline" title="Program & Format Kelas" to="/products" @click="mobileDrawer = false"></v-list-item>
-        <v-list-item prepend-icon="mdi-video-vintage" title="E-Learning Video Modul" to="/elearning" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-book-open-page-variant-outline" title="Buku Pelajaran (Shopee/Tokopedia)" to="/books" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-clipboard-check-outline" title="Tes Level Gratis" to="/tryout" @click="mobileDrawer = false"></v-list-item>
-        <v-list-item prepend-icon="mdi-calendar-clock" title="Jadwal Batch" href="#jadwal" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-cart-outline" title="Keranjang" @click="cartStore.drawerOpen = true; mobileDrawer = false"></v-list-item>
 
         <v-divider class="my-3"></v-divider>

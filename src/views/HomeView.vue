@@ -1,15 +1,15 @@
 <template>
   <div>
     <!-- HERO BANNER SECTION -->
-    <section class="rg-screenshot-hero position-relative pt-8 pt-md-12 pb-16 pb-md-20">
+    <section class="rg-screenshot-hero position-relative pt-8 pt-md-12 pb-0">
       <!-- Decorative Background Orbs -->
       <div class="rg-hero-orb-left" aria-hidden="true"></div>
       <div class="rg-hero-orb-right" aria-hidden="true"></div>
 
       <div class="hero-container mx-auto px-6 px-sm-10 px-md-14 position-relative z-1">
-        <v-row align="center" no-gutters>
+        <v-row align="stretch" no-gutters>
           <!-- Left Column: Copy & Interactive Phone Pill -->
-          <v-col cols="12" md="7" lg="6" class="pr-md-6 pr-lg-8 pb-6 pb-md-0">
+          <v-col cols="12" md="7" lg="6" class="d-flex flex-column justify-center pr-md-6 pr-lg-8 pb-6 pb-md-20">
             <h1 class="hero-title mb-3">
               Bimbel Online &amp; Offline Terbesar,<br class="d-none d-sm-inline" />
               Terlengkap, dan Terbukti di Indonesia
@@ -175,7 +175,7 @@
       <!-- Promo Star Badge (As shown in screenshot bottom-right) -->
       <div class="d-flex justify-end pt-2">
         <div class="promo-star-badge">
-          <span class="star-icon">⭐</span>
+          <v-icon icon="mdi-star" size="14" color="#ff6e02"></v-icon>
           <span class="promo-text">PROMO STAR</span>
         </div>
       </div>
@@ -195,7 +195,7 @@
             :color="activeLanguageFilter === lang.id ? 'primary' : 'grey-darken-1'"
             @click="scrollToLanguage(lang.id)"
           >
-            <span class="mr-1.5">{{ lang.flag }}</span>
+            <v-icon :icon="lang.icon" size="16" class="mr-1"></v-icon>
             {{ lang.name }}
           </v-btn>
         </div>
@@ -228,7 +228,15 @@
             <v-card class="h-100 pa-6 rounded-3xl border bg-white d-flex flex-column justify-space-between rg-card-border shadow-sm">
               <div>
                 <div class="d-flex align-center justify-space-between mb-4">
-                  <v-avatar :color="mode.color" size="52" class="text-white shadow-sm">
+                  <img
+                    v-if="mode.image"
+                    :src="mode.image"
+                    :alt="mode.name"
+                    width="52"
+                    height="52"
+                    style="object-fit: contain; display: block;"
+                  />
+                  <v-avatar v-else :color="mode.color" size="52" class="text-white shadow-sm">
                     <v-icon :icon="mode.icon" size="28"></v-icon>
                   </v-avatar>
                   <span class="text-caption font-weight-bold text-grey">Tersedia 3 Bahasa</span>
@@ -329,7 +337,7 @@
               <!-- Video Preview Card Mock -->
               <div class="rounded-2xl overflow-hidden border shadow-sm bg-slate-900 pa-4 text-white">
                 <div class="d-flex justify-space-between align-center mb-3 text-caption">
-                  <span class="font-weight-bold">🇰🇷 Preview Modul Hangeul Korea</span>
+                  <span class="font-weight-bold">Preview Modul Hangeul Korea</span>
                   <span class="text-grey-lighten-2">Akses Gratis Siswa</span>
                 </div>
                 <div class="py-8 text-center bg-grey-darken-4 rounded-xl mb-3">
@@ -383,7 +391,6 @@
                 >
                   <div class="pa-2 book-cover-overlay d-flex justify-space-between align-center w-100">
                     <span class="text-caption font-weight-bold text-white">{{ book.language }}</span>
-                    <span class="text-body-1">{{ book.flag }}</span>
                   </div>
                 </v-img>
 
@@ -489,9 +496,9 @@
             class="shadow-sm flex-wrap justify-center"
           >
             <v-btn value="all" class="text-none font-weight-bold px-3 px-sm-4">Semua Bahasa</v-btn>
-            <v-btn value="mandarin" class="text-none font-weight-bold px-3 px-sm-4">🇨🇳 Mandarin</v-btn>
-            <v-btn value="korean" class="text-none font-weight-bold px-3 px-sm-4">🇰🇷 Korea</v-btn>
-            <v-btn value="english" class="text-none font-weight-bold px-3 px-sm-4">🇬🇧 Inggris</v-btn>
+            <v-btn value="mandarin" class="text-none font-weight-bold px-3 px-sm-4">Mandarin</v-btn>
+            <v-btn value="korean" class="text-none font-weight-bold px-3 px-sm-4">Korea</v-btn>
+            <v-btn value="english" class="text-none font-weight-bold px-3 px-sm-4">Inggris</v-btn>
           </v-btn-toggle>
         </div>
 
@@ -654,10 +661,10 @@
                   Sesi Mandarin &amp; English bergantian setiap jam. Fokus pada pengenalan dasar yang menyenangkan, sistem Pinyin, karakter Hanzi bergambar, phonics bahasa Inggris, dan keberanian berbicara sejak dini.
                 </p>
                 <div class="d-flex flex-wrap ga-2 text-caption">
-                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">14.00 - 15.00: 🇨🇳 Mandarin</span>
-                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">15.00 - 16.00: 🇬🇧 English</span>
-                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">16.00 - 17.00: 🇨🇳 Mandarin</span>
-                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">17.00 - 18.00: 🇬🇧 English</span>
+                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">14.00 - 15.00: Mandarin</span>
+                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">15.00 - 16.00: English</span>
+                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">16.00 - 17.00: Mandarin</span>
+                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">17.00 - 18.00: English</span>
                 </div>
               </v-card>
 
@@ -683,9 +690,9 @@
                   Kelas malam setelah jam kerja/kuliah. Dirancang untuk akselerasi karier, persiapan sertifikasi resmi HSK 1 - 4, TOEFL/IELTS, percakapan bisnis, serta persiapan wawancara kerja.
                 </p>
                 <div class="d-flex flex-wrap ga-2 text-caption">
-                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">18.00 - 19.00: 🇨🇳 Mandarin</span>
-                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">19.00 - 20.00: 🇬🇧 English</span>
-                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">20.00 - 21.00: 🇨🇳 Mandarin</span>
+                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">18.00 - 19.00: Mandarin</span>
+                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">19.00 - 20.00: English</span>
+                  <span class="px-2 py-1 bg-grey-lighten-4 rounded text-grey-darken-2 font-weight-medium">20.00 - 21.00: Mandarin</span>
                 </div>
               </v-card>
 
@@ -693,7 +700,9 @@
               <v-card class="pa-4 rounded-2xl border bg-amber-lighten-5 border-amber-lighten-2 shadow-sm">
                 <div class="d-flex align-center justify-space-between">
                   <div class="d-flex align-center ga-2">
-                    <span class="text-h6">🇰🇷</span>
+                    <v-avatar color="amber-lighten-4" size="38">
+                      <v-icon icon="mdi-calendar-clock" color="amber-darken-3" size="20"></v-icon>
+                    </v-avatar>
                     <div>
                       <div class="text-subtitle-2 font-weight-bold text-secondary">
                         Kelas Pagi Intensif: Korea EPS-TOPIK
@@ -767,7 +776,7 @@
                 :class="activeScheduleCategory === 'korea' ? 'text-white' : 'text-grey-darken-2'"
                 @click="activeScheduleCategory = 'korea'"
               >
-                🇰🇷 Korea EPS-TOPIK
+                Korea EPS-TOPIK
               </v-btn>
             </div>
           </div>
@@ -791,8 +800,7 @@
                     <div class="text-caption text-grey">{{ b.days }}</div>
                   </td>
                   <td>
-                    <div class="font-weight-bold text-secondary d-flex align-center ga-1.5">
-                      <span>{{ b.flag }}</span>
+                    <div class="font-weight-bold text-secondary d-flex align-center">
                       <span>{{ b.className }}</span>
                     </div>
                     <div class="text-caption text-grey-darken-1" style="max-width: 280px; line-height: 1.3;">
@@ -1246,15 +1254,19 @@ function enrollDirect(prog) {
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 430px;
   object-fit: contain;
+  object-position: bottom right;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
 }
 
 @media (max-width: 960px) {
   .hero-students-img {
-    max-height: 280px;
+    width: 100%;
+    max-width: 450px;
+    max-height: 300px;
     margin: 0 auto;
+    object-position: bottom center;
   }
 }
 
