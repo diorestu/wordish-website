@@ -2,23 +2,24 @@ import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from 'vuetify'
 
-const ruangguruLightTheme = {
+const wordishLightTheme = {
   dark: false,
   colors: {
-    primary: '#00A5CF',           // Iconic Ruangguru Turquoise/Cyan
-    'primary-darken': '#007AA3',
-    'primary-lighten': '#E0F7FA',
-    secondary: '#0C2340',         // Ruangguru Deep Navy
-    'secondary-lighten': '#1E3A8A',
-    accent: '#FF9E00',            // Ruangguru Bright Orange/Gold
-    'accent-lighten': '#FFF3E0',
-    background: '#F8FAFC',        // Slate-50 clean background
+    primary: '#1952A5',           // Authentic Wordish Royal Blue
+    'primary-darken': '#103E80',
+    'primary-lighten': '#EBF2FC',
+    secondary: '#0F2C59',         // Deep Navy Blue
+    'secondary-lighten': '#1E4E9E',
+    accent: '#FF6E02',            // Exact Wordish CTA Orange
+    'accent-darken': '#D95C00',
+    'accent-lighten': '#FFF0E5',
+    background: '#F8FAFC',        // Clean slate-50
     surface: '#FFFFFF',
     'surface-variant': '#F1F5F9',
     'on-surface-variant': '#64748B',
     success: '#10B981',
     info: '#0284C7',
-    warning: '#F59E0B',
+    warning: '#FF6E02',
     error: '#EF4444',
   },
   variables: {
@@ -31,9 +32,9 @@ const ruangguruLightTheme = {
 
 export default createVuetify({
   theme: {
-    defaultTheme: 'ruangguruLightTheme',
+    defaultTheme: 'wordishLightTheme',
     themes: {
-      ruangguruLightTheme,
+      wordishLightTheme,
     },
   },
   defaults: {

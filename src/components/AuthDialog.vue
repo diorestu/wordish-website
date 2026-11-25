@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="authStore.authDialogOpen" max-width="480" persistent>
-    <v-card class="rounded-2xl pa-2">
+    <v-card class="rounded-3xl pa-2">
       <!-- Close Button -->
       <div class="d-flex justify-end pa-2">
         <v-btn icon size="small" variant="text" @click="authStore.closeAuth()">
@@ -10,14 +10,18 @@
 
       <v-card-text class="pt-0 px-6 pb-6">
         <div class="text-center mb-6">
-          <div class="rg-avatar-logo mx-auto mb-2 d-flex align-center justify-center">
-            <v-icon icon="mdi-school" color="white" size="28"></v-icon>
-          </div>
-          <div class="text-h5 font-weight-bold text-secondary">
-            {{ isLoginTab ? 'Masuk ke Ruangguru' : 'Daftar Akun Ruangguru' }}
+          <img
+            src="/wordish-logo.jpg"
+            alt="Wordish Logo"
+            height="46"
+            class="mx-auto mb-2 d-block"
+            style="object-fit: contain;"
+          />
+          <div class="text-h6 font-weight-bold text-secondary">
+            {{ isLoginTab ? 'Masuk ke Akun Peserta' : 'Pendaftaran Akun Baru' }}
           </div>
           <div class="text-caption text-grey">
-            {{ isLoginTab ? 'Belajar seru bersama jutaan siswa berprestasi' : 'Mulai perjalanan prestasimu bersama Master Teacher' }}
+            LPK Pelatihan Bahasa Mandarin, Korea & Inggris
           </div>
         </div>
 
@@ -35,10 +39,10 @@
           class="mb-4 text-caption"
           icon="mdi-lightning-bolt"
         >
-          <strong>Coba Langsung (1-Klik):</strong> Tekan tombol di bawah untuk demo login otomatis.
+          <strong>Demo Login 1-Klik:</strong> Masuk langsung untuk mencoba sistem pelatihan.
           <div class="mt-1">
-            <v-btn size="x-small" color="primary" variant="flat" class="text-none" @click="quickDemoLogin">
-              Masuk sebagai Rian Pratama (Kelas 12 SMA)
+            <v-btn size="x-small" color="primary" variant="flat" class="text-none font-weight-bold" @click="quickDemoLogin">
+              Masuk sebagai Peserta (Budi Santoso)
             </v-btn>
           </div>
         </v-alert>
@@ -83,7 +87,7 @@
 
         <!-- Form Register -->
         <v-form v-else @submit.prevent="handleRegister">
-          <div class="text-caption font-weight-bold text-secondary mb-1">Nama Lengkap Siswa</div>
+          <div class="text-caption font-weight-bold text-secondary mb-1">Nama Lengkap Peserta</div>
           <v-text-field
             v-model="registerForm.fullName"
             placeholder="Masukkan nama lengkap"
@@ -101,20 +105,11 @@
             class="mb-1"
           ></v-text-field>
 
-          <div class="text-caption font-weight-bold text-secondary mb-1">Email Siswa / Orang Tua</div>
-          <v-text-field
-            v-model="registerForm.email"
-            placeholder="contoh@gmail.com"
-            prepend-inner-icon="mdi-email-outline"
-            required
-            class="mb-1"
-          ></v-text-field>
-
-          <div class="text-caption font-weight-bold text-secondary mb-1">Jenjang Pendidikan</div>
+          <div class="text-caption font-weight-bold text-secondary mb-1">Pilihan Bahasa Utama</div>
           <v-select
-            v-model="registerForm.grade"
-            :items="['SD (Kelas 1-6)', 'SMP (Kelas 7-9)', 'SMA (Kelas 10-12)', 'UTBK-SNBT / Gap Year', 'Mahasiswa & Umum']"
-            prepend-inner-icon="mdi-school-outline"
+            v-model="registerForm.language"
+            :items="['🇨🇳 Bahasa Mandarin', '🇰🇷 Bahasa Korea (EPS-TOPIK)', '🇬🇧 Bahasa Inggris']"
+            prepend-inner-icon="mdi-translate"
             class="mb-1"
           ></v-select>
 
@@ -139,19 +134,6 @@
             Daftar Akun Baru
           </v-btn>
         </v-form>
-
-        <!-- Divider -->
-        <div class="d-flex align-center my-3">
-          <v-divider></v-divider>
-          <span class="text-caption text-grey px-3">atau lanjutkan dengan</span>
-          <v-divider></v-divider>
-        </div>
-
-        <div class="d-flex ga-2">
-          <v-btn variant="outlined" block class="text-none text-body-2" prepend-icon="mdi-google" @click="quickDemoLogin">
-            Google
-          </v-btn>
-        </div>
       </v-card-text>
     </v-card>
   </v-dialog>
@@ -168,22 +150,21 @@ const showPassword = ref(false)
 const isLoginTab = computed(() => authStore.authDialogTab === 'login')
 
 const loginForm = ref({
-  identifier: 'rian.pratama@gmail.com',
+  identifier: 'budi.santoso@gmail.com',
   password: 'password123'
 })
 
 const registerForm = ref({
   fullName: '',
   phone: '',
-  email: '',
-  grade: 'SMA (Kelas 10-12)',
+  language: '🇰🇷 Bahasa Korea (EPS-TOPIK)',
   password: ''
 })
 
 function quickDemoLogin() {
   loading.value = true
   setTimeout(() => {
-    authStore.login({ identifier: 'rian.pratama@gmail.com' })
+    authStore.login({ identifier: 'budi.santoso@gmail.com' })
     loading.value = false
   }, 400)
 }
@@ -204,13 +185,3 @@ function handleRegister() {
   }, 500)
 }
 </script>
-
-<style scoped>
-.rg-avatar-logo {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, #00A5CF 0%, #0077B6 100%);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 165, 207, 0.3);
-}
-</style>

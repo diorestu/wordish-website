@@ -1,102 +1,74 @@
-# Ruangguru Web Platform Clone
+# Wordish - LPK Pelatihan Bahasa Asing (Mandarin, Korea & Inggris)
 
-Aplikasi web platform edukasi modern seperti **Ruangguru (ruangguru.com)** yang dibangun menggunakan **Vue 3**, **Vuetify 3**, **Vite**, dan **Pinia**.
+Website platform resmi **Wordish** sebagai **Lembaga Pelatihan Kerja (LPK)** untuk pendidikan bahasa asing yang berorientasi pada kesiapan kerja luar negeri, peluang karier industri, dan beasiswa studi.
 
----
-
-## 🌟 Fitur Utama
-
-1. **Beranda Interaktif (Home)**
-   - Top announcement promo banner dengan countdown & voucher hemat s.d 70%
-   - Hero section dengan jenjang selector cepat (SD, SMP, SMA, UTBK, Dewasa)
-   - Product ecosystem showcase: ruangbelajar, Brain Academy, Roboguru, English Academy, Ruanguji, Skill Academy
-   - **Roboguru AI Solver Playground**: Simulasi tanya soal instan dengan rumus kilat & solusi per langkah
-   - **ruangbelajar Interactive Video Player**: Simulasi pemutar video belajar dengan fitur Adapto, kontrol kecepatan, silabus bab, dan kuis pemahaman
-   - Katalog paket belajar unggulan dengan kalkulator diskon
-   - Testimoni peraih skor UTBK tinggi & lolos PTN favorit (UI, ITB, UGM)
-   - FAQ Accordion lengkap & call-to-action unduh aplikasi mobile
-
-2. **Katalog Paket Belajar (Products)**
-   - Filter dinamis berdasarkan Jenjang (SD, SMP, SMA, UTBK, Umum) dan Kategori Produk
-   - Pencarian real-time paket belajar
-   - Perbandingan fitur komprehensif (ruangbelajar vs Brain Academy vs English Academy)
-   - Tombol "Tambah ke Keranjang" dan "Beli Sekarang"
-
-3. **Roboguru AI (Tanya & Bahas Soal)**
-   - Pemecah soal instan bertenaga AI untuk mata pelajaran Matematika, Fisika, Kimia, dan Biologi
-   - Bank preset contoh soal HOTS
-   - Input soal kustom oleh pengguna dengan animasi analisa langkah demi langkah
-   - Tampilan konsep kunci, rumus utama, tahapan pengerjaan analitik, dan Tips Kilat Master Teacher
-
-4. **Ruanguji (Tryout Online SNBT Berstandar IRT)**
-   - Portal simulasi tryout nasional UTBK-SNBT 2026 & Ujian Sekolah SMA
-   - **Computer Based Test (CBT) Interface**:
-     - Timer hitung mundur pengerjaan ujian
-     - Navigasi nomor soal (1-10) dengan status terjawab, ragu-ragu, dan sedang dibuka
-     - Soal-soal HOTS subtes Penalaran Umum, Penalaran Matematika, Pemahaman Bacaan, dan Literasi
-   - **Halaman Hasil & Analisis IRT**:
-     - Skor terkalibrasi IRT skala 1000
-     - Rasionalisasi peluang kelulusan jurusan PTN (Pilihan 1 & 2)
-     - Selebrasi confetti perayaan nilai
-     - Kunci jawaban dan pembahasan detail setiap butir soal
-
-5. **ruangbelajar (Dashboard Pembelajaran Demo)**
-   - Pemilihan mata pelajaran (Matematika, Fisika, Kimia, Biologi)
-   - Pemutar video materi terstruktur dengan chapter list
-   - Unduh rangkuman rumus Master Teacher format PDF simulasi
-
-6. **Keranjang Belajar & Checkout**
-   - Slide-in Cart Drawer dengan ringkasan biaya
-   - Fitur voucher promo (`RUANGJUARA` untuk diskon 20%, `UTBK2026` untuk diskon 25%)
-   - Formulir biodata siswa dan sekolah
-   - Pilihan metode pembayaran populer di Indonesia:
-     - GoPay / QRIS
-     - ShopeePay
-     - BCA Virtual Account
-     - Mandiri Virtual Account
-     - Kartu Kredit / Cicilan 0%
-   - Modal konfirmasi pembayaran sukses dan nomor resi pesanan
-
-7. **Sistem Autentikasi (Masuk & Daftar)**
-   - Modal autentikasi dengan tab Masuk dan Daftar
-   - Validasi email/nomor WhatsApp & kata sandi
-   - Fitur 1-Klik Login Demo untuk kemudahan pengujian
+Dibangun dengan antarmuka modern khas edtech menggunakan **Vue 3**, **Vuetify 3**, **Vite**, dan **Pinia**.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 🌟 3 Format Layanan Kelas
 
-- **Vue.js 3** (Composition API, `<script setup>`)
-- **Vuetify 3** (Material Design Component Library dengan custom Ruangguru theme)
-- **Vite** (Build tool kilat & Hot Module Replacement)
-- **Vue Router 4** (Client-side routing dengan lazy loaded chunking)
-- **Pinia** (State management untuk user session, keranjang belanja, dan ujian tryout)
-- **Material Design Icons (@mdi/font)**
-- **Canvas-Confetti** (Animasi efek selebrasi skor tryout)
-- **Plus Jakarta Sans** (Tipografi modern resmi)
+1. **Private Class (1-on-1 Intensif)**
+   - Pembelajaran personal 1 siswa 1 tutor di Training Center Wordish.
+   - Jadwal dan materi disesuaikan 100% dengan kebutuhan dan ritme belajar siswa.
+2. **Home Class (Tutor Datang ke Rumah)**
+   - Belajar nyaman langsung di tempat tinggal Anda (area Jabodetabek).
+   - Cocok untuk privat perorangan maupun kelompok kecil (2-4 orang keluarga/teman).
+3. **Online Class (Live Zoom Interaktif)**
+   - Kelas tatap maya langsung via Zoom interaktif yang dapat diikuti dari mana saja.
+   - Termasuk rekaman sesi kelas HD dan materi digital seumur hidup.
 
 ---
 
-## 🚀 Cara Menjalankan
+## 📚 Buku Pelajaran Resmi Wordish (Shopee & Tokopedia)
 
-### 1. Instalasi Dependensi
+Setiap produk buku dilengkapi tombol langsung ke marketplace resmi:
+- **Buku Sakti HSK 1 - 4 & Panduan Hanzi** (Bahasa Mandarin)
+- **Modul Resmi Bank Soal EPS-TOPIK Korea + Audio Listening** (Bahasa Korea)
+- **Pocket Guide Active English Speaking & Interview** (Bahasa Inggris)
+- **Paket Bundle 3 Buku Panduan Lengkap**
+- **Link Pembelian Langsung**:
+  - Tombol oranye **Beli di Shopee**
+  - Tombol hijau **Beli di Tokopedia**
+
+---
+
+## 💻 Portal E-Learning Interaktif (`/elearning`)
+
+- Video materi terstruktur (Mandarin, Korea, dan Inggris).
+- Pemutar video dengan kontrol playback, kecepatan (1x, 1.25x, 1.5x, 2x), dan progress bar.
+- Unduh rangkuman rumus tata bahasa & kosakata format PDF.
+- Silabus video per bab dengan penanda akses materi gratis/siswa.
+
+---
+
+## 🌐 3 Bahasa Utama yang Tersedia
+
+1. 🇨🇳 **Bahasa Mandarin** (HSK 1 - 4 & Mandarin Kerja Taiwan/China)
+2. 🇰🇷 **Bahasa Korea** (EPS-TOPIK G to G Korsel - BP2MI & TOPIK I-II)
+3. 🇬🇧 **Bahasa Inggris** (Active Communicative Speaking & IELTS Prep)
+
+---
+
+## 🚀 Fitur Lainnya
+
+- **Header #004EB2**: Navigasi bersih dengan logo transparan putih resmi Wordish.
+- **Tes Level Online Gratis (`/tryout`)**: Kuis 2 menit untuk rekomendasi penempatan kelas.
+- **Pendaftaran Kelas & Checkout (`/checkout`)**: Pemilihan format kelas, reservasi jadwal batch, dan opsi pembayaran lokal.
+- **Jadwal Batch Bulanan & Konsultasi WhatsApp Cepat**.
+
+---
+
+## 💻 Cara Menjalankan
+
 ```bash
-npm install
-```
-
-### 2. Menjalankan Server Pengembangan (Dev Server)
-```bash
+# Menjalankan Dev Server
 npm run dev
-```
-Akses di browser pada: [http://localhost:3000](http://localhost:3000)
 
-### 3. Build untuk Produksi
-```bash
+# Membangun Versi Produksi
 npm run build
-```
-Hasil build siap rilis akan berada di folder `dist/`.
 
-### 4. Preview Hasil Build
-```bash
+# Preview Hasil Build
 npm run preview
 ```
+Akses di browser: [http://localhost:3000](http://localhost:3000)

@@ -5,43 +5,37 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import('../views/HomeView.vue'),
-    meta: { title: 'Ruangguru - Bimbel Online & Offline Terbesar & Terbukti di Indonesia' }
+    meta: { title: 'Wordish - LPK Pelatihan Bahasa Mandarin, Korea & Inggris' }
   },
   {
     path: '/products',
     name: 'Products',
     component: () => import('../views/ProductsView.vue'),
-    meta: { title: 'Katalog Paket Belajar - Ruangguru' }
+    meta: { title: 'Program & Format Kelas - LPK Wordish' }
   },
   {
-    path: '/roboguru',
-    name: 'Roboguru',
-    component: () => import('../views/RoboguruView.vue'),
-    meta: { title: 'Roboguru AI - Tanya & Bahas Soal Gratis' }
+    path: '/elearning',
+    name: 'Elearning',
+    component: () => import('../views/ElearningView.vue'),
+    meta: { title: 'E-Learning & Video Modul - LPK Wordish' }
+  },
+  {
+    path: '/books',
+    name: 'Books',
+    component: () => import('../views/BooksView.vue'),
+    meta: { title: 'Buku Pelajaran Resmi Wordish - Shopee & Tokopedia' }
   },
   {
     path: '/tryout',
-    name: 'Tryout',
+    name: 'PlacementTest',
     component: () => import('../views/TryoutView.vue'),
-    meta: { title: 'Ruanguji - Tryout Online SNBT & Ujian Sekolah' }
-  },
-  {
-    path: '/tryout/exam',
-    name: 'TryoutExam',
-    component: () => import('../views/TryoutExamView.vue'),
-    meta: { title: 'Simulasi Ujian SNBT IRT - Ruanguji' }
-  },
-  {
-    path: '/ruangbelajar',
-    name: 'Ruangbelajar',
-    component: () => import('../views/RuangbelajarView.vue'),
-    meta: { title: 'ruangbelajar - Video Animasi & Modul Kurikulum Merdeka' }
+    meta: { title: 'Tes Level Bahasa Online Gratis - LPK Wordish' }
   },
   {
     path: '/checkout',
     name: 'Checkout',
     component: () => import('../views/CheckoutView.vue'),
-    meta: { title: 'Pembayaran & Checkout - Ruangguru' }
+    meta: { title: 'Pendaftaran Kelas & Pembayaran - LPK Wordish' }
   },
   {
     path: '/:pathMatch(.*)*',

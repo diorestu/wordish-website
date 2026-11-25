@@ -1,20 +1,20 @@
 <template>
   <v-dialog v-model="cartStore.checkoutSuccessDialog" max-width="500" persistent>
-    <v-card class="pa-6 text-center rounded-2xl">
+    <v-card class="pa-6 text-center rounded-3xl">
       <div class="payment-success-icon mx-auto mb-4 d-flex align-center justify-center">
         <v-icon icon="mdi-check-decagram" color="white" size="48"></v-icon>
       </div>
 
       <div class="text-h5 font-weight-bold text-secondary mb-1">
-        Pembayaran Berhasil!
+        Pendaftaran Berhasil!
       </div>
       <p class="text-caption text-grey mb-4">
-        Paket bimbingan belajar Ruangguru kamu sudah aktif dan siap digunakan.
+        Kursi batch kelas bahasa asingmu di LPK Wordish telah berhasil didaftarkan.
       </p>
 
-      <v-card variant="tonal" color="grey-lighten-4" class="pa-4 rounded-xl text-left mb-4">
+      <v-card variant="tonal" color="grey-lighten-4" class="pa-4 rounded-2xl text-left mb-4">
         <div class="d-flex justify-space-between text-caption mb-1">
-          <span class="text-grey">Nomor Pesanan:</span>
+          <span class="text-grey">Nomor Registrasi:</span>
           <span class="font-weight-bold text-secondary">{{ cartStore.lastOrder?.orderId }}</span>
         </div>
         <div class="d-flex justify-space-between text-caption mb-1">
@@ -22,24 +22,25 @@
           <span class="font-weight-bold text-uppercase">{{ cartStore.lastOrder?.paymentMethod }}</span>
         </div>
         <div class="d-flex justify-space-between text-caption mb-1">
-          <span class="text-grey">Total Dibayar:</span>
+          <span class="text-grey">Total Biaya:</span>
           <span class="font-weight-bold text-primary">{{ formatRupiah(cartStore.lastOrder?.totalPaid) }}</span>
         </div>
         <div class="d-flex justify-space-between text-caption">
-          <span class="text-grey">Tanggal Aktivasi:</span>
+          <span class="text-grey">Waktu Pendaftaran:</span>
           <span class="font-weight-bold">{{ cartStore.lastOrder?.date }}</span>
         </div>
       </v-card>
 
       <div class="d-flex flex-column ga-2">
         <v-btn
-          color="primary"
+          color="success"
           size="large"
-          class="text-none font-weight-bold text-white"
-          to="/ruangbelajar"
-          @click="cartStore.checkoutSuccessDialog = false"
+          class="text-none font-weight-bold text-white shadow-sm"
+          prepend-icon="mdi-whatsapp"
+          :href="`https://wa.me/6281234567890?text=Halo%20Admin%20LPK%20Wordish,%20saya%20sudah%20mendaftar%20dengan%20No%20Registrasi%20${cartStore.lastOrder?.orderId}`"
+          target="_blank"
         >
-          Mulai Belajar Sekarang (Buka Materi)
+          Konfirmasi ke WhatsApp Admin LPK
         </v-btn>
         <v-btn
           variant="text"
@@ -70,8 +71,8 @@ function formatRupiah(val) {
 
 <style scoped>
 .payment-success-icon {
-  width: 80px;
-  height: 80px;
+  width: 76px;
+  height: 76px;
   background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   border-radius: 50%;
   box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);

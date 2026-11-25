@@ -1,22 +1,17 @@
 <template>
-  <v-card class="rounded-3xl border bg-white shadow-md pa-6">
-    <div class="d-flex flex-wrap align-center justify-space-between mb-4">
-      <div class="d-flex align-center">
-        <v-avatar color="primary" size="44" class="text-white mr-3">
-          <v-icon icon="mdi-clipboard-check-outline" size="24"></v-icon>
-        </v-avatar>
-        <div>
-          <div class="text-h6 font-weight-bold text-secondary">
-            Tes Level Bahasa Singkat (Gratis)
-          </div>
-          <div class="text-caption text-grey">
-            Cari tahu kemampuan bahasamu dalam 2 menit untuk penempatan kelas yang tepat
-          </div>
+  <v-card class="rounded-3xl border bg-white shadow-sm pa-6">
+    <div class="d-flex align-center mb-4">
+      <v-avatar color="primary" size="44" class="text-white mr-3">
+        <v-icon icon="mdi-clipboard-check-outline" size="24"></v-icon>
+      </v-avatar>
+      <div>
+        <div class="text-h6 font-weight-bold text-secondary">
+          Tes Level Bahasa Singkat
+        </div>
+        <div class="text-caption text-grey">
+          Cari tahu kemampuan bahasamu dalam 2 menit untuk penempatan kelas yang tepat
         </div>
       </div>
-      <v-chip size="small" color="accent" class="font-weight-bold" label>
-        3 SOAL CEPAT
-      </v-chip>
     </div>
 
     <!-- Step 1: Language Selection -->
@@ -54,10 +49,10 @@
     <div v-else-if="testStep === 'quiz'" class="py-2">
       <!-- Progress and Language indicator -->
       <div class="d-flex justify-space-between align-center mb-3">
-        <v-chip size="small" color="primary" variant="flat" class="font-weight-bold">
+        <span class="font-weight-bold text-body-2 text-primary">
           {{ currentLangObj.flag }} {{ currentLangObj.name }}
-        </v-chip>
-        <span class="text-caption font-weight-bold text-grey">
+        </span>
+        <span class="text-caption font-weight-medium text-grey">
           Pertanyaan {{ currentQIndex + 1 }} dari {{ currentQuestions.length }}
         </span>
       </div>
@@ -119,18 +114,15 @@
       </v-avatar>
 
       <div class="text-h5 font-weight-bold text-secondary mb-1">
-        Hasil Tes Kemampuan: {{ scoreResult.correctCount }} / {{ currentQuestions.length }} Benar
+        Hasil Tes: {{ scoreResult.correctCount }} / {{ currentQuestions.length }} Benar
       </div>
       <p class="text-caption text-grey mb-4">
         Berdasarkan jawabanmu pada tes bahasa {{ currentLangObj.name }}, berikut rekomendasi kelas terbaik untukmu:
       </p>
 
       <v-card class="pa-5 rounded-2xl border bg-blue-lighten-5 text-left mb-6 mx-auto max-width-md">
-        <div class="d-flex align-center justify-space-between mb-2">
-          <v-chip size="small" color="primary" class="font-weight-bold">
-            REKOMENDASI LEVEL KELAS
-          </v-chip>
-          <span class="text-caption font-weight-bold text-teal">Siap Daftar Batch Terdekat</span>
+        <div class="font-weight-bold text-caption text-primary mb-1">
+          Rekomendasi Level Kelas:
         </div>
         <div class="text-h6 font-weight-bold text-secondary mb-1">
           {{ scoreResult.recommendedCourse.title }}
@@ -210,7 +202,6 @@ const scoreResult = computed(() => {
     if (userAnswers.value[idx] === q.correct) correct++
   })
 
-  // Match recommended program based on language and score
   const langPrograms = programs.filter(p => p.languageId === selectedLang.value)
   const recommendedCourse = correct >= 2 && langPrograms.length > 1
     ? langPrograms[1]
@@ -245,11 +236,11 @@ function formatRupiah(val) {
 
 <style scoped>
 .lang-card:hover {
-  border-color: #00A5CF !important;
+  border-color: #1952A5 !important;
   transform: translateY(-2px);
 }
 
 .option-choice:hover {
-  border-color: #00A5CF !important;
+  border-color: #1952A5 !important;
 }
 </style>

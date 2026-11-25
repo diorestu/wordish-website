@@ -6,38 +6,38 @@
         <v-breadcrumbs
           :items="[
             { title: 'Beranda', disabled: false, href: '/' },
-            { title: 'Katalog', disabled: false, href: '/products' },
-            { title: 'Pembayaran & Checkout', disabled: true }
+            { title: 'Program', disabled: false, href: '/products' },
+            { title: 'Pendaftaran Kelas & Pembayaran', disabled: true }
           ]"
           class="pa-0 mb-2 text-caption"
         ></v-breadcrumbs>
         <h1 class="text-h4 font-weight-bold text-secondary mb-1">
-          Konfirmasi Pesanan & Pembayaran
+          Formulir Pendaftaran Kelas LPK Wordish
         </h1>
         <p class="text-body-2 text-grey">
-          Selesaikan pembayaran untuk segera mengaktifkan fasilitas bimbingan belajar Ruangguru.
+          Lengkapi data diri calon peserta untuk reservasi kursi batch pelatihan bahasa asing.
         </p>
       </div>
 
       <v-row>
-        <!-- Left: Form Data Diri & Pilihan Pembayaran -->
+        <!-- Left: Form Data Calon Peserta -->
         <v-col cols="12" md="7">
-          <!-- Card 1: Data Siswa -->
           <v-card class="pa-5 rounded-2xl border bg-white mb-6 shadow-sm">
             <div class="d-flex align-center mb-4">
-              <v-icon icon="mdi-account-circle-outline" color="primary" class="mr-2"></v-icon>
-              <span class="text-subtitle-1 font-weight-bold text-secondary">Data Diri Siswa</span>
+              <v-icon icon="mdi-account-edit" color="primary" class="mr-2"></v-icon>
+              <span class="text-subtitle-1 font-weight-bold text-secondary">Data Calon Peserta</span>
             </div>
 
             <v-row dense>
               <v-col cols="12">
-                <div class="text-caption font-weight-bold text-secondary mb-1">Nama Lengkap Siswa</div>
+                <div class="text-caption font-weight-bold text-secondary mb-1">Nama Lengkap Sesuai KTP / Paspor</div>
                 <v-text-field
                   v-model="customerForm.name"
-                  placeholder="Nama Lengkap"
+                  placeholder="Nama Lengkap Peserta"
                   required
                 ></v-text-field>
               </v-col>
+
               <v-col cols="12" sm="6">
                 <div class="text-caption font-weight-bold text-secondary mb-1">Nomor WhatsApp Aktif</div>
                 <v-text-field
@@ -46,40 +46,51 @@
                   required
                 ></v-text-field>
               </v-col>
+
               <v-col cols="12" sm="6">
-                <div class="text-caption font-weight-bold text-secondary mb-1">Email Pengguna</div>
+                <div class="text-caption font-weight-bold text-secondary mb-1">Email Aktif</div>
                 <v-text-field
                   v-model="customerForm.email"
                   placeholder="nama@email.com"
                   required
                 ></v-text-field>
               </v-col>
+
               <v-col cols="12">
-                <div class="text-caption font-weight-bold text-secondary mb-1">Asal Sekolah & Kelas</div>
-                <v-text-field
-                  v-model="customerForm.school"
-                  placeholder="contoh: SMAN 1 Jakarta (Kelas 12 IPA)"
-                ></v-text-field>
+                <div class="text-caption font-weight-bold text-secondary mb-1">Pilihan Waktu Belajar (Jadwal Kelas Senin - Sabtu)</div>
+                <v-select
+                  v-model="customerForm.schedule"
+                  :items="[
+                    '14.00 - 15.00 WIB: Mandarin (Kids & Junior) - Senin s/d Sabtu',
+                    '15.00 - 16.00 WIB: English (Kids & Junior) - Senin s/d Sabtu',
+                    '16.00 - 17.00 WIB: Mandarin (Kids & Junior) - Senin s/d Sabtu',
+                    '17.00 - 18.00 WIB: English (Kids & Junior) - Senin s/d Sabtu',
+                    '18.00 - 19.00 WIB: Mandarin (Teen & Adult) - Senin s/d Sabtu',
+                    '19.00 - 20.00 WIB: English (Teen & Adult) - Senin s/d Sabtu',
+                    '20.00 - 21.00 WIB: Mandarin (Teen & Adult) - Senin s/d Sabtu',
+                    '09.00 - 12.00 WIB: Korea EPS-TOPIK (Intensif) - Senin s/d Jumat'
+                  ]"
+                  placeholder="Pilih Waktu Belajar"
+                ></v-select>
               </v-col>
             </v-row>
           </v-card>
 
-          <!-- Card 2: Metode Pembayaran -->
+          <!-- Metode Pembayaran -->
           <v-card class="pa-5 rounded-2xl border bg-white shadow-sm">
             <div class="d-flex align-center justify-space-between mb-4">
               <div class="d-flex align-center">
                 <v-icon icon="mdi-credit-card-outline" color="accent" class="mr-2"></v-icon>
-                <span class="text-subtitle-1 font-weight-bold text-secondary">Pilih Metode Pembayaran</span>
+                <span class="text-subtitle-1 font-weight-bold text-secondary">Metode Pembayaran</span>
               </div>
               <v-chip size="x-small" color="success" class="font-weight-bold">
-                Instan & Otomatis
+                Bisa Bayar DP / Lunas
               </v-chip>
             </div>
 
             <v-radio-group v-model="cartStore.selectedPaymentMethod" class="pa-0">
-              <!-- E-Wallet -->
-              <div class="text-caption font-weight-bold text-grey mb-2">E-Wallet & QRIS (Bebas Biaya Admin)</div>
-              <div class="d-flex flex-column ga-2 mb-4">
+              <div class="d-flex flex-column ga-2">
+                <!-- QRIS / GoPay -->
                 <div
                   class="payment-option border rounded-xl pa-3 cursor-pointer d-flex align-center justify-space-between"
                   :class="{ 'border-primary bg-blue-lighten-5': cartStore.selectedPaymentMethod === 'gopay' }"
@@ -88,32 +99,14 @@
                   <div class="d-flex align-center">
                     <v-radio value="gopay" class="mr-2"></v-radio>
                     <div>
-                      <div class="font-weight-bold text-body-2 text-secondary">GoPay / GoPay Later / QRIS</div>
-                      <div class="text-caption text-grey">Scan kode QR langsung dari aplikasi e-wallet apapun</div>
+                      <div class="font-weight-bold text-body-2 text-secondary">QRIS / GoPay / OVO / ShopeePay</div>
+                      <div class="text-caption text-grey">Scan kode QR langsung dari e-wallet apapun</div>
                     </div>
                   </div>
                   <v-icon icon="mdi-qrcode-scan" color="primary"></v-icon>
                 </div>
 
-                <div
-                  class="payment-option border rounded-xl pa-3 cursor-pointer d-flex align-center justify-space-between"
-                  :class="{ 'border-primary bg-blue-lighten-5': cartStore.selectedPaymentMethod === 'shopeepay' }"
-                  @click="cartStore.selectedPaymentMethod = 'shopeepay'"
-                >
-                  <div class="d-flex align-center">
-                    <v-radio value="shopeepay" class="mr-2"></v-radio>
-                    <div>
-                      <div class="font-weight-bold text-body-2 text-secondary">ShopeePay</div>
-                      <div class="text-caption text-grey">Pembayaran langsung dari akun Shopee</div>
-                    </div>
-                  </div>
-                  <v-icon icon="mdi-shopping" color="orange"></v-icon>
-                </div>
-              </div>
-
-              <!-- Virtual Account -->
-              <div class="text-caption font-weight-bold text-grey mb-2">Virtual Account Bank (Konfirmasi Otomatis)</div>
-              <div class="d-flex flex-column ga-2 mb-4">
+                <!-- Virtual Account BCA -->
                 <div
                   class="payment-option border rounded-xl pa-3 cursor-pointer d-flex align-center justify-space-between"
                   :class="{ 'border-primary bg-blue-lighten-5': cartStore.selectedPaymentMethod === 'bca_va' }"
@@ -122,13 +115,14 @@
                   <div class="d-flex align-center">
                     <v-radio value="bca_va" class="mr-2"></v-radio>
                     <div>
-                      <div class="font-weight-bold text-body-2 text-secondary">BCA Virtual Account</div>
-                      <div class="text-caption text-grey">Transfer via m-BCA, KlikBCA atau ATM BCA</div>
+                      <div class="font-weight-bold text-body-2 text-secondary">BCA Virtual Account (Otomatis)</div>
+                      <div class="text-caption text-grey">Transfer melalui m-BCA atau ATM</div>
                     </div>
                   </div>
                   <v-icon icon="mdi-bank" color="primary"></v-icon>
                 </div>
 
+                <!-- Transfer Bank Mandiri -->
                 <div
                   class="payment-option border rounded-xl pa-3 cursor-pointer d-flex align-center justify-space-between"
                   :class="{ 'border-primary bg-blue-lighten-5': cartStore.selectedPaymentMethod === 'mandiri_va' }"
@@ -144,40 +138,23 @@
                   <v-icon icon="mdi-bank" color="primary"></v-icon>
                 </div>
               </div>
-
-              <!-- Kartu Kredit / Cicilan -->
-              <div class="text-caption font-weight-bold text-grey mb-2">Kartu Kredit / Cicilan 0%</div>
-              <div
-                class="payment-option border rounded-xl pa-3 cursor-pointer d-flex align-center justify-space-between"
-                :class="{ 'border-primary bg-blue-lighten-5': cartStore.selectedPaymentMethod === 'cc' }"
-                @click="cartStore.selectedPaymentMethod = 'cc'"
-              >
-                <div class="d-flex align-center">
-                  <v-radio value="cc" class="mr-2"></v-radio>
-                  <div>
-                    <div class="font-weight-bold text-body-2 text-secondary">Kartu Kredit Visa / Mastercard / JCB</div>
-                    <div class="text-caption text-grey">Cicilan 0% hingga 12 bulan tersedia</div>
-                  </div>
-                </div>
-                <v-icon icon="mdi-credit-card" color="teal"></v-icon>
-              </div>
             </v-radio-group>
           </v-card>
         </v-col>
 
-        <!-- Right: Ringkasan Pesanan & Tombol Bayar -->
+        <!-- Right: Summary & Checkout Button -->
         <v-col cols="12" md="5">
-          <v-card class="pa-5 rounded-2xl border bg-white shadow-sm position-sticky" style="top: 86px;">
+          <v-card class="pa-5 rounded-2xl border bg-white shadow-sm checkout-summary-card">
             <div class="text-subtitle-1 font-weight-bold text-secondary mb-4 pb-2 border-b">
-              Ringkasan Pembelian
+              Program Bahasa yang Dipilih
             </div>
 
             <!-- Items -->
             <div v-if="cartStore.items.length === 0" class="text-center py-6">
               <v-icon icon="mdi-cart-off" size="48" color="grey" class="mb-2"></v-icon>
-              <div class="text-caption text-grey">Belum ada paket dipilih.</div>
+              <div class="text-caption text-grey">Belum ada program dipilih.</div>
               <v-btn color="primary" size="small" to="/products" class="mt-2 text-none font-weight-bold">
-                Pilih Paket Belajar
+                Pilih Program Bahasa
               </v-btn>
             </div>
 
@@ -189,11 +166,11 @@
               >
                 <div>
                   <div class="font-weight-bold text-body-2 text-secondary">{{ item.title }}</div>
-                  <div class="text-caption text-grey">{{ item.gradeLabel }} • {{ item.period }}</div>
+                  <div class="text-caption text-grey">{{ item.level }} • {{ item.duration }}</div>
                 </div>
                 <div class="text-right">
                   <div class="font-weight-bold text-body-2 text-primary">
-                    {{ formatRupiah(item.discountedPrice || item.price) }}
+                    {{ formatRupiah(item.price || item.discountedPrice) }}
                   </div>
                   <div v-if="item.originalPrice" class="text-caption text-grey text-decoration-line-through">
                     {{ formatRupiah(item.originalPrice) }}
@@ -225,22 +202,22 @@
 
             <!-- Calculations -->
             <div class="d-flex justify-space-between text-body-2 mb-1">
-              <span class="text-grey">Subtotal:</span>
+              <span class="text-grey">Biaya Program:</span>
               <span>{{ formatRupiah(cartStore.subtotal) }}</span>
             </div>
             <div v-if="cartStore.voucherDiscount > 0" class="d-flex justify-space-between text-body-2 mb-1 text-teal font-weight-medium">
-              <span>Diskon Voucher:</span>
+              <span>Potongan Diskon:</span>
               <span>- {{ formatRupiah(cartStore.voucherDiscount) }}</span>
             </div>
             <div class="d-flex justify-space-between text-body-2 mb-3">
-              <span class="text-grey">Biaya Layanan:</span>
+              <span class="text-grey">Biaya Pendaftaran LPK:</span>
               <span class="text-success font-weight-bold">GRATIS</span>
             </div>
 
             <v-divider class="my-3"></v-divider>
 
             <div class="d-flex justify-space-between align-baseline mb-6">
-              <span class="text-subtitle-1 font-weight-bold text-secondary">Total Tagihan:</span>
+              <span class="text-subtitle-1 font-weight-bold text-secondary">Total Biaya:</span>
               <span class="text-h5 font-weight-extrabold text-primary">
                 {{ formatRupiah(cartStore.totalAmount) }}
               </span>
@@ -253,22 +230,21 @@
               class="text-none font-weight-bold text-white shadow-lg"
               :disabled="cartStore.items.length === 0"
               :loading="isProcessing"
-              @click="submitPayment"
+              @click="submitRegistration"
             >
-              Bayar Sekarang
-              <v-icon icon="mdi-lock" size="small" class="ml-2"></v-icon>
+              Konfirmasi & Daftar Kelas
+              <v-icon icon="mdi-arrow-right" class="ml-2"></v-icon>
             </v-btn>
 
             <div class="text-center text-caption text-grey mt-3">
               <v-icon icon="mdi-shield-check" size="small" color="success" class="mr-1"></v-icon>
-              Transaksi Terenkripsi 256-bit SSL Aman
+              Pendaftaran Resmi Lembaga Pelatihan Kerja Terdaftar
             </div>
           </v-card>
         </v-col>
       </v-row>
     </v-container>
 
-    <!-- Success Modal Dialog -->
     <CheckoutDialog />
   </div>
 </template>
@@ -276,16 +252,14 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { useCartStore } from '../stores/cart'
-import { useAuthStore } from '../stores/auth'
-import { courses } from '../data/courses'
+import { programs } from '../data/wordishData'
 import CheckoutDialog from '../components/CheckoutDialog.vue'
 
 const cartStore = useCartStore()
-const authStore = useAuthStore()
 
-// If cart is empty, add the popular course for instant checkout convenience
+// If cart empty, default to the popular Korean EPS program
 if (cartStore.items.length === 0) {
-  cartStore.items.push({ ...courses[0] })
+  cartStore.items.push({ ...programs[2] })
   cartStore.applyVoucher('RUANGJUARA')
 }
 
@@ -293,10 +267,10 @@ const voucherInput = ref('RUANGJUARA')
 const isProcessing = ref(false)
 
 const customerForm = reactive({
-  name: authStore.user.name,
-  phone: authStore.user.phone,
-  email: authStore.user.email,
-  school: `${authStore.user.school} (${authStore.user.grade})`
+  name: 'Budi Santoso',
+  phone: '081234567890',
+  email: 'budi.santoso@gmail.com',
+  schedule: 'Kelas Pagi (Senin - Jumat 09.00 - 12.00 WIB) - Tatap Muka'
 })
 
 function formatRupiah(val) {
@@ -311,12 +285,12 @@ function applyVoucher() {
   cartStore.applyVoucher(voucherInput.value)
 }
 
-function submitPayment() {
+function submitRegistration() {
   isProcessing.value = true
   setTimeout(() => {
     isProcessing.value = false
     cartStore.processCheckout(customerForm)
-  }, 1000)
+  }, 900)
 }
 </script>
 
@@ -326,5 +300,12 @@ function submitPayment() {
 }
 .payment-option:hover {
   background-color: #F8FAFC;
+}
+
+@media (min-width: 960px) {
+  .checkout-summary-card {
+    position: sticky;
+    top: 86px;
+  }
 }
 </style>
