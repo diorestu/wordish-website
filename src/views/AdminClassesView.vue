@@ -21,13 +21,23 @@
                 Admin Panel — Kelola Kelas
               </h1>
               <p class="text-body-2 text-grey-darken-1 mb-0">
-                Tambah, ubah, nonaktifkan, atau hapus program kelas dan jadwal LPK Wordish. Perubahan langsung tampil di halaman publik.
+                Tambah, ubah, nonaktifkan, atau hapus program kelas dan jadwal Wordish. Perubahan langsung tampil di halaman publik.
               </p>
             </div>
           </div>
         </div>
 
         <div class="d-flex flex-wrap align-center ga-2">
+          <v-chip
+            v-if="adminAuthStore.admin"
+            color="secondary"
+            variant="tonal"
+            size="small"
+            prepend-icon="mdi-account-check-outline"
+            class="font-weight-bold"
+          >
+            {{ adminAuthStore.admin.name }}
+          </v-chip>
           <v-chip
             :color="classesStore.dbConnected ? 'success' : 'warning'"
             variant="tonal"
@@ -55,6 +65,15 @@
             @click="confirmResetDialog = true"
           >
             Reset Default
+          </v-btn>
+          <v-btn
+            variant="tonal"
+            color="secondary"
+            prepend-icon="mdi-logout"
+            class="text-none font-weight-bold"
+            @click="handleLogout"
+          >
+            Keluar
           </v-btn>
         </div>
       </div>
@@ -813,7 +832,7 @@
           Reset Data ke Default?
         </v-card-title>
         <v-card-text class="text-body-2 text-grey-darken-1">
-          Semua perubahan pada daftar program kelas dan jadwal akan dikembalikan ke data awal LPK Wordish.
+          Semua perubahan pada daftar program kelas dan jadwal akan dikembalikan ke data awal Wordish.
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -836,9 +855,18 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { useClassesStore } from '../stores/classes'
+import { useAdminAuthStore } from '../stores/adminAuth'
 
+const router = useRouter()
 const classesStore = useClassesStore()
+const adminAuthStore = useAdminAuthStore()
+
+async function handleLogout() {
+  await adminAuthStore.logout()
+  router.replace({ name: 'AdminLogin' })
+}
 
 onMounted(() => {
   classesStore.fetchAll()

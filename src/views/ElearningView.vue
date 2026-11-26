@@ -108,7 +108,7 @@
                     {{ currentLesson.title }}
                   </div>
                   <div class="text-caption text-grey">
-                    Modul Pelatihan Resmi LPK Wordish • {{ activeModule.totalDuration }}
+                    Modul Pelatihan Resmi Wordish • {{ activeModule.totalDuration }}
                   </div>
                 </div>
 

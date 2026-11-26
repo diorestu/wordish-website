@@ -4,6 +4,9 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   DB_PATH,
+  authenticateAdmin,
+  verifyAdminToken,
+  revokeAdminToken,
   getAllPrograms,
   createProgram,
   updateProgram,
@@ -42,9 +45,27 @@ function sendJson(res, status, data) {
     'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization'
   })
   res.end(JSON.stringify(data))
+}
+
+function getBearerToken(req) {
+  const auth = req.headers.authorization || ''
+  if (auth.startsWith('Bearer ')) {
+    return auth.slice(7).trim()
+  }
+  return ''
+}
+
+function requireAdmin(req, res) {
+  const token = getBearerToken(req)
+  const admin = verifyAdminToken(token)
+  if (!admin) {
+    sendJson(res, 401, { error: 'Akses ditolak. Silakan login sebagai Admin terlebih dahulu.' })
+    return null
+  }
+  return admin
 }
 
 function readBody(req) {
@@ -103,6 +124,35 @@ const server = http.createServer(async (req, res) => {
       return
     }
 
+    // --- ADMIN AUTH API ---
+    if (req.method === 'POST' && pathname === '/api/admin/login') {
+      const body = await readBody(req)
+      if (!body.identifier || !body.password) {
+        sendJson(res, 400, { error: 'Username/email dan password wajib diisi' })
+        return
+      }
+      const session = authenticateAdmin(body.identifier, body.password)
+      if (!session) {
+        sendJson(res, 401, { error: 'Username/email atau password salah' })
+        return
+      }
+      sendJson(res, 200, { data: session })
+      return
+    }
+
+    if (req.method === 'GET' && pathname === '/api/admin/me') {
+      const admin = requireAdmin(req, res)
+      if (!admin) return
+      sendJson(res, 200, { data: admin })
+      return
+    }
+
+    if (req.method === 'POST' && pathname === '/api/admin/logout') {
+      revokeAdminToken(getBearerToken(req))
+      sendJson(res, 200, { ok: true })
+      return
+    }
+
     // --- PROGRAMS API ---
     if (req.method === 'GET' && pathname === '/api/programs') {
       sendJson(res, 200, { data: getAllPrograms() })
@@ -110,6 +160,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && pathname === '/api/programs') {
+      if (!requireAdmin(req, res)) return
       const body = await readBody(req)
       if (!body.title || !body.languageId) {
         sendJson(res, 400, { error: 'Nama program dan bahasa wajib diisi' })
@@ -122,6 +173,7 @@ const server = http.createServer(async (req, res) => {
 
     const progToggleMatch = pathname.match(/^\/api\/programs\/([^/]+)\/toggle$/)
     if (req.method === 'PATCH' && progToggleMatch) {
+      if (!requireAdmin(req, res)) return
       const updated = toggleProgramStatus(decodeURIComponent(progToggleMatch[1]))
       if (!updated) return sendJson(res, 404, { error: 'Program tidak ditemukan' })
       sendJson(res, 200, { data: updated })
@@ -130,6 +182,7 @@ const server = http.createServer(async (req, res) => {
 
     const progDupMatch = pathname.match(/^\/api\/programs\/([^/]+)\/duplicate$/)
     if (req.method === 'POST' && progDupMatch) {
+      if (!requireAdmin(req, res)) return
       const copy = duplicateProgram(decodeURIComponent(progDupMatch[1]))
       if (!copy) return sendJson(res, 404, { error: 'Program tidak ditemukan' })
       sendJson(res, 201, { data: copy })
@@ -140,6 +193,7 @@ const server = http.createServer(async (req, res) => {
     if (progIdMatch) {
       const id = decodeURIComponent(progIdMatch[1])
       if (req.method === 'PUT') {
+        if (!requireAdmin(req, res)) return
         const body = await readBody(req)
         const updated = updateProgram(id, body)
         if (!updated) return sendJson(res, 404, { error: 'Program tidak ditemukan' })
@@ -147,6 +201,7 @@ const server = http.createServer(async (req, res) => {
         return
       }
       if (req.method === 'DELETE') {
+        if (!requireAdmin(req, res)) return
         const ok = deleteProgram(id)
         if (!ok) return sendJson(res, 404, { error: 'Program tidak ditemukan' })
         sendJson(res, 200, { deleted: true })
@@ -161,6 +216,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && pathname === '/api/schedules') {
+      if (!requireAdmin(req, res)) return
       const body = await readBody(req)
       if (!body.time || !body.className) {
         sendJson(res, 400, { error: 'Jam dan nama kelas wajib diisi' })
@@ -175,6 +231,7 @@ const server = http.createServer(async (req, res) => {
     if (schedIdMatch) {
       const id = Number(schedIdMatch[1])
       if (req.method === 'PUT') {
+        if (!requireAdmin(req, res)) return
         const body = await readBody(req)
         const updated = updateSchedule(id, body)
         if (!updated) return sendJson(res, 404, { error: 'Jadwal tidak ditemukan' })
@@ -182,6 +239,7 @@ const server = http.createServer(async (req, res) => {
         return
       }
       if (req.method === 'DELETE') {
+        if (!requireAdmin(req, res)) return
         const ok = deleteSchedule(id)
         if (!ok) return sendJson(res, 404, { error: 'Jadwal tidak ditemukan' })
         sendJson(res, 200, { deleted: true })
@@ -191,6 +249,7 @@ const server = http.createServer(async (req, res) => {
 
     // --- RESET ---
     if (req.method === 'POST' && pathname === '/api/reset') {
+      if (!requireAdmin(req, res)) return
       const resetData = resetAllToDefaults()
       sendJson(res, 200, { data: resetData })
       return

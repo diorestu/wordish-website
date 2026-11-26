@@ -1,6 +1,6 @@
-# Wordish - LPK Pelatihan Bahasa Asing (Mandarin, Korea & Inggris)
+# Wordish - Lembaga Pelatihan Bahasa Asing (Mandarin, Korea & Inggris)
 
-Website platform resmi **Wordish** sebagai **Lembaga Pelatihan Kerja (LPK)** untuk pendidikan bahasa asing yang berorientasi pada kesiapan kerja luar negeri, peluang karier industri, dan beasiswa studi.
+Website platform resmi **Wordish** sebagai lembaga pelatihan bahasa asing yang berorientasi pada kesiapan kerja luar negeri, peluang karier industri, dan beasiswa studi.
 
 Dibangun dengan antarmuka modern khas edtech menggunakan **Vue 3**, **Vuetify 3**, **Vite**, dan **Pinia**.
 

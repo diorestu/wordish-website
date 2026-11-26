@@ -9,7 +9,7 @@
         Pendaftaran Berhasil!
       </div>
       <p class="text-caption text-grey mb-4">
-        Kursi batch kelas bahasa asingmu di LPK Wordish telah berhasil didaftarkan.
+        Kursi batch kelas bahasa asingmu di Wordish telah berhasil didaftarkan.
       </p>
 
       <v-card variant="tonal" color="grey-lighten-4" class="pa-4 rounded-2xl text-left mb-4">
@@ -37,10 +37,10 @@
           size="large"
           class="text-none font-weight-bold text-white shadow-sm"
           prepend-icon="mdi-whatsapp"
-          :href="`https://wa.me/6281234567890?text=Halo%20Admin%20LPK%20Wordish,%20saya%20sudah%20mendaftar%20dengan%20No%20Registrasi%20${cartStore.lastOrder?.orderId}`"
+          :href="`https://wa.me/6281234567890?text=Halo%20Admin%20Wordish,%20saya%20sudah%20mendaftar%20dengan%20No%20Registrasi%20${cartStore.lastOrder?.orderId}`"
           target="_blank"
         >
-          Konfirmasi ke WhatsApp Admin LPK
+          Konfirmasi ke WhatsApp Admin
         </v-btn>
         <v-btn
           variant="text"

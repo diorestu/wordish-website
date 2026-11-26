@@ -20,13 +20,13 @@
           Ragu atau Ingin Konsultasi Langsung dengan Pengajar?
         </div>
         <p class="text-caption text-grey mb-4">
-          Tim konselor akademik LPK Wordish siap membantu menilai kebutuhanmu lewat sesi tanya jawab singkat di WhatsApp.
+          Tim konselor akademik Wordish siap membantu menilai kebutuhanmu lewat sesi tanya jawab singkat di WhatsApp.
         </p>
         <v-btn
           color="success"
           class="text-none font-weight-bold"
           prepend-icon="mdi-whatsapp"
-          href="https://wa.me/6281234567890?text=Halo%20LPK%20Wordish,%20saya%20mau%20konsultasi%20penempatan%20level%20bahasa"
+          href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20mau%20konsultasi%20penempatan%20level%20bahasa"
           target="_blank"
         >
           Konsultasi via WhatsApp

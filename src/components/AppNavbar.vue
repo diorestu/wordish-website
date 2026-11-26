@@ -8,7 +8,7 @@
           <img
             src="/wordish-logo-white.png"
             alt="Wordish Logo"
-            height="36"
+            height="55"
             class="wordish-logo-img"
           />
         </router-link>
@@ -23,9 +23,6 @@
           </v-btn>
           <v-btn to="/tryout" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
             Tes Level
-          </v-btn>
-          <v-btn to="/admin" variant="text" prepend-icon="mdi-shield-crown-outline" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
-            Admin Kelas
           </v-btn>
         </div>
 
@@ -54,7 +51,7 @@
             color="white"
             class="text-none font-weight-bold px-3 d-none d-sm-flex"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20LPK%20Wordish,%20saya%20ingin%20tanya%20info%20pendaftaran%20kelas%20bahasa%20asing"
+            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20tanya%20info%20pendaftaran%20kelas%20bahasa%20asing"
             target="_blank"
           >
             Konsultasi
@@ -82,7 +79,6 @@
         <v-list-item prepend-icon="mdi-school-outline" title="Program & Format Kelas" to="/products" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-book-open-page-variant-outline" title="Buku Pelajaran (Shopee/Tokopedia)" to="/books" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-clipboard-check-outline" title="Tes Level Gratis" to="/tryout" @click="mobileDrawer = false"></v-list-item>
-        <v-list-item prepend-icon="mdi-shield-crown-outline" title="Admin Kelola Kelas" to="/admin" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-cart-outline" title="Keranjang" @click="cartStore.drawerOpen = true; mobileDrawer = false"></v-list-item>
 
         <v-divider class="my-3"></v-divider>

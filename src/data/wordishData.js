@@ -1,4 +1,4 @@
-// Data Program Pelatihan Bahasa Asing LPK Wordish
+// Data Program Pelatihan Bahasa Asing Wordish
 export const languages = [
   {
     id: 'mandarin',
@@ -35,14 +35,16 @@ export const languages = [
   }
 ]
 
-// 3 FORMAT LAYANAN KELAS LPK WORDISH
+// 3 FORMAT LAYANAN KELAS WORDISH
 export const classModes = [
   {
     id: 'private',
     name: 'Private Class',
     subtitle: '1-on-1 Eksklusif di Training Center',
+    shortBadge: '1-on-1 Center',
     icon: 'mdi-account-star',
     image: '/icon-private-class.png',
+    bannerImage: '/mode-private.jpg',
     color: '#004EB2',
     desc: 'Bimbingan intensif 1 siswa 1 tutor di Training Center Wordish. Materi dan ritme belajar disesuaikan 100% dengan kebutuhan dan target pribadimu.',
     benefits: [
@@ -56,9 +58,11 @@ export const classModes = [
     id: 'home',
     name: 'Home Class',
     subtitle: 'Tutor Datang Langsung ke Rumah',
+    shortBadge: 'Tutor ke Rumah',
     icon: 'mdi-home-account',
+    bannerImage: '/mode-home.jpg',
     color: '#FF6E02',
-    desc: 'Belajar nyaman di rumah sendiri tanpa macet di jalan. Tutor terverifikasi LPK Wordish hadir membimbing kamu secara privat atau kelompok kecil keluarga.',
+    desc: 'Belajar nyaman di rumah sendiri tanpa macet di jalan. Tutor terverifikasi Wordish hadir membimbing kamu secara privat atau kelompok kecil keluarga.',
     benefits: [
       'Hemat waktu dan ongkos transportasi',
       'Bisa privat 1 orang atau kelompok kecil (2-4 orang)',
@@ -70,8 +74,10 @@ export const classModes = [
     id: 'online',
     name: 'Online Class',
     subtitle: 'Live Interactive Zoom dari Mana Saja',
+    shortBadge: 'Live Zoom',
     icon: 'mdi-laptop-account',
     image: '/icon-online-class.png',
+    bannerImage: '/mode-online.jpg',
     color: '#10B981',
     desc: 'Kelas tatap maya interaktif dua arah bersama tutor profesional. Dilengkapi rekaman sesi belajar seumur hidup jika berhalangan hadir.',
     benefits: [
@@ -89,7 +95,7 @@ export const books = [
     id: 'book-hsk',
     title: 'Buku Sakti HSK 1 - 4 & Panduan Menulis Hanzi',
     language: 'Bahasa Mandarin',
-    author: 'Tim Akademik LPK Wordish',
+    author: 'Tim Akademik Wordish',
     pages: '280 Halaman (Full Color)',
     rating: 4.9,
     soldCount: '1.400+ Terjual',
@@ -104,7 +110,7 @@ export const books = [
     id: 'book-eps-topik',
     title: 'Modul Resmi Bank Soal EPS-TOPIK Korea + Audio Listening MP3',
     language: 'Bahasa Korea',
-    author: 'Master Tutor EPS-TOPIK LPK Wordish',
+    author: 'Master Tutor EPS-TOPIK Wordish',
     pages: '320 Halaman + QR Audio',
     rating: 4.95,
     soldCount: '2.800+ Terjual',
@@ -134,14 +140,14 @@ export const books = [
     id: 'book-bundle-trio',
     title: 'Paket Bundle 3 Buku Panduan Bahasa Asing (Mandarin, Korea, Inggris)',
     language: 'Semua Bahasa (Best Value)',
-    author: 'LPK Wordish Publishing',
+    author: 'Wordish Publishing',
     pages: '3 Buku Lengkap + Bonus E-Book',
     rating: 5.0,
     soldCount: '850+ Paket',
     originalPrice: 540000,
     price: 320000,
     coverImage: 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=400&q=80',
-    description: 'Dapatkan ketiga buku pelajaran unggulan LPK Wordish dalam 1 paket hemat. Bonus akses latihan audio listening & e-book modul selamanya.',
+    description: 'Dapatkan ketiga buku pelajaran unggulan Wordish dalam 1 paket hemat. Bonus akses latihan audio listening & e-book modul selamanya.',
     shopeeUrl: 'https://shopee.co.id/search?keyword=bundle%20buku%20bahasa%20wordish',
     tokopediaUrl: 'https://www.tokopedia.com/search?q=bundle%20buku%20bahasa%20wordish'
   }
@@ -202,7 +208,7 @@ export const elearningModules = [
   }
 ]
 
-// PROGRAM KELAS LPK
+// PROGRAM KELAS WORDISH
 export const programs = [
   // --- BAHASA MANDARIN ---
   {
@@ -223,7 +229,7 @@ export const programs = [
       'Penguasaan sistem Pinyin & 4 nada suara akurat',
       'Dasar guratan & radikal karakter Hanzi umum',
       'Modul belajar cetak & akses video e-learning',
-      'Sertifikat kelulusan LPK resmi untuk portofolio'
+      'Sertifikat kelulusan resmi untuk portofolio'
     ],
     nextBatch: 'Batch 14: Mulai 10 Desember 2026'
   },
@@ -245,7 +251,7 @@ export const programs = [
       'Kosakata teknis industri & operasional keselamatan kerja',
       'Simulasi interview kerja langsung dengan pengajar',
       'Bimbingan penulisan CV & pengurusan berkas kerja luar negeri',
-      'Koneksi info lowongan kerja dari mitra LPK'
+      'Koneksi info lowongan kerja dari mitra terpercaya'
     ],
     nextBatch: 'Batch 8: Mulai 15 Desember 2026'
   },
@@ -315,7 +321,7 @@ export const programs = [
       'Praktek bicara langsung (Full Speaking immersion)',
       'Koreksi pelafalan (Pronunciation) & intonasi alami',
       'Keterampilan presentasi diri & interview kerja bahasa Inggris',
-      'Sertifikat kemampuan berbicara resmi LPK'
+      'Sertifikat kemampuan berbicara resmi'
     ],
     nextBatch: 'Batch 30: Mulai 5 Desember 2026'
   },
@@ -452,12 +458,12 @@ export const placementTests = {
   ]
 }
 
-// Keunggulan LPK Wordish
+// Keunggulan Wordish
 export const advantages = [
   {
     icon: 'mdi-certificate',
-    title: 'LPK Resmi Berizin Kemnaker',
-    desc: 'Lembaga Pelatihan Kerja terdaftar resmi dengan kurikulum berbasis kompetensi kerja terstandar.',
+    title: 'Lembaga Pelatihan Terakreditasi',
+    desc: 'Lembaga pelatihan bahasa asing resmi dengan kurikulum berbasis standar internasional.',
     color: '#004EB2'
   },
   {
@@ -480,14 +486,14 @@ export const advantages = [
   }
 ]
 
-// Testimoni Siswa LPK Wordish
+// Testimoni Siswa Wordish
 export const testimonials = [
   {
     id: 1,
     name: 'Bagus Setyawan',
     program: 'Bahasa Korea (EPS-TOPIK) - Private Class',
     outcome: 'Lolos Kerja Manufaktur di Hwaseong, Korea Selatan',
-    quote: 'Belajar dari nol huruf Hangeul di LPK Wordish sampai bisa lulus ujian EPS-TOPIK dengan nilai 95/100. Simulasi ujian komputernya sangat mirip aslinya!',
+    quote: 'Belajar dari nol huruf Hangeul di Wordish sampai bisa lulus ujian EPS-TOPIK dengan nilai 95/100. Simulasi ujian komputernya sangat mirip aslinya!',
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80'
   },
   {
@@ -508,7 +514,7 @@ export const testimonials = [
   }
 ]
 
-// Jadwal Kelas Harian LPK Wordish (Senin - Sabtu)
+// Jadwal Kelas Harian Wordish (Senin - Sabtu)
 export const batchSchedules = [
   {
     id: 1,
@@ -632,11 +638,11 @@ export const batchSchedules = [
   }
 ]
 
-// FAQ Sederhana untuk LPK
+// FAQ Sederhana untuk Wordish
 export const faqs = [
   {
     q: 'Apa perbedaan antara Private Class, Home Class, dan Online Class?',
-    a: 'Private Class adalah bimbingan 1-on-1 intensif di Training Center LPK Wordish. Home Class adalah layanan di mana instruktur kami datang langsung ke tempat tinggal Anda (area Jabodetabek). Sedangkan Online Class adalah sesi tatap maya langsung via Zoom interaktif yang dapat diikuti dari mana saja.'
+    a: 'Private Class adalah bimbingan 1-on-1 intensif di Training Center Wordish. Home Class adalah layanan di mana instruktur kami datang langsung ke tempat tinggal Anda (area Jabodetabek). Sedangkan Online Class adalah sesi tatap maya langsung via Zoom interaktif yang dapat diikuti dari mana saja.'
   },
   {
     q: 'Apakah bisa belajar dari nol jika sama sekali belum punya dasar?',
@@ -647,11 +653,19 @@ export const faqs = [
     a: 'Seluruh peserta kelas mendapatkan akses E-Learning resmi Wordish selama masa pelatihan. Anda juga dapat membeli Buku Pelajaran fisik resmi Wordish secara langsung atau melalui Official Store kami di Shopee dan Tokopedia.'
   },
   {
-    q: 'Apakah LPK Wordish menyalurkan kerja ke luar negeri?',
-    a: 'LPK Wordish adalah lembaga pelatihan resmi yang memberikan bekal kompetensi bahasa, sertifikat pelatihan, simulasi ujian (seperti EPS-TOPIK), pendampingan pendaftaran ujian negara, serta memberikan informasi lowongan dari mitra resmi.'
+    q: 'Apakah Wordish menyalurkan kerja ke luar negeri?',
+    a: 'Wordish adalah lembaga pelatihan resmi yang memberikan bekal kompetensi bahasa, sertifikat pelatihan, simulasi ujian (seperti EPS-TOPIK), pendampingan pendaftaran ujian negara, serta memberikan informasi lowongan dari mitra resmi.'
   },
   {
     q: 'Bagaimana cara membeli buku pelajaran resmi Wordish di Shopee atau Tokopedia?',
     a: 'Anda cukup mengklik tombol "Beli di Shopee" atau "Beli di Tokopedia" pada bagian katalog Buku Pelajaran di website ini, dan Anda akan langsung diarahkan ke laman produk resmi kami di marketplace tersebut.'
   }
 ]
+
+/** Truncates text to maxLength characters with a trailing ellipsis. */
+export function truncateText(text, maxLength = 60) {
+  if (!text) return ''
+  const normalized = String(text).trim()
+  if (normalized.length <= maxLength) return normalized
+  return `${normalized.slice(0, Math.max(0, maxLength - 3)).trimEnd()}...`
+}

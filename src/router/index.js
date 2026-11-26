@@ -1,23 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useAdminAuthStore } from '../stores/adminAuth'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: () => import('../views/HomeView.vue'),
-    meta: { title: 'Wordish - LPK Pelatihan Bahasa Mandarin, Korea & Inggris' }
+    meta: { title: 'Wordish - Lembaga Pelatihan Bahasa Mandarin, Korea & Inggris' }
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/AboutView.vue'),
+    meta: { title: 'Tentang Kami - Lembaga Pelatihan Bahasa Wordish' }
   },
   {
     path: '/products',
     name: 'Products',
     component: () => import('../views/ProductsView.vue'),
-    meta: { title: 'Program & Format Kelas - LPK Wordish' }
+    meta: { title: 'Program & Format Kelas - Wordish' }
   },
   {
     path: '/elearning',
     name: 'Elearning',
     component: () => import('../views/ElearningView.vue'),
-    meta: { title: 'E-Learning & Video Modul - LPK Wordish' }
+    meta: { title: 'E-Learning & Video Modul - Wordish' }
   },
   {
     path: '/books',
@@ -29,20 +36,26 @@ const routes = [
     path: '/tryout',
     name: 'PlacementTest',
     component: () => import('../views/TryoutView.vue'),
-    meta: { title: 'Tes Level Bahasa Online Gratis - LPK Wordish' }
+    meta: { title: 'Tes Level Bahasa Online Gratis - Wordish' }
   },
   {
     path: '/checkout',
     name: 'Checkout',
     component: () => import('../views/CheckoutView.vue'),
-    meta: { title: 'Pendaftaran Kelas & Pembayaran - LPK Wordish' }
+    meta: { title: 'Pendaftaran Kelas & Pembayaran - Wordish' }
+  },
+  {
+    path: '/admin/login',
+    name: 'AdminLogin',
+    component: () => import('../views/AdminLoginView.vue'),
+    meta: { title: 'Login Admin Panel - Wordish', guestAdminOnly: true }
   },
   {
     path: '/admin',
     alias: '/admin/kelas',
     name: 'AdminClasses',
     component: () => import('../views/AdminClassesView.vue'),
-    meta: { title: 'Admin Panel Kelola Kelas - LPK Wordish' }
+    meta: { title: 'Admin Panel Kelola Kelas - Wordish', requiresAdmin: true }
   },
   {
     path: '/:pathMatch(.*)*',
@@ -62,10 +75,27 @@ const router = createRouter({
   }
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   if (to.meta.title) {
     document.title = to.meta.title
   }
+
+  if (to.meta.requiresAdmin) {
+    const adminAuthStore = useAdminAuthStore()
+    const isValid = await adminAuthStore.ensureVerified()
+    if (!isValid) {
+      next({ name: 'AdminLogin', query: { redirect: to.fullPath } })
+      return
+    }
+  } else if (to.meta.guestAdminOnly) {
+    const adminAuthStore = useAdminAuthStore()
+    const isValid = await adminAuthStore.ensureVerified()
+    if (isValid) {
+      next({ name: 'AdminClasses' })
+      return
+    }
+  }
+
   next()
 })
 

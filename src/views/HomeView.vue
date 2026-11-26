@@ -8,7 +8,7 @@
       <div class="hero-container mx-auto px-6 px-sm-10 px-md-14 position-relative z-1">
         <v-row align="stretch" no-gutters>
           <v-col cols="12" md="7" lg="6" class="d-flex flex-column justify-center pr-md-6 pr-lg-8 pb-6 pb-md-20">
-            <div class="hero-eyebrow mb-3">Learn. Speak. Explore.</div>
+            <div class="hero-eyebrow mb-3">Connecting World with Words</div>
 
             <h1 class="hero-title mb-4">
               Belajar Bahasa,<br class="d-none d-sm-inline" />
@@ -44,7 +44,7 @@
           <v-col cols="12" md="5" lg="6" class="d-flex justify-center justify-md-end align-end">
             <img
               src="/hero-students.png"
-              alt="Siswa Berprestasi LPK Wordish"
+              alt="Siswa Berprestasi Wordish"
               width="1536"
               height="1024"
               class="hero-students-img"
@@ -62,7 +62,7 @@
         <v-row align="center">
           <v-col cols="12" md="6" class="pr-md-10">
             <div class="text-overline font-weight-bold text-primary mb-2" style="letter-spacing: 2px;">Hello, We're Wordish!</div>
-            <h2 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-4" style="line-height: 1.25;">
+            <h2 class="font-weight-bold text-secondary mb-4" style="font-size: 36px; line-height: 1.25;">
               Belajar Bahasa Nggak Harus Membosankan.
             </h2>
             <p class="text-body-1 text-grey-darken-1 mb-4" style="line-height: 1.75;">
@@ -71,9 +71,30 @@
             <p class="text-body-1 text-grey-darken-1 mb-4" style="line-height: 1.75;">
               Baik untuk sekolah, karier, traveling, atau sekadar menikmati budaya favoritmu, kami hadir untuk menemani setiap langkah perjalanan belajarmu.
             </p>
-            <p class="text-body-1 font-weight-bold text-secondary" style="line-height: 1.75;">
+            <p class="text-body-1 font-weight-bold text-secondary mb-6" style="line-height: 1.75;">
               Belajar lebih santai, berkembang lebih percaya diri.
             </p>
+            <div class="d-flex align-center ga-3 flex-wrap">
+              <v-btn
+                to="/about"
+                color="primary"
+                variant="flat"
+                size="large"
+                class="text-none font-weight-bold px-6 text-white rounded-xl shadow-sm"
+                append-icon="mdi-arrow-right"
+              >
+                Tentang Kami
+              </v-btn>
+              <v-btn
+                to="/products"
+                variant="outlined"
+                color="primary"
+                size="large"
+                class="text-none font-weight-bold px-5 rounded-xl"
+              >
+                Lihat Program
+              </v-btn>
+            </div>
           </v-col>
           <v-col cols="12" md="6">
             <div class="about-stats-grid">
@@ -105,12 +126,25 @@
           <!-- Mandarin -->
           <v-col cols="12" md="4">
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
-              <div class="lang-card-header bg-red-darken-1 pa-6 text-white">
-                <div class="text-h3 font-weight-black mb-1">🇨🇳</div>
-                <div class="text-h5 font-weight-bold">Mandarin</div>
-                <div class="text-body-2 mt-1 opacity-90">你好！Nǐ Hǎo!</div>
+              <div class="lang-card-media position-relative overflow-hidden">
+                <v-img
+                  src="/lang-mandarin.jpg"
+                  alt="Belajar Bahasa Mandarin - Wordish"
+                  height="210"
+                  cover
+                  class="lang-card-img"
+                ></v-img>
               </div>
               <div class="pa-6 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-center justify-space-between mb-2">
+                  <div class="d-flex align-center ga-2">
+                    <span class="text-h5">🇨🇳</span>
+                    <span class="text-h5 font-weight-bold text-secondary">Mandarin</span>
+                  </div>
+                  <v-chip color="#E63946" size="small" variant="tonal" class="font-weight-bold">
+                    你好！Nǐ Hǎo!
+                  </v-chip>
+                </div>
                 <p class="text-body-2 text-grey-darken-1 mb-6" style="line-height: 1.65;">
                   Dari percakapan sehari-hari hingga peluang bisnis internasional. Kenali dunia Mandarin, satu kata dalam satu waktu.
                 </p>
@@ -132,12 +166,25 @@
           <!-- English -->
           <v-col cols="12" md="4">
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
-              <div class="lang-card-header pa-6 text-white" style="background: #0077B6;">
-                <div class="text-h3 font-weight-black mb-1">🇬🇧</div>
-                <div class="text-h5 font-weight-bold">English</div>
-                <div class="text-body-2 mt-1 opacity-90">Hello, World!</div>
+              <div class="lang-card-media position-relative overflow-hidden">
+                <v-img
+                  src="/lang-english.jpg"
+                  alt="Belajar Bahasa Inggris - Wordish"
+                  height="210"
+                  cover
+                  class="lang-card-img"
+                ></v-img>
               </div>
               <div class="pa-6 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-center justify-space-between mb-2">
+                  <div class="d-flex align-center ga-2">
+                    <span class="text-h5">🇬🇧</span>
+                    <span class="text-h5 font-weight-bold text-secondary">English</span>
+                  </div>
+                  <v-chip color="#0077B6" size="small" variant="tonal" class="font-weight-bold">
+                    Hello, World!
+                  </v-chip>
+                </div>
                 <p class="text-body-2 text-grey-darken-1 mb-6" style="line-height: 1.65;">
                   Lebih percaya diri saat presentasi, menghadapi interview, traveling, atau ngobrol dengan teman dari berbagai negara.
                 </p>
@@ -159,12 +206,25 @@
           <!-- Korean -->
           <v-col cols="12" md="4">
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
-              <div class="lang-card-header pa-6 text-white" style="background: #1D4ED8;">
-                <div class="text-h3 font-weight-black mb-1">🇰🇷</div>
-                <div class="text-h5 font-weight-bold">Korean</div>
-                <div class="text-body-2 mt-1 opacity-90">안녕하세요! Annyeonghaseyo!</div>
+              <div class="lang-card-media position-relative overflow-hidden">
+                <v-img
+                  src="/lang-korean.jpg"
+                  alt="Belajar Bahasa Korea - Wordish"
+                  height="210"
+                  cover
+                  class="lang-card-img"
+                ></v-img>
               </div>
               <div class="pa-6 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-center justify-space-between mb-2">
+                  <div class="d-flex align-center ga-2">
+                    <span class="text-h5">🇰🇷</span>
+                    <span class="text-h5 font-weight-bold text-secondary">Korean</span>
+                  </div>
+                  <v-chip color="#1D4ED8" size="small" variant="tonal" class="font-weight-bold">
+                    안녕하세요!
+                  </v-chip>
+                </div>
                 <p class="text-body-2 text-grey-darken-1 mb-6" style="line-height: 1.65;">
                   Nonton K-Drama, memahami lirik K-Pop, mengenal budaya Korea, hingga mempersiapkan peluang studi dan karier.
                 </p>
@@ -237,9 +297,14 @@
             md="3"
           >
             <v-card class="h-100 pa-6 rounded-3xl border bg-white text-center shadow-sm">
-              <v-avatar :color="audience.bgColor" size="56" class="mb-4">
-                <v-icon :icon="audience.icon" :color="audience.iconColor" size="28"></v-icon>
-              </v-avatar>
+              <img
+                :src="audience.image"
+                :alt="audience.title"
+                width="80"
+                height="80"
+                class="mb-4 mx-auto d-block"
+                style="object-fit: contain;"
+              />
               <div class="text-subtitle-1 font-weight-bold text-secondary mb-2">{{ audience.title }}</div>
               <p class="text-body-2 text-grey-darken-1" style="line-height: 1.6;">{{ audience.desc }}</p>
             </v-card>
@@ -251,8 +316,9 @@
     <!-- SECTION: 3 FORMAT LAYANAN KELAS (Private, Home, Online) -->
     <section class="py-12 py-md-16 bg-surface border-y">
       <v-container class="max-width-xl px-4 px-sm-6">
-        <div class="text-center mb-8 mb-md-12">
-          <h2 class="text-h4 font-weight-bold text-secondary mb-2">
+        <div class="text-center mb-10 mb-md-14">
+          <div class="text-overline font-weight-bold text-primary mb-2" style="letter-spacing: 2px;">Flexible Learning</div>
+          <h2 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-3">
             Pilihan Format Layanan Kelas
           </h2>
           <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
@@ -267,31 +333,33 @@
             cols="12"
             md="4"
           >
-            <v-card class="h-100 pa-6 rounded-3xl border bg-white d-flex flex-column justify-space-between rg-card-border shadow-sm">
-              <div>
-                <div class="d-flex align-center justify-space-between mb-4">
-                  <img
-                    v-if="mode.image"
-                    :src="mode.image"
-                    :alt="mode.name"
-                    width="52"
-                    height="52"
-                    style="object-fit: contain; display: block;"
-                  />
-                  <v-avatar v-else :color="mode.color" size="52" class="text-white shadow-sm">
-                    <v-icon :icon="mode.icon" size="28"></v-icon>
-                  </v-avatar>
-                  <span class="text-caption font-weight-bold text-grey">Tersedia 3 Bahasa</span>
+            <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
+              <div class="lang-card-media position-relative overflow-hidden">
+                <v-img
+                  :src="mode.bannerImage"
+                  :alt="mode.name"
+                  height="210"
+                  cover
+                  class="lang-card-img"
+                ></v-img>
+              </div>
+
+              <div class="pa-6 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-center justify-space-between ga-2 mb-2">
+                  <div class="d-flex align-center ga-2">
+                    <v-icon :icon="mode.icon" :color="mode.color" size="24"></v-icon>
+                    <span class="text-h5 font-weight-bold text-secondary">{{ mode.name }}</span>
+                  </div>
+                  <v-chip :color="mode.color" size="small" variant="tonal" class="font-weight-bold">
+                    {{ mode.shortBadge }}
+                  </v-chip>
                 </div>
 
-                <div class="text-h5 font-weight-bold text-secondary mb-1">
-                  {{ mode.name }}
-                </div>
                 <div class="text-caption font-weight-bold text-primary mb-3">
                   {{ mode.subtitle }}
                 </div>
 
-                <p class="text-body-2 text-grey-darken-1 mb-4" style="line-height: 1.5;">
+                <p class="text-body-2 text-grey-darken-1 mb-4" style="line-height: 1.6;">
                   {{ mode.desc }}
                 </p>
 
@@ -306,19 +374,18 @@
                     <span>{{ b }}</span>
                   </div>
                 </div>
-              </div>
 
-              <div class="pt-3 border-t">
-                <v-btn
-                  :color="mode.color"
-                  variant="outlined"
-                  block
-                  class="text-none font-weight-bold"
-                  to="/products"
-                >
-                  Pilih Kelas {{ mode.name }}
-                  <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
-                </v-btn>
+                <div class="mt-auto">
+                  <v-btn
+                    :color="mode.color"
+                    block
+                    class="text-none font-weight-bold text-white"
+                    to="/products"
+                  >
+                    Pilih Kelas {{ mode.name }}
+                    <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
+                  </v-btn>
+                </div>
               </div>
             </v-card>
           </v-col>
@@ -326,7 +393,7 @@
       </v-container>
     </section>
 
-    <!-- KATALOG PROGRAM KELAS LPK -->
+    <!-- KATALOG PROGRAM KELAS -->
     <section class="py-12 py-md-16 bg-grey-lighten-5">
       <v-container class="max-width-xl px-4 px-sm-6">
         <div class="text-center mb-8 mb-md-10">
@@ -481,8 +548,8 @@
                     {{ book.title }}
                   </div>
 
-                  <p class="text-caption text-grey-darken-1 mb-3" style="line-height: 1.4; min-height: 36px;">
-                    {{ book.description }}
+                  <p class="text-caption text-grey-darken-1 mb-3" style="line-height: 1.4; min-height: 36px;" :title="book.description">
+                    {{ truncateText(book.description, 60) }}
                   </p>
 
                   <div class="d-flex align-baseline ga-2 mb-3">
@@ -550,7 +617,7 @@
             Jadwal Belajar Fleksibel
           </v-chip>
           <h2 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-3">
-            Jadwal Harian Kelas LPK Wordish
+            Jadwal Harian Kelas Wordish
           </h2>
           <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
             Kelas berlangsung dari <strong>Senin sampai Sabtu</strong>. Pilihan format belajar lengkap: <strong>Private Class</strong> (1-on-1), <strong>Home Class</strong> (tutor ke rumah), dan <strong>Online Class</strong>.
@@ -690,7 +757,7 @@
             size="large"
             class="text-none font-weight-bold px-6 shadow-sm"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20LPK%20Wordish,%20saya%20ingin%20konsultasi%20jadwal%20dan%20pendaftaran%20kelas"
+            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20jadwal%20dan%20pendaftaran%20kelas"
             target="_blank"
           >
             Konsultasi Jadwal via WhatsApp
@@ -714,7 +781,7 @@
       <v-container class="max-width-xl px-4 px-sm-6">
         <div class="text-center mb-8 mb-md-10">
           <h2 class="text-h4 font-weight-bold text-secondary mb-2">
-            Kisah Sukses Alumni LPK Wordish
+            Kisah Sukses Alumni Wordish
           </h2>
           <p class="text-body-1 text-grey-darken-1">
             Pengalaman nyata peserta yang sukses meraih pekerjaan impian di luar negeri dan perusahaan internasional.
@@ -752,7 +819,7 @@
 
               <div class="pt-3 border-t text-caption text-grey d-flex align-center">
                 <v-icon icon="mdi-check-decagram" color="teal" size="16" class="mr-1"></v-icon>
-                Alumni Resmi LPK Wordish
+                Alumni Resmi Wordish
               </div>
             </v-card>
           </v-col>
@@ -793,7 +860,7 @@
           Siap Mulai Belajar Bahasa Mandarin, Korea, atau Inggris?
         </h3>
         <p class="text-body-1 text-white opacity-90 max-width-md mx-auto mb-6">
-          Hubungi konselor LPK Wordish untuk konsultasi gratis penentuan format kelas (Private, Home, atau Online), rincian biaya, dan info persiapan berkas kerja ke luar negeri.
+          Hubungi konselor Wordish untuk konsultasi gratis penentuan format kelas (Private, Home, atau Online), rincian biaya, dan info persiapan berkas kerja ke luar negeri.
         </p>
         <div class="d-flex flex-column flex-sm-row justify-center align-center ga-3">
           <v-btn
@@ -801,7 +868,7 @@
             size="large"
             class="text-primary font-weight-bold text-none px-8"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20LPK%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan"
+            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan"
             target="_blank"
           >
             Konsultasi WhatsApp
@@ -831,7 +898,7 @@
           Diskon Spesial 30% Diaktifkan!
         </h3>
         <p class="text-body-2 text-grey-darken-1 mb-4">
-          Nomor WhatsApp <strong>+62 {{ heroPhone }}</strong> berhasil didaftarkan untuk promo diskon 30% semua program pelatihan LPK Wordish (Private Class, Home Class, Online Class).
+          Nomor WhatsApp <strong>+62 {{ heroPhone }}</strong> berhasil didaftarkan untuk promo diskon 30% semua program pelatihan Wordish (Private Class, Home Class, Online Class).
         </p>
 
         <div class="bg-amber-lighten-5 rounded-2xl pa-4 mb-5 border border-amber-lighten-2">
@@ -848,7 +915,7 @@
             size="large"
             class="text-none font-weight-bold text-white shadow-sm"
             prepend-icon="mdi-whatsapp"
-            :href="`https://wa.me/6281234567890?text=Halo%20LPK%20Wordish,%20saya%20sudah%20mendaftarkan%20nomor%20%2B62${heroPhone}%20dan%20ingin%20klaim%20Diskon%20Spesial%2030%25%20Kode%20WORDISH30`"
+            :href="`https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20sudah%20mendaftarkan%20nomor%20%2B62${heroPhone}%20dan%20ingin%20klaim%20Diskon%20Spesial%2030%25%20Kode%20WORDISH30`"
             target="_blank"
             @click="discountDialog = false"
           >
@@ -872,7 +939,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { languages, classModes, books, testimonials, faqs } from '../data/wordishData'
+import { languages, classModes, books, testimonials, faqs, truncateText } from '../data/wordishData'
 import { useClassesStore } from '../stores/classes'
 import { useCartStore } from '../stores/cart'
 
@@ -941,6 +1008,7 @@ const whyWordish = [
 // 05. Who Can Join audiences
 const whoCanJoin = [
   {
+    image: '/audience-school.svg',
     icon: 'mdi-school-outline',
     title: 'School Students',
     desc: 'Belajar bahasa baru, tingkatkan kemampuan akademis, dan temukan pengalaman seru di luar sekolah.',
@@ -948,6 +1016,7 @@ const whoCanJoin = [
     iconColor: 'blue-darken-2'
   },
   {
+    image: '/audience-college.svg',
     icon: 'mdi-account-school',
     title: 'College Students',
     desc: 'Persiapkan studi, beasiswa, dan langkah pertama menuju dunia profesional.',
@@ -955,6 +1024,7 @@ const whoCanJoin = [
     iconColor: 'deep-purple-darken-1'
   },
   {
+    image: '/audience-professionals.svg',
     icon: 'mdi-briefcase-outline',
     title: 'Professionals',
     desc: 'Upgrade skill komunikasi, tingkatkan kepercayaan diri, dan buka peluang karier yang lebih luas.',
@@ -962,6 +1032,7 @@ const whoCanJoin = [
     iconColor: 'teal-darken-2'
   },
   {
+    image: '/audience-lovers.svg',
     icon: 'mdi-heart-outline',
     title: 'Language Lovers',
     desc: 'Belajar karena hobi, traveling, atau sekadar ingin mencoba sesuatu yang baru.',
@@ -976,7 +1047,7 @@ function scrollToPrograms() {
 }
 
 function bookScheduleSlot(slot) {
-  const msg = `Halo LPK Wordish, saya ingin konsultasi/booking jadwal kelas ${slot.className} jam ${slot.time} (${slot.days}). Mohon info ketersediaan slotnya.`
+  const msg = `Halo Wordish, saya ingin konsultasi/booking jadwal kelas ${slot.className} jam ${slot.time} (${slot.days}). Mohon info ketersediaan slotnya.`
   window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`, '_blank')
 }
 

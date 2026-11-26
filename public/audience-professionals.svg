@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
+  <defs>
+    <linearGradient id="bgPro" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#CCFBF1"/>
+      <stop offset="100%" stop-color="#D1FAE5"/>
+    </linearGradient>
+    <linearGradient id="caseGrad" x1="20" y1="30" x2="76" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="26" fill="url(#bgPro)"/>
+  <circle cx="75" cy="23" r="6" fill="#10B981" opacity="0.22"/>
+  <!-- Briefcase Handle -->
+  <path d="M38 34V29C38 26.8 39.8 25 42 25H54C56.2 25 58 26.8 58 29V34" stroke="#0F2C59" stroke-width="4" stroke-linecap="round"/>
+  <!-- Briefcase Body -->
+  <rect x="20" y="34" width="56" height="40" rx="10" fill="url(#caseGrad)"/>
+  <path d="M20 46C36 53 60 53 76 46V41C76 37.1 72.9 34 69 34H27C23.1 34 20 37.1 20 41V46Z" fill="#14B8A6"/>
+  <!-- Clasp -->
+  <rect x="43" y="45" width="10" height="8" rx="3" fill="#FBBF24"/>
+  <!-- Growth Speech Badge -->
+  <circle cx="72" cy="30" r="11" fill="#FF6E02"/>
+  <path d="M67 32L70.5 28.5L73 31L77 27" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

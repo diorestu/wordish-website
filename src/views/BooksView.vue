@@ -14,7 +14,7 @@
           Buku Pelajaran Bahasa Asing Resmi Wordish
         </h1>
         <p class="text-body-1 text-grey-darken-1 max-width-md">
-          Modul cetak fisik berkualitas tinggi yang disusun oleh instruktur ahli LPK Wordish. Dapatkan sekarang melalui Official Store kami di <strong>Shopee</strong> dan <strong>Tokopedia</strong>.
+          Modul cetak fisik berkualitas tinggi yang disusun oleh instruktur ahli Wordish. Dapatkan sekarang melalui Official Store kami di <strong>Shopee</strong> dan <strong>Tokopedia</strong>.
         </p>
       </div>
 
@@ -95,8 +95,8 @@
                   {{ book.title }}
                 </div>
 
-                <p class="text-caption text-grey-darken-1 mb-4" style="line-height: 1.5; min-height: 42px;">
-                  {{ book.description }}
+                <p class="text-caption text-grey-darken-1 mb-4" style="line-height: 1.5; min-height: 42px;" :title="book.description">
+                  {{ truncateText(book.description, 60) }}
                 </p>
 
                 <!-- Pricing -->
@@ -144,7 +144,7 @@
 </template>
 
 <script setup>
-import { books } from '../data/wordishData'
+import { books, truncateText } from '../data/wordishData'
 
 function formatRupiah(val) {
   return new Intl.NumberFormat('id-ID', {

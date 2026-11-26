@@ -2,7 +2,7 @@
   <footer class="bg-secondary text-white pt-12 pb-6">
     <v-container class="max-width-xl px-4">
       <v-row class="mb-8">
-        <!-- Brand & LPK Info -->
+        <!-- Brand & Info Lembaga -->
         <v-col cols="12" md="5" class="pr-md-6">
           <div class="mb-4">
             <div class="bg-white px-3 py-2 rounded-xl d-inline-block shadow-sm">
@@ -17,15 +17,15 @@
               Connecting World with Words
             </div>
             <div class="text-caption text-teal-lighten-3 font-weight-bold mt-1">
-              Lembaga Pelatihan Kerja (LPK) Bahasa Asing
+              Lembaga Pelatihan Bahasa Asing
             </div>
           </div>
           <p class="text-body-2 text-grey-lighten-1 mb-4" style="line-height: 1.6;">
-            LPK Wordish adalah lembaga pelatihan kerja resmi spesialis pendidikan bahasa asing (Mandarin, Korea, dan Inggris) yang berorientasi pada kesiapan kerja luar negeri, peluang karier industri, dan persiapan beasiswa studi.
+            Wordish adalah lembaga pelatihan bahasa asing terpercaya spesialis pendidikan Bahasa Mandarin, Korea, dan Inggris yang berorientasi pada kemahiran komunikasi, kesiapan karier global, dan persiapan beasiswa studi.
           </p>
           <div class="text-caption text-grey-lighten-2 mb-2 d-flex align-center">
             <v-icon icon="mdi-shield-check" color="success" size="small" class="mr-2"></v-icon>
-            Izin Operasional LPK Resmi No. Kemnaker: 563/024/LPK-BA/2024
+            Lembaga Pelatihan Bahasa Asing Terakreditasi
           </div>
           <div class="text-caption text-grey-lighten-2 d-flex align-center mb-4">
             <v-icon icon="mdi-map-marker" color="accent" size="small" class="mr-2"></v-icon>
@@ -60,7 +60,7 @@
               size="small"
               variant="tonal"
               color="white"
-              href="https://wa.me/6281234567890?text=Halo%20LPK%20Wordish"
+              href="https://wa.me/6281234567890?text=Halo%20Wordish"
               target="_blank"
               title="WhatsApp: 0812-3456-7890"
             >
@@ -82,8 +82,9 @@
 
         <!-- Fasilitas & Layanan -->
         <v-col cols="6" sm="4" md="2">
-          <div class="text-subtitle-2 font-weight-bold text-accent mb-3 text-uppercase">Layanan LPK</div>
+          <div class="text-subtitle-2 font-weight-bold text-accent mb-3 text-uppercase">Layanan Kursus</div>
           <ul class="list-unstyled text-body-2 pa-0 ma-0">
+            <li class="mb-2"><router-link to="/about" class="footer-link">Tentang Kami</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Private Class</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Home Class</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Online Class</router-link></li>
@@ -96,7 +97,7 @@
 
         <!-- Kontak & Jam Kerja -->
         <v-col cols="12" sm="4" md="3">
-          <div class="text-subtitle-2 font-weight-bold text-accent mb-3 text-uppercase">Hubungi LPK</div>
+          <div class="text-subtitle-2 font-weight-bold text-accent mb-3 text-uppercase">Hubungi Kami</div>
 
           <!-- Email -->
           <div class="text-caption text-grey-lighten-2 mb-2 d-flex align-center">
@@ -117,7 +118,7 @@
           <!-- WhatsApp -->
           <div class="text-caption text-grey-lighten-2 mb-2 d-flex align-center">
             <v-icon icon="mdi-whatsapp" size="18" color="success" class="mr-2"></v-icon>
-            <a href="https://wa.me/6281234567890?text=Halo%20LPK%20Wordish" target="_blank" class="footer-link">
+            <a href="https://wa.me/6281234567890?text=Halo%20Wordish" target="_blank" class="footer-link">
               0812-3456-7890
             </a>
           </div>
@@ -133,7 +134,7 @@
             size="small"
             class="text-none font-weight-bold"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20LPK%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
+            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
             target="_blank"
           >
             Chat WhatsApp Sekarang
@@ -146,10 +147,10 @@
       <!-- Bottom Bar -->
       <div class="d-flex flex-column flex-md-row align-center justify-space-between text-caption text-grey-lighten-2">
         <div>
-          © 2026 LPK Wordish. Seluruh Hak Cipta Dilindungi Undang-Undang.
+          © 2026 Wordish. Seluruh Hak Cipta Dilindungi Undang-Undang.
         </div>
         <div class="d-flex align-center ga-4 mt-2 mt-md-0">
-          <span>Terdaftar Resmi Kemnaker RI</span>
+          <span>Lembaga Pelatihan Bahasa Asing</span>
           <span>•</span>
           <span>Standar HSK • EPS-TOPIK • CEFR</span>
         </div>

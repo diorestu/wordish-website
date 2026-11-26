@@ -3,6 +3,7 @@ import {
   programs as fallbackPrograms,
   batchSchedules as fallbackSchedules
 } from '../data/wordishData'
+import { useAdminAuthStore } from './adminAuth'
 
 function cloneData(data) {
   return JSON.parse(JSON.stringify(data))
@@ -27,16 +28,21 @@ function normalizeProgram(item) {
 }
 
 async function apiRequest(url, options = {}) {
+  const adminToken = localStorage.getItem('wordish_admin_token')
   const res = await fetch(url, {
+    ...options,
     headers: {
       'Content-Type': 'application/json',
+      ...(adminToken ? { Authorization: `Bearer ${adminToken}` } : {}),
       ...(options.headers || {})
-    },
-    ...options
+    }
   })
 
   const json = await res.json().catch(() => ({}))
   if (!res.ok) {
+    if (res.status === 401) {
+      useAdminAuthStore().clearSession()
+    }
     throw new Error(json.error || `Request gagal (${res.status})`)
   }
   return json

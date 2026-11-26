@@ -21,7 +21,7 @@
             {{ isLoginTab ? 'Masuk ke Akun Peserta' : 'Pendaftaran Akun Baru' }}
           </div>
           <div class="text-caption text-grey">
-            LPK Pelatihan Bahasa Mandarin, Korea & Inggris
+            Lembaga Pelatihan Bahasa Mandarin, Korea & Inggris
           </div>
         </div>
 

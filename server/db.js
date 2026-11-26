@@ -1,4 +1,5 @@
 import { DatabaseSync } from 'node:sqlite'
+import crypto from 'node:crypto'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
@@ -13,6 +14,24 @@ const db = new DatabaseSync(DB_PATH)
 
 db.exec(`
   PRAGMA journal_mode = WAL;
+
+  CREATE TABLE IF NOT EXISTS admin_users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'Admin Akademik',
+    password_hash TEXT NOT NULL,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  );
+
+  CREATE TABLE IF NOT EXISTS admin_sessions (
+    token TEXT PRIMARY KEY,
+    admin_id INTEGER NOT NULL,
+    expires_at TEXT NOT NULL,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (admin_id) REFERENCES admin_users(id) ON DELETE CASCADE
+  );
 
   CREATE TABLE IF NOT EXISTS programs (
     id TEXT PRIMARY KEY,
@@ -162,6 +181,10 @@ function seedSchedules() {
 }
 
 export function ensureSeeded() {
+  const adminCount = db.prepare('SELECT COUNT(*) AS count FROM admin_users').get().count
+  if (adminCount === 0) {
+    seedDefaultAdmin()
+  }
   const progCount = db.prepare('SELECT COUNT(*) AS count FROM programs').get().count
   if (progCount === 0) {
     seedPrograms()
@@ -170,6 +193,93 @@ export function ensureSeeded() {
   if (schedCount === 0) {
     seedSchedules()
   }
+}
+
+function hashPassword(password) {
+  const salt = crypto.randomBytes(16).toString('hex')
+  const derived = crypto.scryptSync(password, salt, 64).toString('hex')
+  return `${salt}:${derived}`
+}
+
+function verifyPassword(password, storedHash) {
+  const [salt, key] = String(storedHash).split(':')
+  if (!salt || !key) return false
+  const derived = crypto.scryptSync(password, salt, 64)
+  const keyBuf = Buffer.from(key, 'hex')
+  if (derived.length !== keyBuf.length) return false
+  return crypto.timingSafeEqual(derived, keyBuf)
+}
+
+function seedDefaultAdmin() {
+  db.prepare(`
+    INSERT INTO admin_users (username, email, name, role, password_hash)
+    VALUES (?, ?, ?, ?, ?)
+  `).run(
+    'admin',
+    'admin@wordish.id',
+    'Administrator Wordish',
+    'Super Admin',
+    hashPassword('wordish2026')
+  )
+}
+
+export function authenticateAdmin(identifier, password) {
+  const normalized = String(identifier || '').trim().toLowerCase()
+  const admin = db.prepare(`
+    SELECT * FROM admin_users WHERE lower(username) = ? OR lower(email) = ?
+  `).get(normalized, normalized)
+
+  if (!admin || !verifyPassword(String(password || ''), admin.password_hash)) {
+    return null
+  }
+
+  const token = crypto.randomBytes(32).toString('hex')
+  const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+
+  db.prepare(`
+    INSERT INTO admin_sessions (token, admin_id, expires_at) VALUES (?, ?, ?)
+  `).run(token, admin.id, expiresAt)
+
+  return {
+    token,
+    admin: {
+      id: admin.id,
+      username: admin.username,
+      email: admin.email,
+      name: admin.name,
+      role: admin.role
+    }
+  }
+}
+
+export function verifyAdminToken(token) {
+  if (!token) return null
+  const row = db.prepare(`
+    SELECT s.token, s.expires_at, u.id, u.username, u.email, u.name, u.role
+    FROM admin_sessions s
+    JOIN admin_users u ON u.id = s.admin_id
+    WHERE s.token = ?
+  `).get(token)
+
+  if (!row) return null
+  if (new Date(row.expires_at).getTime() < Date.now()) {
+    db.prepare('DELETE FROM admin_sessions WHERE token = ?').run(token)
+    return null
+  }
+
+  return {
+    id: row.id,
+    username: row.username,
+    email: row.email,
+    name: row.name,
+    role: row.role
+  }
+}
+
+export function revokeAdminToken(token) {
+  if (!token) return false
+  const info = db.prepare('DELETE FROM admin_sessions WHERE token = ?').run(token)
+  return info.changes > 0
 }
 
 ensureSeeded()

@@ -11,7 +11,7 @@
           class="pa-0 mb-2 text-caption"
         ></v-breadcrumbs>
         <h1 class="text-h4 font-weight-bold text-secondary mb-2">
-          Program Pelatihan Bahasa Asing LPK Wordish
+          Program Pelatihan Bahasa Asing Wordish
         </h1>
         <p class="text-body-1 text-grey-darken-1">
           Pilih pelatihan spesialis Bahasa Mandarin, Bahasa Korea (EPS-TOPIK), atau Bahasa Inggris sesuai target kariermu.

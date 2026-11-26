@@ -12,7 +12,7 @@
           class="pa-0 mb-2 text-caption"
         ></v-breadcrumbs>
         <h1 class="text-h4 font-weight-bold text-secondary mb-1">
-          Formulir Pendaftaran Kelas LPK Wordish
+          Formulir Pendaftaran Kelas Wordish
         </h1>
         <p class="text-body-2 text-grey">
           Lengkapi data diri calon peserta untuk reservasi kursi batch pelatihan bahasa asing.
@@ -210,7 +210,7 @@
               <span>- {{ formatRupiah(cartStore.voucherDiscount) }}</span>
             </div>
             <div class="d-flex justify-space-between text-body-2 mb-3">
-              <span class="text-grey">Biaya Pendaftaran LPK:</span>
+              <span class="text-grey">Biaya Administrasi Pendaftaran:</span>
               <span class="text-success font-weight-bold">GRATIS</span>
             </div>
 
@@ -238,7 +238,7 @@
 
             <div class="text-center text-caption text-grey mt-3">
               <v-icon icon="mdi-shield-check" size="small" color="success" class="mr-1"></v-icon>
-              Pendaftaran Resmi Lembaga Pelatihan Kerja Terdaftar
+              Pendaftaran Resmi Lembaga Pelatihan Bahasa Terpercaya
             </div>
           </v-card>
         </v-col>
