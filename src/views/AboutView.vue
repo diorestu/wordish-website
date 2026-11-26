@@ -90,7 +90,7 @@
                   <v-icon icon="mdi-account-group-outline" color="primary" size="20" class="mt-1"></v-icon>
                   <div>
                     <div class="text-caption text-grey">Metode Pembelajaran</div>
-                    <div class="text-body-2 font-weight-bold text-secondary">Private Class (1-on-1), Home Class, Online Class</div>
+                    <div class="text-body-2 font-weight-bold text-secondary">Regular, Semi-Private, Private (1-on-1), Online</div>
                   </div>
                 </div>
               </div>
@@ -301,7 +301,7 @@
         <v-card class="pa-8 pa-md-12 rounded-3xl text-center text-white" color="#004EB2">
           <h2 class="text-h4 text-sm-h3 font-weight-bold mb-3">Siap Mulai Belajar Bersama Kami?</h2>
           <p class="text-body-1 text-blue-lighten-4 max-width-md mx-auto mb-6">
-            Daftar sekarang untuk Private Class, Home Class, atau Online Class. Nikmati materi komprehensif, modul audio, dan tutor terbaik Wordish.
+            Daftar sekarang untuk Regular Class, Semi-Private, Private, atau Online Class. Nikmati materi komprehensif, modul audio, dan tutor terbaik Wordish.
           </p>
           <div class="d-flex justify-center flex-wrap ga-3">
             <v-btn

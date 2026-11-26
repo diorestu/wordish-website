@@ -35,56 +35,78 @@ export const languages = [
   }
 ]
 
-// 3 FORMAT LAYANAN KELAS WORDISH
+// 4 FORMAT LAYANAN KELAS WORDISH
 export const classModes = [
   {
-    id: 'private',
-    name: 'Private Class',
-    subtitle: '1-on-1 Eksklusif di Training Center',
-    shortBadge: '1-on-1 Center',
-    icon: 'mdi-account-star',
-    image: '/icon-private-class.png',
-    bannerImage: '/mode-private.jpg',
+    id: 'regular',
+    name: 'Regular Class',
+    subtitle: 'Interaktif dalam grup kelas',
+    shortBadge: 'Maks. 6 Orang',
+    icon: 'mdi-account-group',
     color: '#004EB2',
-    desc: 'Bimbingan intensif 1 siswa 1 tutor di Training Center Wordish. Materi dan ritme belajar disesuaikan 100% dengan kebutuhan dan target pribadimu.',
-    benefits: [
-      'Jadwal belajar fleksibel sesuai ketersediaan siswa',
-      'Kurikulum dan materi dikustomisasi khusus',
-      'Konsultasi privat dan evaluasi kemampuan mingguan',
-      'Ruang kelas ber-AC & fasilitas multimedia lengkap'
+    bannerImage: '/mode-private.jpg',
+    person: 'Grup (maks. 6 orang)',
+    schedule: 'Mengikuti jadwal yang tersedia',
+    location: 'Khusus di Wordish Center',
+    desc: 'Belajar interaktif bersama teman sekelas dengan kuota terbatas agar pendampingan tutor tetap optimal.',
+    highlights: [
+      'Grup kecil kompak & kompetitif positif',
+      'Kurikulum terstruktur per level',
+      'Fasilitas ruang multimedia Wordish Center'
     ]
   },
   {
-    id: 'home',
-    name: 'Home Class',
-    subtitle: 'Tutor Datang Langsung ke Rumah',
-    shortBadge: 'Tutor ke Rumah',
-    icon: 'mdi-home-account',
+    id: 'semi-private',
+    name: 'Semi-Private',
+    subtitle: 'Mini grup fleksibel bersama rekan',
+    shortBadge: '2–3 Orang',
+    icon: 'mdi-account-multiple',
+    color: '#0D9488',
     bannerImage: '/mode-home.jpg',
+    person: 'Mini Grup (2–3 orang)',
+    schedule: 'Fleksibel (menyesuaikan murid)',
+    location: 'Wordish Center / Home Visit / Online',
+    desc: 'Cocok untuk belajar bareng sahabat atau rekan kerja dengan ritme dan target yang disepakati bersama.',
+    highlights: [
+      'Belajar nyaman bareng partner pilihan',
+      'Waktu sesi bebas disepakati bersama tutor',
+      'Pilihan lokasi offline maupun virtual'
+    ]
+  },
+  {
+    id: 'private',
+    name: 'Private Class',
+    subtitle: '1-on-1 eksklusif fokus penuh',
+    shortBadge: '1 on 1',
+    icon: 'mdi-account-star',
     color: '#FF6E02',
-    desc: 'Belajar nyaman di rumah sendiri tanpa macet di jalan. Tutor terverifikasi Wordish hadir membimbing kamu secara privat atau kelompok kecil keluarga.',
-    benefits: [
-      'Hemat waktu dan ongkos transportasi',
-      'Bisa privat 1 orang atau kelompok kecil (2-4 orang)',
-      'Jangkauan area Jabodetabek dan sekitarnya',
-      'Materi cetak, lembar kerja & audio dibawa langsung tutor'
+    bannerImage: '/mode-private.jpg',
+    person: '1 on 1 (Private)',
+    schedule: 'Fleksibel (menyesuaikan murid)',
+    location: 'Wordish Center / Home Visit / Online',
+    desc: 'Pendampingan privat penuh untuk akselerasi belajar tercepat sesuai target karier atau sertifikasi.',
+    highlights: [
+      'Fokus 100% pada satu murid',
+      'Materi & ritme disesuaikan kebutuhan',
+      'Bebas atur sesi kapan saja dan di mana saja'
     ]
   },
   {
     id: 'online',
     name: 'Online Class',
-    subtitle: 'Live Interactive Zoom dari Mana Saja',
-    shortBadge: 'Live Zoom',
+    subtitle: 'Live virtual interaktif dari mana saja',
+    shortBadge: 'Live Virtual',
     icon: 'mdi-laptop-account',
-    image: '/icon-online-class.png',
+    color: '#7C3AED',
     bannerImage: '/mode-online.jpg',
-    color: '#10B981',
-    desc: 'Kelas tatap maya interaktif dua arah bersama tutor profesional. Dilengkapi rekaman sesi belajar seumur hidup jika berhalangan hadir.',
-    benefits: [
-      'Bisa diikuti dari seluruh Indonesia & luar negeri',
-      'Rekaman video kelas HD & materi PDF dapat diunduh',
-      'Grup diskusi WhatsApp 24/7 bersama tutor',
-      'Biaya paling hemat, praktis dan efisien'
+    person: 'Private / Grup Online',
+    schedule: 'Fleksibel & Sesi Terjadwal',
+    location: 'Online Meet (Zoom / G-Meet)',
+    desc: 'Solusi praktis belajar dari mana saja lewat sesi tatap maya langsung, hemat mobilitas tanpa mengurangi kualitas.',
+    highlights: [
+      'Akses dari mana saja tanpa kendala jarak',
+      'Dapat rekaman sesi kelas & modul digital',
+      'Tanya jawab langsung dua arah via video call'
     ]
   }
 ]
@@ -641,8 +663,8 @@ export const batchSchedules = [
 // FAQ Sederhana untuk Wordish
 export const faqs = [
   {
-    q: 'Apa perbedaan antara Private Class, Home Class, dan Online Class?',
-    a: 'Private Class adalah bimbingan 1-on-1 intensif di Training Center Wordish. Home Class adalah layanan di mana instruktur kami datang langsung ke tempat tinggal Anda (area Jabodetabek). Sedangkan Online Class adalah sesi tatap maya langsung via Zoom interaktif yang dapat diikuti dari mana saja.'
+    q: 'Apa perbedaan format Regular, Semi-Private, Private, dan Online Class?',
+    a: 'Regular Class adalah kelas kelompok (maks. 6 orang) dengan jadwal tetap khusus di Wordish Center. Semi-Private Class untuk grup mini (2-3 orang) dengan jadwal fleksibel dan lokasi di Wordish Center, Home Visit, atau Online. Private Class adalah bimbingan 1-on-1 personal dengan jadwal fleksibel (di Wordish, Home Visit, atau Online). Sedangkan Online Class adalah sesi virtual interaktif dari mana saja.'
   },
   {
     q: 'Apakah bisa belajar dari nol jika sama sekali belum punya dasar?',

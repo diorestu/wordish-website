@@ -6,56 +6,84 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import('../views/HomeView.vue'),
-    meta: { title: 'Wordish - Lembaga Pelatihan Bahasa Mandarin, Korea & Inggris' }
+    meta: {
+      title: 'Wordish - Lembaga Pelatihan Bahasa Mandarin, Korea & Inggris',
+      description: 'Wordish adalah lembaga pelatihan bahasa asing spesialis Mandarin, Korea, dan Inggris dengan Private Class, Home Class, dan Online Class. Tes level gratis, portal e-learning, dan buku pelajaran resmi.',
+      robots: 'index, follow'
+    }
   },
   {
     path: '/about',
     name: 'About',
     component: () => import('../views/AboutView.vue'),
-    meta: { title: 'Tentang Kami - Lembaga Pelatihan Bahasa Wordish' }
+    meta: {
+      title: 'Tentang Kami - Lembaga Pelatihan Bahasa Wordish',
+      description: 'Kenali Wordish, lembaga pelatihan bahasa asing terpercaya dengan program Mandarin, Korea, dan Inggris berorientasi kesiapan kerja luar negeri dan beasiswa.',
+      robots: 'index, follow'
+    }
   },
   {
     path: '/products',
     name: 'Products',
     component: () => import('../views/ProductsView.vue'),
-    meta: { title: 'Program & Format Kelas - Wordish' }
+    meta: {
+      title: 'Program & Format Kelas - Wordish',
+      description: 'Pilih program bahasa Mandarin, Korea, dan Inggris di Wordish dengan format Private Class, Home Class, dan Online Class.',
+      robots: 'index, follow'
+    }
   },
   {
     path: '/elearning',
     name: 'Elearning',
     component: () => import('../views/ElearningView.vue'),
-    meta: { title: 'E-Learning & Video Modul - Wordish' }
+    meta: {
+      title: 'E-Learning & Video Modul - Wordish',
+      description: 'Portal e-learning Wordish: video materi terstruktur Mandarin, Korea, dan Inggris, modul PDF, dan silabus per bab.',
+      robots: 'index, follow'
+    }
   },
   {
     path: '/books',
     name: 'Books',
     component: () => import('../views/BooksView.vue'),
-    meta: { title: 'Buku Pelajaran Resmi Wordish - Shopee & Tokopedia' }
+    meta: {
+      title: 'Buku Pelajaran Resmi Wordish - Shopee & Tokopedia',
+      description: 'Buku pelajaran resmi Wordish: Buku Sakti HSK, modul EPS-TOPIK Korea, dan Pocket Guide English. Beli di Shopee dan Tokopedia.',
+      robots: 'index, follow'
+    }
   },
   {
     path: '/tryout',
     name: 'PlacementTest',
     component: () => import('../views/TryoutView.vue'),
-    meta: { title: 'Tes Level Bahasa Online Gratis - Wordish' }
+    meta: {
+      title: 'Tes Level Bahasa Online Gratis - Wordish',
+      description: 'Tes level bahasa online gratis 2 menit untuk rekomendasi penempatan kelas Mandarin, Korea, atau Inggris di Wordish.',
+      robots: 'index, follow'
+    }
   },
   {
     path: '/checkout',
     name: 'Checkout',
     component: () => import('../views/CheckoutView.vue'),
-    meta: { title: 'Pendaftaran Kelas & Pembayaran - Wordish' }
+    meta: {
+      title: 'Pendaftaran Kelas & Pembayaran - Wordish',
+      description: 'Formulir pendaftaran kelas dan pembayaran Wordish.',
+      robots: 'noindex, nofollow'
+    }
   },
   {
     path: '/admin/login',
     name: 'AdminLogin',
     component: () => import('../views/AdminLoginView.vue'),
-    meta: { title: 'Login Admin Panel - Wordish', guestAdminOnly: true }
+    meta: { title: 'Login Admin Panel - Wordish', guestAdminOnly: true, robots: 'noindex, nofollow' }
   },
   {
     path: '/admin',
     alias: '/admin/kelas',
     name: 'AdminClasses',
     component: () => import('../views/AdminClassesView.vue'),
-    meta: { title: 'Admin Panel Kelola Kelas - Wordish', requiresAdmin: true }
+    meta: { title: 'Admin Panel Kelola Kelas - Wordish', requiresAdmin: true, robots: 'noindex, nofollow' }
   },
   {
     path: '/:pathMatch(.*)*',
@@ -78,6 +106,23 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   if (to.meta.title) {
     document.title = to.meta.title
+  }
+
+  const descTag = document.querySelector('meta[name="description"]')
+  if (descTag && to.meta.description) {
+    descTag.setAttribute('content', to.meta.description)
+  }
+
+  const robotsTag = document.querySelector('meta[name="robots"]')
+  if (robotsTag && to.meta.robots) {
+    robotsTag.setAttribute('content', to.meta.robots)
+  }
+
+  const canonicalTag = document.querySelector('link[rel="canonical"]')
+  if (canonicalTag) {
+    const base = 'https://wordish.id'
+    const path = to.path === '/' ? '/' : to.path
+    canonicalTag.setAttribute('href', `${base}${path}`)
   }
 
   if (to.meta.requiresAdmin) {

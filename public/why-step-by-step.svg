@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
+  <defs>
+    <linearGradient id="bgStep" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F0FDFA"/>
+      <stop offset="100%" stop-color="#CCFBF1"/>
+    </linearGradient>
+    <linearGradient id="stepGrad1" x1="20" y1="58" x2="36" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="stepGrad2" x1="36" y1="44" x2="52" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <linearGradient id="stepGrad3" x1="52" y1="30" x2="68" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Card -->
+  <rect width="96" height="96" rx="24" fill="url(#bgStep)"/>
+  <circle cx="24" cy="24" r="5" fill="#14B8A6" opacity="0.15"/>
+
+  <!-- Step 1 (Lowest) -->
+  <rect x="22" y="58" width="16" height="18" rx="4" fill="url(#stepGrad1)"/>
+  <!-- Step 2 (Middle) -->
+  <rect x="38" y="44" width="16" height="32" rx="4" fill="url(#stepGrad2)"/>
+  <!-- Step 3 (Top) -->
+  <rect x="54" y="30" width="16" height="46" rx="4" fill="url(#stepGrad3)"/>
+
+  <!-- Growth Arrow / Rising Curve -->
+  <path d="M24 50C32 44 42 34 68 20" stroke="#FF6E02" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Arrow Head -->
+  <path d="M60 19H70V29" stroke="#FF6E02" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Target / Star on Top Step -->
+  <circle cx="62" cy="24" r="3" fill="#FBBF24"/>
+  <path d="M78 36L79.5 39.5L83 41L79.5 42.5L78 46L76.5 42.5L73 41L76.5 39.5L78 36Z" fill="#F59E0B"/>
+</svg>

@@ -26,17 +26,18 @@
                 class="text-none font-weight-bold text-white shadow-sm hero-cta-btn"
                 to="/products"
               >
-                Yuk, Mulai Belajar!
-                <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
+                Mulai Belajar
+                <v-icon icon="mdi-chevron-right" class="ml-1" size="22"></v-icon>
               </v-btn>
               <v-btn
                 variant="outlined"
                 color="white"
                 size="x-large"
                 class="text-none font-weight-bold hero-cta-btn"
-                @click="scrollToPrograms"
+                to="/products"
               >
-                Lihat Program
+                <v-icon icon="mdi-magnify" class="mr-2" size="20"></v-icon>
+                Lihat Semua Kelas
               </v-btn>
             </div>
           </v-col>
@@ -53,6 +54,42 @@
             />
           </v-col>
         </v-row>
+      </div>
+    </section>
+
+    <!-- SECTION: MITRA & SEKOLAH REKANAN (SEAMLESS OVERLAP TICKER) -->
+    <section class="py-6 py-md-8 bg-white overflow-hidden">
+      <div class="text-center mb-4 px-4">
+        <div class="text-caption font-weight-bold text-uppercase text-grey-darken-1 letter-spacing-1">
+          Dipercaya Oleh Berbagai Sekolah, Universitas &amp; Mitra Industri
+        </div>
+      </div>
+
+      <!-- Full-bleed seamless scrolling track without right padding -->
+      <div class="partners-marquee-wrapper position-relative">
+        <!-- Optional soft fade mask on left edge only -->
+        <div class="marquee-fade-left d-none d-sm-block"></div>
+
+        <div class="partners-marquee-track">
+          <!-- Repeat list twice for seamless continuous infinite loop -->
+          <div
+            v-for="(partner, pIdx) in [...partnersList, ...partnersList]"
+            :key="`${partner.name}-${pIdx}`"
+            class="partner-logo-item d-flex align-center ga-2 pa-2 px-3 rounded-xl flex-shrink-0"
+          >
+            <v-avatar :color="partner.badgeColor" size="36" class="rounded-lg shadow-sm">
+              <v-icon :icon="partner.icon" :color="partner.iconColor" size="20"></v-icon>
+            </v-avatar>
+            <div>
+              <div class="text-subtitle-2 font-weight-bold text-secondary text-no-wrap" style="font-size: 13px; line-height: 1.2;">
+                {{ partner.name }}
+              </div>
+              <div class="text-caption text-grey text-no-wrap" style="font-size: 11px;">
+                {{ partner.type }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -264,15 +301,22 @@
             sm="6"
             md="4"
           >
-            <div class="d-flex ga-4 mb-6 mb-md-8">
-              <v-avatar :color="benefit.bgColor" size="48" class="flex-shrink-0">
-                <v-icon :icon="benefit.icon" :color="benefit.iconColor" size="24"></v-icon>
-              </v-avatar>
-              <div>
-                <div class="text-subtitle-1 font-weight-bold text-secondary mb-1">{{ benefit.title }}</div>
-                <p class="text-body-2 text-grey-darken-1" style="line-height: 1.6;">{{ benefit.desc }}</p>
+            <v-card class="h-100 pa-6 rounded-3xl border bg-white shadow-sm hover-card transition-all">
+              <div class="d-flex flex-column flex-sm-row align-start align-sm-center ga-4 mb-4">
+                <img
+                  :src="benefit.image"
+                  :alt="benefit.title"
+                  width="64"
+                  height="64"
+                  class="flex-shrink-0"
+                  style="object-fit: contain;"
+                />
+                <div>
+                  <div class="text-h6 font-weight-bold text-secondary mb-1">{{ benefit.title }}</div>
+                </div>
               </div>
-            </div>
+              <p class="text-body-2 text-grey-darken-1 mb-0" style="line-height: 1.6;">{{ benefit.desc }}</p>
+            </v-card>
           </v-col>
         </v-row>
       </v-container>
@@ -313,8 +357,8 @@
       </v-container>
     </section>
 
-    <!-- SECTION: 3 FORMAT LAYANAN KELAS (Private, Home, Online) -->
-    <section class="py-12 py-md-16 bg-surface border-y">
+    <!-- SECTION: FORMAT LAYANAN KELAS (Regular, Semi-Private, Private, Online) -->
+    <section id="format-layanan" class="py-12 py-md-16 bg-surface border-y">
       <v-container class="max-width-xl px-4 px-sm-6">
         <div class="text-center mb-10 mb-md-14">
           <div class="text-overline font-weight-bold text-primary mb-2" style="letter-spacing: 2px;">Flexible Learning</div>
@@ -322,7 +366,7 @@
             Pilihan Format Layanan Kelas
           </h2>
           <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
-            Sesuaikan metode belajar terbaik dengan kenyamanan, lokasi, dan target waktu belajarmu.
+            Tentukan format belajar terbaik yang sesuai dengan jumlah murid, waktu luang, dan lokasimu.
           </p>
         </div>
 
@@ -331,47 +375,50 @@
             v-for="mode in classModes"
             :key="mode.id"
             cols="12"
-            md="4"
+            sm="6"
+            lg="3"
           >
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
               <div class="lang-card-media position-relative overflow-hidden">
                 <v-img
                   :src="mode.bannerImage"
                   :alt="mode.name"
-                  height="210"
+                  height="160"
                   cover
                   class="lang-card-img"
                 ></v-img>
-              </div>
-
-              <div class="pa-6 d-flex flex-column flex-grow-1">
-                <div class="d-flex align-center justify-space-between ga-2 mb-2">
-                  <div class="d-flex align-center ga-2">
-                    <v-icon :icon="mode.icon" :color="mode.color" size="24"></v-icon>
-                    <span class="text-h5 font-weight-bold text-secondary">{{ mode.name }}</span>
-                  </div>
-                  <v-chip :color="mode.color" size="small" variant="tonal" class="font-weight-bold">
+                <div class="position-absolute top-0 right-0 ma-3">
+                  <v-chip :color="mode.color" size="small" variant="flat" class="text-white font-weight-bold shadow-sm">
                     {{ mode.shortBadge }}
                   </v-chip>
                 </div>
+              </div>
 
-                <div class="text-caption font-weight-bold text-primary mb-3">
+              <div class="pa-5 d-flex flex-column flex-grow-1">
+                <!-- Title & Subtitle: Single row without wrapping -->
+                <div class="d-flex align-center ga-2 mb-1">
+                  <v-icon :icon="mode.icon" :color="mode.color" size="22" class="flex-shrink-0"></v-icon>
+                  <h3 class="text-subtitle-1 font-weight-bold text-secondary text-truncate mb-0 text-no-wrap" style="letter-spacing: -0.2px;">
+                    {{ mode.name }}
+                  </h3>
+                </div>
+                <div class="text-caption text-grey-darken-1 text-truncate mb-3" style="line-height: 1.3;">
                   {{ mode.subtitle }}
                 </div>
 
-                <p class="text-body-2 text-grey-darken-1 mb-4" style="line-height: 1.6;">
+                <p class="text-body-2 text-grey-darken-1 mb-4" style="line-height: 1.55;">
                   {{ mode.desc }}
                 </p>
 
-                <!-- Benefits Checklist -->
-                <div class="d-flex flex-column ga-2 mb-6">
+                <!-- Keunggulan Singkat -->
+                <div class="d-flex flex-column ga-2 mb-5">
                   <div
-                    v-for="(b, bIdx) in mode.benefits"
-                    :key="bIdx"
+                    v-for="(h, hIdx) in mode.highlights"
+                    :key="hIdx"
                     class="d-flex align-start text-caption text-grey-darken-2"
                   >
-                    <v-icon icon="mdi-check-circle" color="teal" size="16" class="mr-2 mt-1"></v-icon>
-                    <span>{{ b }}</span>
+                    <v-icon icon="mdi-check-circle" color="teal" size="15" class="mr-2 mt-0-5 flex-shrink-0"></v-icon>
+                    <span style="line-height: 1.4;">{{ h }}</span>
                   </div>
                 </div>
 
@@ -379,10 +426,10 @@
                   <v-btn
                     :color="mode.color"
                     block
-                    class="text-none font-weight-bold text-white"
+                    class="text-none font-weight-bold text-white text-no-wrap"
                     to="/products"
                   >
-                    Pilih Kelas {{ mode.name }}
+                    Pilih Kelas
                     <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
                   </v-btn>
                 </div>
@@ -620,7 +667,7 @@
             Jadwal Harian Kelas Wordish
           </h2>
           <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
-            Kelas berlangsung dari <strong>Senin sampai Sabtu</strong>. Pilihan format belajar lengkap: <strong>Private Class</strong> (1-on-1), <strong>Home Class</strong> (tutor ke rumah), dan <strong>Online Class</strong>.
+            Kelas berlangsung dari <strong>Senin sampai Sabtu</strong>. Pilihan format belajar lengkap: <strong>Regular Class</strong>, <strong>Semi-Private Class</strong>, <strong>Private Class</strong> (1-on-1), dan <strong>Online Class</strong>.
           </p>
         </div>
 
@@ -898,7 +945,7 @@
           Diskon Spesial 30% Diaktifkan!
         </h3>
         <p class="text-body-2 text-grey-darken-1 mb-4">
-          Nomor WhatsApp <strong>+62 {{ heroPhone }}</strong> berhasil didaftarkan untuk promo diskon 30% semua program pelatihan Wordish (Private Class, Home Class, Online Class).
+          Nomor WhatsApp <strong>+62 {{ heroPhone }}</strong> berhasil didaftarkan untuk promo diskon 30% semua format kelas Wordish (Regular, Semi-Private, Private, Online Class).
         </p>
 
         <div class="bg-amber-lighten-5 rounded-2xl pa-4 mb-5 border border-amber-lighten-2">
@@ -951,6 +998,32 @@ const activeLanguageFilter = ref('all')
 const heroPhone = ref('')
 const discountDialog = ref(false)
 
+// Mitra & Sekolah Rekanan (Auto-slide per 3 detik)
+const partnersList = [
+  { name: 'SMA Taruna Nusantara', type: 'Sekolah Menengah', icon: 'mdi-school', badgeColor: 'blue-lighten-5', iconColor: '#004EB2' },
+  { name: 'SMK Telkom Global', type: 'Mitra Vokasi', icon: 'mdi-domain', badgeColor: 'amber-lighten-5', iconColor: '#D97706' },
+  { name: 'Bina Bangsa School', type: 'Sekolah Internasional', icon: 'mdi-book-education', badgeColor: 'teal-lighten-5', iconColor: '#0D9488' },
+  { name: 'Universitas Indonesia Career', type: 'Pusat Karier Kampus', icon: 'mdi-school-outline', badgeColor: 'purple-lighten-5', iconColor: '#7C3AED' },
+  { name: 'PT Hanwha Mining ID', type: 'Mitra Industri Korea', icon: 'mdi-office-building', badgeColor: 'blue-lighten-5', iconColor: '#2563EB' },
+  { name: 'Sinarmas Tech Group', type: 'Mitra Korporat Mandarin', icon: 'mdi-briefcase-check', badgeColor: 'red-lighten-5', iconColor: '#DC2626' },
+  { name: 'SMA Santa Ursula', type: 'Sekolah Rekanan', icon: 'mdi-shield-check-outline', badgeColor: 'green-lighten-5', iconColor: '#16A34A' },
+  { name: 'SMK Negeri 1 Jakarta', type: 'Sekolah Kejuruan', icon: 'mdi-certificate-outline', badgeColor: 'orange-lighten-5', iconColor: '#EA580C' },
+  { name: 'Global Jaya Academy', type: 'Sekolah Cambridge', icon: 'mdi-earth', badgeColor: 'pink-lighten-5', iconColor: '#E11D48' },
+  { name: 'PT LG Electronics ID', type: 'Sponsor Program Korea', icon: 'mdi-cog-outline', badgeColor: 'indigo-lighten-5', iconColor: '#4F46E5' },
+  { name: 'BP2MI Hub Jawa Barat', type: 'Pemberangkatan G to G', icon: 'mdi-airplane-takeoff', badgeColor: 'teal-lighten-5', iconColor: '#0F766E' },
+  { name: 'Jakarta Intercultural School', type: 'Sekolah Rekanan', icon: 'mdi-account-star-outline', badgeColor: 'amber-lighten-5', iconColor: '#B45309' }
+]
+
+// Kelompokkan partner menjadi grup slide (masing-masing 4 partner per slide)
+const partnerGroups = computed(() => {
+  const groups = []
+  const perGroup = 4
+  for (let i = 0; i < partnersList.length; i += perGroup) {
+    groups.push(partnersList.slice(i, i + perGroup))
+  }
+  return groups
+})
+
 // 02. About Us stats
 const aboutStats = [
   { icon: 'mdi-account-group', value: '5,000+', label: 'Siswa Aktif', color: 'primary' },
@@ -962,44 +1035,50 @@ const aboutStats = [
 // 04. Why Wordish benefits
 const whyWordish = [
   {
+    image: '/why-fun-learning.svg',
     icon: 'mdi-emoticon-happy-outline',
     title: 'Fun Learning',
-    desc: 'Belajar dengan suasana yang menyenangkan dan interaktif.',
+    desc: 'Belajar dengan suasana yang menyenangkan, interaktif, dan penuh semangat tanpa tekanan.',
     bgColor: 'amber-lighten-4',
     iconColor: 'amber-darken-3'
   },
   {
+    image: '/why-real-conversations.svg',
     icon: 'mdi-forum-outline',
     title: 'Real Conversations',
-    desc: 'Bukan sekadar teori, tetapi bahasa yang bisa kamu gunakan sehari-hari.',
+    desc: 'Bukan sekadar rumus teori, tetapi latihan percakapan nyata yang langsung bisa kamu gunakan sehari-hari.',
     bgColor: 'blue-lighten-4',
     iconColor: 'blue-darken-2'
   },
   {
+    image: '/why-step-by-step.svg',
     icon: 'mdi-stairs-up',
     title: 'Step by Step',
-    desc: 'Mulai dari dasar dan berkembang sesuai kemampuanmu.',
+    desc: 'Kurikulum terstruktur mulai dari dasar pemula hingga mahir, bertahap sesuai kecepatan belajarmu.',
     bgColor: 'teal-lighten-4',
     iconColor: 'teal-darken-2'
   },
   {
+    image: '/why-build-confidence.svg',
     icon: 'mdi-arm-flex-outline',
     title: 'Build Confidence',
-    desc: 'Lebih berani berbicara tanpa takut salah.',
+    desc: 'Bangun rasa percaya diri tinggi untuk berbicara bahasa asing di depan umum tanpa rasa takut salah.',
     bgColor: 'deep-purple-lighten-4',
     iconColor: 'deep-purple-darken-1'
   },
   {
+    image: '/why-explore-cultures.svg',
     icon: 'mdi-earth',
     title: 'Explore Cultures',
-    desc: 'Kenali cerita dan budaya di balik setiap bahasa.',
+    desc: 'Pahami konteks sosial, etika komunikasi, dan keunikan budaya asli di balik bahasa yang kamu pelajari.',
     bgColor: 'pink-lighten-4',
     iconColor: 'pink-darken-2'
   },
   {
+    image: '/why-future-ready.svg',
     icon: 'mdi-rocket-launch-outline',
     title: 'Future Ready',
-    desc: 'Persiapkan kemampuan bahasa untuk sekolah, karier, dan kehidupan.',
+    desc: 'Siapkan bekal bahasa untuk akselerasi karier internasional, beasiswa studi luar negeri, dan peluang kerja global.',
     bgColor: 'green-lighten-4',
     iconColor: 'green-darken-2'
   }
@@ -1188,6 +1267,57 @@ function enrollDirect(prog) {
     margin: 0 auto;
     object-position: bottom center;
   }
+}
+
+.partners-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.marquee-fade-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+  padding-left: 24px;
+  padding-right: 0;
+}
+
+.partners-marquee-wrapper:hover .partners-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-logo-item {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.partner-logo-item:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
 }
 
 /* About stats grid */

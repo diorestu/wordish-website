@@ -1,0 +1,21 @@
+{
+  "name": "Wordish - Lembaga Pelatihan Bahasa Asing",
+  "short_name": "Wordish",
+  "description": "Lembaga pelatihan bahasa asing (Mandarin, Korea, Inggris) dengan Private, Home, dan Online Class.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#004EB2",
+  "theme_color": "#004EB2",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

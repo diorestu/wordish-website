@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
+  <defs>
+    <linearGradient id="bgConv" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="bubbleBlue" x1="18" y1="22" x2="64" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="bubbleOrange" x1="38" y1="36" x2="78" y2="76" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Card -->
+  <rect width="96" height="96" rx="24" fill="url(#bgConv)"/>
+  <circle cx="78" cy="20" r="5" fill="#3B82F6" opacity="0.2"/>
+
+  <!-- Back Chat Bubble (Blue) -->
+  <path d="M22 28C22 23.5817 25.5817 20 30 20H58C62.4183 20 66 23.5817 66 28V46C66 50.4183 62.4183 54 58 54H34L24 62V54.5C22.75 53 22 51 22 46V28Z" fill="url(#bubbleBlue)"/>
+  <!-- Lines in blue bubble -->
+  <rect x="30" y="30" width="22" height="3" rx="1.5" fill="#BFDBFE"/>
+  <rect x="30" y="37" width="14" height="3" rx="1.5" fill="#93C5FD"/>
+
+  <!-- Front Chat Bubble (Orange) -->
+  <path d="M38 42C38 37.5817 41.5817 34 46 34H70C74.4183 34 78 37.5817 78 42V58C78 62.4183 74.4183 66 70 66H64L56 74V66H46C41.5817 66 38 62.4183 38 58V42Z" fill="url(#bubbleOrange)"/>
+  <!-- Voice / Dots in orange bubble -->
+  <circle cx="51" cy="50" r="3" fill="#FFFFFF"/>
+  <circle cx="58" cy="50" r="3" fill="#FFFFFF"/>
+  <circle cx="65" cy="50" r="3" fill="#FFFFFF"/>
+
+  <!-- Audio Wave Accent -->
+  <path d="M16 40C16 34 18 30 21 27" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M12 43C12 33 15 26 20 22" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+</svg>

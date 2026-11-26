@@ -85,8 +85,9 @@
           <div class="text-subtitle-2 font-weight-bold text-accent mb-3 text-uppercase">Layanan Kursus</div>
           <ul class="list-unstyled text-body-2 pa-0 ma-0">
             <li class="mb-2"><router-link to="/about" class="footer-link">Tentang Kami</router-link></li>
+            <li class="mb-2"><router-link to="/products" class="footer-link">Regular Class</router-link></li>
+            <li class="mb-2"><router-link to="/products" class="footer-link">Semi-Private Class</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Private Class</router-link></li>
-            <li class="mb-2"><router-link to="/products" class="footer-link">Home Class</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Online Class</router-link></li>
             <li class="mb-2"><router-link to="/elearning" class="footer-link">Portal E-Learning</router-link></li>
             <li class="mb-2"><router-link to="/books" class="footer-link">Buku Pelajaran Resmi</router-link></li>
