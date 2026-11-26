@@ -1,48 +1,46 @@
 <template>
   <div>
-    <!-- HERO BANNER SECTION -->
-    <section class="rg-screenshot-hero position-relative pt-8 pt-md-12 pb-0">
-      <!-- Decorative Background Orbs -->
+    <!-- 01. HERO SECTION -->
+    <section class="rg-screenshot-hero position-relative pt-10 pt-md-16 pb-0">
       <div class="rg-hero-orb-left" aria-hidden="true"></div>
       <div class="rg-hero-orb-right" aria-hidden="true"></div>
 
       <div class="hero-container mx-auto px-6 px-sm-10 px-md-14 position-relative z-1">
         <v-row align="stretch" no-gutters>
-          <!-- Left Column: Copy & Interactive Phone Pill -->
           <v-col cols="12" md="7" lg="6" class="d-flex flex-column justify-center pr-md-6 pr-lg-8 pb-6 pb-md-20">
-            <h1 class="hero-title mb-3">
-              Bimbel Online &amp; Offline Terbesar,<br class="d-none d-sm-inline" />
-              Terlengkap, dan Terbukti di Indonesia
+            <div class="hero-eyebrow mb-3">Learn. Speak. Explore.</div>
+
+            <h1 class="hero-title mb-4">
+              Belajar Bahasa,<br class="d-none d-sm-inline" />
+              Buka Dunia!
             </h1>
 
-            <p class="hero-subtitle mb-6">
-              Diskon spesial untukmu dengan isi nomor HP sekarang
+            <p class="hero-subtitle mb-8">
+              Dari ruang kelas hingga dunia kerja, dari hobi hingga mimpi besar. Belajar bahasa Mandarin, Inggris, dan Korea jadi lebih seru bersama Wordish.
             </p>
 
-            <!-- Phone Input Pill (Rounded Pill + Orange Button) -->
-            <div class="hero-phone-pill-wrapper">
-              <form @submit.prevent="submitDiscount" class="hero-phone-pill">
-                <span class="phone-prefix">+62</span>
-                <div class="phone-separator"></div>
-                <input
-                  type="tel"
-                  v-model="heroPhone"
-                  placeholder="812-3456-7890"
-                  class="phone-input"
-                  required
-                  aria-label="Nomor WhatsApp untuk Diskon"
-                />
-                <button type="submit" class="hero-discount-btn">
-                  <span>Dapatkan Diskon</span>
-                  <svg class="chevron-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                  </svg>
-                </button>
-              </form>
+            <div class="d-flex flex-wrap ga-3">
+              <v-btn
+                color="accent"
+                size="x-large"
+                class="text-none font-weight-bold text-white shadow-sm hero-cta-btn"
+                to="/products"
+              >
+                Yuk, Mulai Belajar!
+                <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
+              </v-btn>
+              <v-btn
+                variant="outlined"
+                color="white"
+                size="x-large"
+                class="text-none font-weight-bold hero-cta-btn"
+                @click="scrollToPrograms"
+              >
+                Lihat Program
+              </v-btn>
             </div>
           </v-col>
 
-          <!-- Right Column: Student Illustration -->
           <v-col cols="12" md="5" lg="6" class="d-flex justify-center justify-md-end align-end">
             <img
               src="/hero-students.png"
@@ -58,153 +56,197 @@
       </div>
     </section>
 
-    <!-- FLOATING BOTTOM RIBBON CARD (6 Category Cards overlapping the banner) -->
-    <div class="floating-ribbon-wrapper max-width-xl mx-auto px-4 px-sm-6">
-      <div class="floating-ribbon-card">
-        <div class="ribbon-items-grid">
-          <!-- 1. Persiapan HSK & EPS-TOPIK -->
-          <router-link to="/products" class="ribbon-item">
-            <div class="ribbon-icon">
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                <rect x="2" y="2" width="40" height="40" rx="10" fill="#EBF4FF" stroke="#3B82F6" stroke-width="1.5"/>
-                <rect x="9" y="7" width="26" height="18" rx="4" fill="#1D4ED8"/>
-                <text x="22" y="19" fill="#FFFFFF" font-size="7.5" font-weight="800" text-anchor="middle" font-family="system-ui, sans-serif">HSK/TOPIK</text>
-                <rect x="5" y="27" width="34" height="12" rx="4" fill="#DC2626"/>
-                <text x="22" y="36" fill="#FFFFFF" font-size="7" font-weight="900" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="0.5">INTENSIF</text>
-              </svg>
+    <!-- 02. ABOUT US -->
+    <section class="py-12 py-md-16 bg-white">
+      <v-container class="max-width-xl px-4 px-sm-6">
+        <v-row align="center">
+          <v-col cols="12" md="6" class="pr-md-10">
+            <div class="text-overline font-weight-bold text-primary mb-2" style="letter-spacing: 2px;">Hello, We're Wordish!</div>
+            <h2 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-4" style="line-height: 1.25;">
+              Belajar Bahasa Nggak Harus Membosankan.
+            </h2>
+            <p class="text-body-1 text-grey-darken-1 mb-4" style="line-height: 1.75;">
+              Di Wordish, kami percaya setiap orang bisa belajar bahasa baru dengan cara yang menyenangkan.
+            </p>
+            <p class="text-body-1 text-grey-darken-1 mb-4" style="line-height: 1.75;">
+              Baik untuk sekolah, karier, traveling, atau sekadar menikmati budaya favoritmu, kami hadir untuk menemani setiap langkah perjalanan belajarmu.
+            </p>
+            <p class="text-body-1 font-weight-bold text-secondary" style="line-height: 1.75;">
+              Belajar lebih santai, berkembang lebih percaya diri.
+            </p>
+          </v-col>
+          <v-col cols="12" md="6">
+            <div class="about-stats-grid">
+              <v-card v-for="stat in aboutStats" :key="stat.label" class="pa-5 rounded-2xl border text-center bg-grey-lighten-5">
+                <v-icon :icon="stat.icon" :color="stat.color" size="36" class="mb-2"></v-icon>
+                <div class="text-h4 font-weight-black text-secondary">{{ stat.value }}</div>
+                <div class="text-caption text-grey-darken-1 font-weight-medium">{{ stat.label }}</div>
+              </v-card>
             </div>
-            <div class="ribbon-text">
-              <span class="ribbon-line1">Persiapan</span>
-              <span class="ribbon-line2">HSK &amp; EPS-TOPIK</span>
-            </div>
-          </router-link>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
 
-          <!-- 2. Bimbel Tatap Muka -->
-          <router-link to="/products?format=private" class="ribbon-item">
-            <div class="ribbon-icon">
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                <rect x="2" y="2" width="40" height="40" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
-                <rect x="10" y="10" width="24" height="16" rx="3" fill="#2563EB"/>
-                <rect x="12" y="12" width="20" height="12" rx="2" fill="#93C5FD"/>
-                <circle cx="22" cy="16" r="2.5" fill="#1D4ED8"/>
-                <path d="M17 23C17 20.8 19 19.5 22 19.5C25 19.5 27 20.8 27 23H17Z" fill="#1D4ED8"/>
-                <rect x="19" y="26" width="6" height="4" fill="#2563EB"/>
-                <rect x="15" y="30" width="14" height="2" rx="1" fill="#1D4ED8"/>
-              </svg>
-            </div>
-            <div class="ribbon-text">
-              <span class="ribbon-line1">Bimbel</span>
-              <span class="ribbon-line2">Tatap Muka</span>
-            </div>
-          </router-link>
-
-          <!-- 3. Bimbel Online Interaktif -->
-          <router-link to="/products?format=online" class="ribbon-item">
-            <div class="ribbon-icon">
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                <rect x="2" y="2" width="40" height="40" rx="10" fill="#ECFEFF" stroke="#22D3EE" stroke-width="1.5"/>
-                <circle cx="22" cy="22" r="13" fill="#06B6D4"/>
-                <circle cx="22" cy="18" r="4" fill="#FFFFFF"/>
-                <path d="M14 28C14 24 17.5 22.5 22 22.5C26.5 22.5 30 24 30 28H14Z" fill="#FFFFFF"/>
-                <path d="M28 14C30 16 30 20 28 22" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="ribbon-text">
-              <span class="ribbon-line1">Bimbel Online</span>
-              <span class="ribbon-line2">Interaktif</span>
-            </div>
-          </router-link>
-
-          <!-- 4. Video Belajar dan Soal -->
-          <router-link to="/elearning" class="ribbon-item">
-            <div class="ribbon-icon">
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                <rect x="2" y="2" width="40" height="40" rx="10" fill="#FDF2F8" stroke="#F472B6" stroke-width="1.5"/>
-                <rect x="9" y="9" width="26" height="26" rx="7" fill="url(#heroPinkGrad)"/>
-                <polygon points="19,16 29,22 19,28" fill="#FFFFFF"/>
-                <defs>
-                  <linearGradient id="heroPinkGrad" x1="9" y1="9" x2="35" y2="35" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F43F5E"/>
-                    <stop offset="1" stop-color="#E11D48"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div class="ribbon-text">
-              <span class="ribbon-line1">Video Belajar</span>
-              <span class="ribbon-line2">dan Soal</span>
-            </div>
-          </router-link>
-
-          <!-- 5. Bimbel Kedinasan & Kerja LN -->
-          <router-link to="/products?lang=korean" class="ribbon-item">
-            <div class="ribbon-icon">
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                <rect x="2" y="2" width="40" height="40" rx="10" fill="#FFFBEB" stroke="#FBBF24" stroke-width="1.5"/>
-                <circle cx="22" cy="18" r="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
-                <path d="M22 9L26 13V18C26 21 22 23 22 23C22 23 18 21 18 18V13L22 9Z" fill="#D97706"/>
-                <rect x="5" y="27" width="34" height="12" rx="4" fill="#DC2626"/>
-                <text x="22" y="36" fill="#FFFFFF" font-size="7" font-weight="900" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="0.5">INTENSIF!</text>
-              </svg>
-            </div>
-            <div class="ribbon-text">
-              <span class="ribbon-line1">Bimbel</span>
-              <span class="ribbon-line2">Kedinasan &amp; Kerja LN</span>
-            </div>
-          </router-link>
-
-          <!-- 6. Semua Produk -->
-          <router-link to="/products" class="ribbon-item">
-            <div class="ribbon-icon">
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                <rect x="2" y="2" width="40" height="40" rx="10" fill="#F5F3FF" stroke="#A78BFA" stroke-width="1.5"/>
-                <rect x="13" y="13" width="7" height="7" rx="2" fill="#7C3AED"/>
-                <rect x="24" y="13" width="7" height="7" rx="2" fill="#7C3AED"/>
-                <rect x="13" y="24" width="7" height="7" rx="2" fill="#7C3AED"/>
-                <rect x="24" y="24" width="7" height="7" rx="2" fill="#7C3AED"/>
-              </svg>
-            </div>
-            <div class="ribbon-text">
-              <span class="ribbon-line1">Semua</span>
-              <span class="ribbon-line2">Produk</span>
-            </div>
-          </router-link>
+    <!-- 03. LANGUAGE PROGRAMS -->
+    <section id="language-programs" class="py-12 py-md-16 bg-grey-lighten-5">
+      <v-container class="max-width-xl px-4 px-sm-6">
+        <div class="text-center mb-10 mb-md-14">
+          <div class="text-overline font-weight-bold text-primary mb-2" style="letter-spacing: 2px;">Pick Your Language</div>
+          <h2 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-3">
+            Tiga Bahasa, Banyak Cerita.
+          </h2>
+          <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
+            Pilih bahasa yang kamu suka dan mulai perjalanan menuju kesempatan baru.
+          </p>
         </div>
-      </div>
 
-      <!-- Promo Star Badge (As shown in screenshot bottom-right) -->
-      <div class="d-flex justify-end pt-2">
-        <div class="promo-star-badge">
-          <v-icon icon="mdi-star" size="14" color="#ff6e02"></v-icon>
-          <span class="promo-text">PROMO STAR</span>
+        <v-row>
+          <!-- Mandarin -->
+          <v-col cols="12" md="4">
+            <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
+              <div class="lang-card-header bg-red-darken-1 pa-6 text-white">
+                <div class="text-h3 font-weight-black mb-1">🇨🇳</div>
+                <div class="text-h5 font-weight-bold">Mandarin</div>
+                <div class="text-body-2 mt-1 opacity-90">你好！Nǐ Hǎo!</div>
+              </div>
+              <div class="pa-6 d-flex flex-column flex-grow-1">
+                <p class="text-body-2 text-grey-darken-1 mb-6" style="line-height: 1.65;">
+                  Dari percakapan sehari-hari hingga peluang bisnis internasional. Kenali dunia Mandarin, satu kata dalam satu waktu.
+                </p>
+                <div class="mt-auto">
+                  <v-btn
+                    color="#E63946"
+                    block
+                    class="text-none font-weight-bold text-white"
+                    to="/products?lang=mandarin"
+                  >
+                    Belajar Mandarin
+                    <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
+                  </v-btn>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+
+          <!-- English -->
+          <v-col cols="12" md="4">
+            <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
+              <div class="lang-card-header pa-6 text-white" style="background: #0077B6;">
+                <div class="text-h3 font-weight-black mb-1">🇬🇧</div>
+                <div class="text-h5 font-weight-bold">English</div>
+                <div class="text-body-2 mt-1 opacity-90">Hello, World!</div>
+              </div>
+              <div class="pa-6 d-flex flex-column flex-grow-1">
+                <p class="text-body-2 text-grey-darken-1 mb-6" style="line-height: 1.65;">
+                  Lebih percaya diri saat presentasi, menghadapi interview, traveling, atau ngobrol dengan teman dari berbagai negara.
+                </p>
+                <div class="mt-auto">
+                  <v-btn
+                    color="#0077B6"
+                    block
+                    class="text-none font-weight-bold text-white"
+                    to="/products?lang=english"
+                  >
+                    Belajar English
+                    <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
+                  </v-btn>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+
+          <!-- Korean -->
+          <v-col cols="12" md="4">
+            <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
+              <div class="lang-card-header pa-6 text-white" style="background: #1D4ED8;">
+                <div class="text-h3 font-weight-black mb-1">🇰🇷</div>
+                <div class="text-h5 font-weight-bold">Korean</div>
+                <div class="text-body-2 mt-1 opacity-90">안녕하세요! Annyeonghaseyo!</div>
+              </div>
+              <div class="pa-6 d-flex flex-column flex-grow-1">
+                <p class="text-body-2 text-grey-darken-1 mb-6" style="line-height: 1.65;">
+                  Nonton K-Drama, memahami lirik K-Pop, mengenal budaya Korea, hingga mempersiapkan peluang studi dan karier.
+                </p>
+                <div class="mt-auto">
+                  <v-btn
+                    color="#1D4ED8"
+                    block
+                    class="text-none font-weight-bold text-white"
+                    to="/products?lang=korean"
+                  >
+                    Belajar Korean
+                    <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
+                  </v-btn>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
+    <!-- 04. WHY WORDISH? -->
+    <section class="py-12 py-md-16 bg-white">
+      <v-container class="max-width-xl px-4 px-sm-6">
+        <div class="text-center mb-10 mb-md-14">
+          <div class="text-overline font-weight-bold text-primary mb-2" style="letter-spacing: 2px;">A Better Way to Learn</div>
+          <h2 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-3">
+            Seru Belajarnya, Nyata Manfaatnya.
+          </h2>
         </div>
-      </div>
-    </div>
 
-    <!-- LANGUAGE SELECTION STRIP -->
-    <div class="max-width-xl mx-auto px-4 px-sm-6 pt-5 pb-3">
-      <div class="d-flex flex-wrap align-center justify-space-between ga-3">
-        <div class="d-flex flex-wrap align-center ga-2">
-          <span class="text-caption font-weight-bold text-grey-darken-1 mr-1">Pilihan Bahasa:</span>
-          <v-btn
-            v-for="lang in languages"
-            :key="lang.id"
-            size="small"
-            variant="tonal"
-            class="font-weight-bold text-none rounded-pill"
-            :color="activeLanguageFilter === lang.id ? 'primary' : 'grey-darken-1'"
-            @click="scrollToLanguage(lang.id)"
+        <v-row>
+          <v-col
+            v-for="benefit in whyWordish"
+            :key="benefit.title"
+            cols="12"
+            sm="6"
+            md="4"
           >
-            <v-icon :icon="lang.icon" size="16" class="mr-1"></v-icon>
-            {{ lang.name }}
-          </v-btn>
+            <div class="d-flex ga-4 mb-6 mb-md-8">
+              <v-avatar :color="benefit.bgColor" size="48" class="flex-shrink-0">
+                <v-icon :icon="benefit.icon" :color="benefit.iconColor" size="24"></v-icon>
+              </v-avatar>
+              <div>
+                <div class="text-subtitle-1 font-weight-bold text-secondary mb-1">{{ benefit.title }}</div>
+                <p class="text-body-2 text-grey-darken-1" style="line-height: 1.6;">{{ benefit.desc }}</p>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
+    <!-- 05. WHO CAN JOIN? -->
+    <section class="py-12 py-md-16 bg-grey-lighten-5">
+      <v-container class="max-width-xl px-4 px-sm-6">
+        <div class="text-center mb-10 mb-md-14">
+          <div class="text-overline font-weight-bold text-primary mb-2" style="letter-spacing: 2px;">Everyone is Welcome!</div>
+          <h2 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-3">
+            Beda Tujuan, Satu Semangat Belajar.
+          </h2>
         </div>
-        <div class="text-caption text-grey-darken-1 d-none d-md-flex align-center">
-          <v-icon icon="mdi-shield-check" size="18" color="success" class="mr-1"></v-icon>
-          Sertifikasi Resmi Kemnaker &bull; Tutor Native &amp; Bersertifikat &bull; Modul HSK, EPS-TOPIK &amp; CEFR
-        </div>
-      </div>
-    </div>
+
+        <v-row>
+          <v-col
+            v-for="audience in whoCanJoin"
+            :key="audience.title"
+            cols="12"
+            sm="6"
+            md="3"
+          >
+            <v-card class="h-100 pa-6 rounded-3xl border bg-white text-center shadow-sm">
+              <v-avatar :color="audience.bgColor" size="56" class="mb-4">
+                <v-icon :icon="audience.icon" :color="audience.iconColor" size="28"></v-icon>
+              </v-avatar>
+              <div class="text-subtitle-1 font-weight-bold text-secondary mb-2">{{ audience.title }}</div>
+              <p class="text-body-2 text-grey-darken-1" style="line-height: 1.6;">{{ audience.desc }}</p>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
 
     <!-- SECTION: 3 FORMAT LAYANAN KELAS (Private, Home, Online) -->
     <section class="py-12 py-md-16 bg-surface border-y">
@@ -284,79 +326,111 @@
       </v-container>
     </section>
 
-    <!-- SECTION: E-LEARNING SHOWCASE TEASER -->
+    <!-- KATALOG PROGRAM KELAS LPK -->
     <section class="py-12 py-md-16 bg-grey-lighten-5">
       <v-container class="max-width-xl px-4 px-sm-6">
-        <v-card class="rounded-3xl border bg-white shadow-md pa-6 pa-md-8 overflow-hidden">
-          <v-row align="center">
-            <v-col cols="12" md="6" class="pr-md-6">
-              <div class="d-flex align-center mb-3">
-                <v-icon icon="mdi-play-circle" color="accent" size="28" class="mr-2"></v-icon>
-                <span class="font-weight-bold text-subtitle-2 text-primary text-uppercase">
-                  E-Learning Interaktif Wordish
-                </span>
-              </div>
+        <div class="text-center mb-8 mb-md-10">
+          <h2 class="text-h4 font-weight-bold text-secondary mb-2">
+            Paket Pelatihan Bahasa Asing
+          </h2>
+          <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
+            Daftar paket intensif dengan kurikulum siap kerja dan fleksibilitas format belajar.
+          </p>
+        </div>
 
-              <h2 class="text-h4 font-weight-bold text-secondary mb-3">
-                Belajar Fleksibel Kapan Saja dengan Video Modul E-Learning
-              </h2>
+        <!-- Filter Language Toggle (Responsive wrap) -->
+        <div class="d-flex justify-center mb-8">
+          <v-btn-toggle
+            v-model="activeLanguageFilter"
+            color="primary"
+            rounded="xl"
+            mandatory
+            class="shadow-sm flex-wrap justify-center"
+          >
+            <v-btn value="all" class="text-none font-weight-bold px-3 px-sm-4">Semua Bahasa</v-btn>
+            <v-btn value="mandarin" class="text-none font-weight-bold px-3 px-sm-4">Mandarin</v-btn>
+            <v-btn value="korean" class="text-none font-weight-bold px-3 px-sm-4">Korea</v-btn>
+            <v-btn value="english" class="text-none font-weight-bold px-3 px-sm-4">Inggris</v-btn>
+          </v-btn-toggle>
+        </div>
 
-              <p class="text-body-1 text-grey-darken-1 mb-4" style="line-height: 1.6;">
-                Dapatkan akses ke puluhan video pembelajaran terstruktur untuk Mandarin, Korea, dan Inggris. Dilengkapi latihan audio listening, rangkuman PDF yang dapat diunduh, dan kuis uji pemahaman bab.
-              </p>
-
-              <div class="d-flex flex-column ga-2 mb-6 text-body-2 text-grey-darken-2">
-                <div class="d-flex align-center">
-                  <v-icon icon="mdi-check" color="success" size="18" class="mr-2"></v-icon>
-                  <span>Materi video HD berurutan dari dasar hingga mahir</span>
+        <v-row>
+          <v-col
+            v-for="prog in filteredPrograms"
+            :key="prog.id"
+            cols="12"
+            md="6"
+            lg="4"
+          >
+            <v-card class="h-100 pa-5 pa-sm-6 rounded-3xl border bg-white d-flex flex-column justify-space-between shadow-sm rg-card-border">
+              <div>
+                <div class="text-caption font-weight-medium text-grey mb-1">
+                  {{ prog.level }}
                 </div>
-                <div class="d-flex align-center">
-                  <v-icon icon="mdi-check" color="success" size="18" class="mr-2"></v-icon>
-                  <span>Rangkuman rumus tata bahasa dan kosakata PDF</span>
-                </div>
-                <div class="d-flex align-center">
-                  <v-icon icon="mdi-check" color="success" size="18" class="mr-2"></v-icon>
-                  <span>Dapat diputar ulang 24/7 di laptop maupun smartphone</span>
-                </div>
-              </div>
 
-              <div class="d-flex ga-3">
-                <v-btn
-                  color="primary"
-                  size="large"
-                  class="text-none font-weight-bold text-white shadow-sm"
-                  to="/elearning"
-                >
-                  Buka Portal E-Learning
-                  <v-icon icon="mdi-arrow-right" class="ml-2"></v-icon>
-                </v-btn>
-              </div>
-            </v-col>
-
-            <v-col cols="12" md="6" class="mt-6 mt-md-0">
-              <!-- Video Preview Card Mock -->
-              <div class="rounded-2xl overflow-hidden border shadow-sm bg-slate-900 pa-4 text-white">
-                <div class="d-flex justify-space-between align-center mb-3 text-caption">
-                  <span class="font-weight-bold">Preview Modul Hangeul Korea</span>
-                  <span class="text-grey-lighten-2">Akses Gratis Siswa</span>
+                <div class="text-h6 font-weight-bold text-secondary mb-1">
+                  {{ prog.title }}
                 </div>
-                <div class="py-8 text-center bg-grey-darken-4 rounded-xl mb-3">
-                  <v-btn icon size="large" color="accent" class="mb-2" to="/elearning">
-                    <v-icon icon="mdi-play" size="32" color="white"></v-icon>
-                  </v-btn>
-                  <div class="text-body-2 font-weight-bold">
-                    Pengenalan Vokal & Konsonan Dasar Hangeul
+                <div class="text-caption text-grey mb-3">
+                  <v-icon icon="mdi-clock-outline" size="small" class="mr-1"></v-icon>
+                  {{ prog.duration }} • {{ prog.mode }}
+                </div>
+
+                <!-- Price Box -->
+                <div class="bg-grey-lighten-5 pa-4 rounded-2xl mb-4 border">
+                  <div class="text-caption text-grey text-decoration-line-through">
+                    {{ formatRupiah(prog.originalPrice) }}
                   </div>
-                  <div class="text-caption text-grey">Bersama Ssaem Park Ji-hoon (14:20 Menit)</div>
+                  <div class="d-flex align-baseline ga-2">
+                    <span class="text-h5 font-weight-extrabold text-primary">
+                      {{ formatRupiah(prog.price) }}
+                    </span>
+                    <span class="text-caption text-error font-weight-bold">
+                      Hemat {{ prog.discountPercent }}%
+                    </span>
+                  </div>
                 </div>
-                <div class="d-flex justify-space-between text-caption text-grey-lighten-1">
-                  <span>Modul 1 dari 16 Video</span>
-                  <span class="text-success font-weight-bold">Tersedia di E-Learning</span>
+
+                <!-- Features list -->
+                <div class="d-flex flex-column ga-2 mb-6">
+                  <div
+                    v-for="(feat, fIdx) in prog.features"
+                    :key="fIdx"
+                    class="d-flex align-start text-caption text-grey-darken-2"
+                  >
+                    <v-icon icon="mdi-check" color="teal" size="16" class="mr-2 mt-1"></v-icon>
+                    <span>{{ feat }}</span>
+                  </div>
                 </div>
               </div>
-            </v-col>
-          </v-row>
-        </v-card>
+
+              <!-- Actions -->
+              <div>
+                <div class="text-caption text-grey font-weight-medium mb-3 d-flex align-center">
+                  <v-icon icon="mdi-calendar-check" size="small" class="mr-1 text-primary"></v-icon>
+                  {{ prog.nextBatch }}
+                </div>
+                <div class="d-flex ga-2">
+                  <v-btn
+                    variant="outlined"
+                    color="primary"
+                    class="text-none flex-grow-1 font-weight-bold"
+                    @click="cartStore.addToCart(prog)"
+                  >
+                    + Keranjang
+                  </v-btn>
+                  <v-btn
+                    color="accent"
+                    class="text-none flex-grow-1 font-weight-bold text-white shadow-sm"
+                    @click="enrollDirect(prog)"
+                  >
+                    Daftar Kelas
+                  </v-btn>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
     </section>
 
@@ -467,121 +541,6 @@
       </v-container>
     </section>
 
-    <!-- INTERACTIVE PLACEMENT TEST WIDGET -->
-    <section class="py-12 py-md-16 bg-grey-lighten-5">
-      <v-container class="max-width-lg px-4 px-sm-6">
-        <LanguagePlacementTest />
-      </v-container>
-    </section>
-
-    <!-- KATALOG PROGRAM KELAS LPK -->
-    <section class="py-12 py-md-16 bg-surface">
-      <v-container class="max-width-xl px-4 px-sm-6">
-        <div class="text-center mb-8 mb-md-10">
-          <h2 class="text-h4 font-weight-bold text-secondary mb-2">
-            Paket Pelatihan Bahasa Asing
-          </h2>
-          <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
-            Daftar paket intensif dengan kurikulum siap kerja dan fleksibilitas format belajar.
-          </p>
-        </div>
-
-        <!-- Filter Language Toggle (Responsive wrap) -->
-        <div class="d-flex justify-center mb-8">
-          <v-btn-toggle
-            v-model="activeLanguageFilter"
-            color="primary"
-            rounded="xl"
-            mandatory
-            class="shadow-sm flex-wrap justify-center"
-          >
-            <v-btn value="all" class="text-none font-weight-bold px-3 px-sm-4">Semua Bahasa</v-btn>
-            <v-btn value="mandarin" class="text-none font-weight-bold px-3 px-sm-4">Mandarin</v-btn>
-            <v-btn value="korean" class="text-none font-weight-bold px-3 px-sm-4">Korea</v-btn>
-            <v-btn value="english" class="text-none font-weight-bold px-3 px-sm-4">Inggris</v-btn>
-          </v-btn-toggle>
-        </div>
-
-        <v-row>
-          <v-col
-            v-for="prog in filteredPrograms"
-            :key="prog.id"
-            cols="12"
-            md="6"
-            lg="4"
-          >
-            <v-card class="h-100 pa-5 pa-sm-6 rounded-3xl border bg-white d-flex flex-column justify-space-between shadow-sm rg-card-border">
-              <div>
-                <div class="text-caption font-weight-medium text-grey mb-1">
-                  {{ prog.level }}
-                </div>
-
-                <div class="text-h6 font-weight-bold text-secondary mb-1">
-                  {{ prog.title }}
-                </div>
-                <div class="text-caption text-grey mb-3">
-                  <v-icon icon="mdi-clock-outline" size="small" class="mr-1"></v-icon>
-                  {{ prog.duration }} • {{ prog.mode }}
-                </div>
-
-                <!-- Price Box -->
-                <div class="bg-grey-lighten-5 pa-4 rounded-2xl mb-4 border">
-                  <div class="text-caption text-grey text-decoration-line-through">
-                    {{ formatRupiah(prog.originalPrice) }}
-                  </div>
-                  <div class="d-flex align-baseline ga-2">
-                    <span class="text-h5 font-weight-extrabold text-primary">
-                      {{ formatRupiah(prog.price) }}
-                    </span>
-                    <span class="text-caption text-error font-weight-bold">
-                      Hemat {{ prog.discountPercent }}%
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Features list -->
-                <div class="d-flex flex-column ga-2 mb-6">
-                  <div
-                    v-for="(feat, fIdx) in prog.features"
-                    :key="fIdx"
-                    class="d-flex align-start text-caption text-grey-darken-2"
-                  >
-                    <v-icon icon="mdi-check" color="teal" size="16" class="mr-2 mt-1"></v-icon>
-                    <span>{{ feat }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Actions -->
-              <div>
-                <div class="text-caption text-grey font-weight-medium mb-3 d-flex align-center">
-                  <v-icon icon="mdi-calendar-check" size="small" class="mr-1 text-primary"></v-icon>
-                  {{ prog.nextBatch }}
-                </div>
-                <div class="d-flex ga-2">
-                  <v-btn
-                    variant="outlined"
-                    color="primary"
-                    class="text-none flex-grow-1 font-weight-bold"
-                    @click="cartStore.addToCart(prog)"
-                  >
-                    + Keranjang
-                  </v-btn>
-                  <v-btn
-                    color="accent"
-                    class="text-none flex-grow-1 font-weight-bold text-white shadow-sm"
-                    @click="enrollDirect(prog)"
-                  >
-                    Daftar Kelas
-                  </v-btn>
-                </div>
-              </div>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
-
     <!-- JADWAL KELAS HARIAN (Senin - Sabtu) -->
     <section id="jadwal" class="py-12 py-md-16 bg-surface border-t">
       <v-container class="max-width-xl px-4 px-sm-6">
@@ -599,41 +558,42 @@
         </div>
 
         <v-row class="mb-8" align="stretch">
-          <!-- Col 1: Visual Blueprint Grid Board (1:1 Inspired by Graphic) -->
+          <!-- Col 1: Tabel Jam & Kelas -->
           <v-col cols="12" lg="6">
-            <div class="schedule-blueprint-card h-100 d-flex flex-column justify-space-between">
-              <div>
-                <!-- Board Header -->
-                <div class="blueprint-header">
-                  <span class="blueprint-col-title">jam</span>
-                  <span class="blueprint-col-title">kelas</span>
-                </div>
-
-                <!-- 7 Time Slots from uploaded image -->
-                <div class="blueprint-rows-container">
-                  <div
-                    v-for="item in batchSchedules.slice(0, 7)"
+            <v-card class="rounded-3xl border bg-white shadow-sm overflow-hidden h-100 d-flex flex-column justify-space-between">
+              <v-table class="schedule-simple-table">
+                <thead>
+                  <tr class="bg-grey-lighten-4 text-caption text-uppercase">
+                    <th class="font-weight-bold text-secondary py-4 px-5">Jam</th>
+                    <th class="font-weight-bold text-secondary py-4 px-5">Kelas</th>
+                    <th class="font-weight-bold text-secondary py-4 px-5 text-right"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="item in classesStore.batchSchedules.slice(0, 7)"
                     :key="item.id"
-                    class="blueprint-row"
+                    class="schedule-table-row cursor-pointer"
                     @click="bookScheduleSlot(item)"
                     :title="`Klik untuk booking kelas ${item.className} jam ${item.time}`"
                   >
-                    <div class="blueprint-time">
-                      {{ item.time }}
-                    </div>
-                    <div class="blueprint-class d-flex align-center ga-2">
-                      <span>{{ item.className }}</span>
-                      <v-icon icon="mdi-chevron-right" size="18" class="blueprint-arrow opacity-60"></v-icon>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    <td class="py-4 px-5 font-weight-bold text-body-1 text-primary text-no-wrap">
+                      {{ item.time }} WIB
+                    </td>
+                    <td class="py-4 px-5 font-weight-bold text-body-1 text-secondary">
+                      {{ item.className }}
+                    </td>
+                    <td class="py-4 px-5 text-right">
+                      <v-icon icon="mdi-chevron-right" size="20" color="grey-darken-1"></v-icon>
+                    </td>
+                  </tr>
+                </tbody>
+              </v-table>
 
-              <!-- Footnote from image -->
-              <div class="blueprint-footnote">
-                *kelas berlangsung dari senin - sabtu
+              <div class="pa-4 bg-grey-lighten-5 border-t text-center text-body-2 font-italic text-grey-darken-1">
+                *Kelas berlangsung dari Senin - Sabtu
               </div>
-            </div>
+            </v-card>
           </v-col>
 
           <!-- Col 2: Panduan Kategori & Format Layanan -->
@@ -724,123 +684,6 @@
           </v-col>
         </v-row>
 
-        <!-- Tabel Rinci Lengkap & Filter Kategori -->
-        <v-card class="rounded-3xl border bg-white shadow-sm overflow-hidden mb-6">
-          <div class="pa-4 pa-sm-5 border-b bg-grey-lighten-5 d-flex flex-column flex-sm-row align-stretch align-sm-center justify-space-between ga-3">
-            <div>
-              <div class="text-subtitle-1 font-weight-bold text-secondary">
-                Rincian Jadwal &amp; Sisa Slot Kuota
-              </div>
-              <div class="text-caption text-grey-darken-1">
-                Pilih slot jadwal yang cocok, lalu klik "Booking Slot" untuk reservasi kursi
-              </div>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="d-flex flex-wrap ga-1">
-              <v-btn
-                size="small"
-                variant="flat"
-                class="text-none font-weight-bold"
-                :color="activeScheduleCategory === 'all' ? 'primary' : 'grey-lighten-2'"
-                :class="activeScheduleCategory === 'all' ? 'text-white' : 'text-grey-darken-2'"
-                @click="activeScheduleCategory = 'all'"
-              >
-                Semua Slot ({{ batchSchedules.length }})
-              </v-btn>
-              <v-btn
-                size="small"
-                variant="flat"
-                class="text-none font-weight-bold"
-                :color="activeScheduleCategory === 'kids' ? 'teal' : 'grey-lighten-2'"
-                :class="activeScheduleCategory === 'kids' ? 'text-white' : 'text-grey-darken-2'"
-                @click="activeScheduleCategory = 'kids'"
-              >
-                Kids &amp; Junior
-              </v-btn>
-              <v-btn
-                size="small"
-                variant="flat"
-                class="text-none font-weight-bold"
-                :color="activeScheduleCategory === 'adult' ? 'deep-purple' : 'grey-lighten-2'"
-                :class="activeScheduleCategory === 'adult' ? 'text-white' : 'text-grey-darken-2'"
-                @click="activeScheduleCategory = 'adult'"
-              >
-                Teen &amp; Adult
-              </v-btn>
-              <v-btn
-                size="small"
-                variant="flat"
-                class="text-none font-weight-bold"
-                :color="activeScheduleCategory === 'korea' ? 'amber-darken-3' : 'grey-lighten-2'"
-                :class="activeScheduleCategory === 'korea' ? 'text-white' : 'text-grey-darken-2'"
-                @click="activeScheduleCategory = 'korea'"
-              >
-                Korea EPS-TOPIK
-              </v-btn>
-            </div>
-          </div>
-
-          <div class="overflow-x-auto">
-            <v-table style="min-width: 700px;">
-              <thead>
-                <tr class="bg-grey-lighten-4 text-caption text-uppercase">
-                  <th class="font-weight-bold text-secondary">Jam &amp; Hari</th>
-                  <th class="font-weight-bold text-secondary">Nama Kelas &amp; Bahasa</th>
-                  <th class="font-weight-bold text-secondary">Kategori Usia</th>
-                  <th class="font-weight-bold text-secondary">Format Tersedia</th>
-                  <th class="font-weight-bold text-secondary">Status Slot</th>
-                  <th class="font-weight-bold text-secondary text-right">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="b in filteredSchedules" :key="b.id" class="schedule-table-row">
-                  <td>
-                    <div class="font-weight-bold text-body-2 text-primary">{{ b.time }} WIB</div>
-                    <div class="text-caption text-grey">{{ b.days }}</div>
-                  </td>
-                  <td>
-                    <div class="font-weight-bold text-secondary d-flex align-center">
-                      <span>{{ b.className }}</span>
-                    </div>
-                    <div class="text-caption text-grey-darken-1" style="max-width: 280px; line-height: 1.3;">
-                      {{ b.focus }}
-                    </div>
-                  </td>
-                  <td>
-                    <v-chip :color="b.categoryBadgeColor" size="x-small" class="font-weight-bold mb-1">
-                      {{ b.category }}
-                    </v-chip>
-                    <div class="text-caption text-grey">{{ b.ageGroup }}</div>
-                  </td>
-                  <td>
-                    <div class="d-flex flex-wrap ga-1">
-                      <v-chip size="x-small" variant="outlined" color="primary">Private</v-chip>
-                      <v-chip size="x-small" variant="outlined" color="primary">Home</v-chip>
-                      <v-chip size="x-small" variant="outlined" color="primary">Online</v-chip>
-                    </div>
-                  </td>
-                  <td>
-                    <span class="text-caption font-weight-bold text-success">{{ b.quota }}</span>
-                  </td>
-                  <td class="text-right">
-                    <v-btn
-                      size="small"
-                      color="accent"
-                      variant="flat"
-                      class="text-none font-weight-bold text-white"
-                      @click="bookScheduleSlot(b)"
-                    >
-                      <v-icon icon="mdi-whatsapp" start size="15"></v-icon>
-                      Booking
-                    </v-btn>
-                  </td>
-                </tr>
-              </tbody>
-            </v-table>
-          </div>
-        </v-card>
-
         <div class="d-flex flex-column flex-sm-row align-center justify-center ga-3">
           <v-btn
             color="success"
@@ -926,11 +769,10 @@
           </h2>
         </div>
 
-        <v-expansion-panels variant="accordion" class="rounded-2xl overflow-hidden border">
+        <v-expansion-panels variant="accordion" flat class="faq-accordion rounded-2xl overflow-hidden">
           <v-expansion-panel
             v-for="(f, idx) in faqs"
             :key="idx"
-            class="border-b"
           >
             <v-expansion-panel-title class="font-weight-bold text-body-1 text-secondary py-3">
               <v-icon icon="mdi-help-circle-outline" color="primary" class="mr-3"></v-icon>
@@ -1030,25 +872,108 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { languages, classModes, books, programs, testimonials, batchSchedules, faqs } from '../data/wordishData'
+import { languages, classModes, books, testimonials, faqs } from '../data/wordishData'
+import { useClassesStore } from '../stores/classes'
 import { useCartStore } from '../stores/cart'
-import LanguagePlacementTest from '../components/LanguagePlacementTest.vue'
 
 const router = useRouter()
+const classesStore = useClassesStore()
 const cartStore = useCartStore()
 
 const activeLanguageFilter = ref('all')
 const heroPhone = ref('')
 const discountDialog = ref(false)
-const activeScheduleCategory = ref('all')
 
-const filteredSchedules = computed(() => {
-  if (activeScheduleCategory.value === 'all') return batchSchedules
-  if (activeScheduleCategory.value === 'kids') return batchSchedules.filter(s => s.category === 'Kids & Junior')
-  if (activeScheduleCategory.value === 'adult') return batchSchedules.filter(s => s.category === 'Teen & Adult')
-  if (activeScheduleCategory.value === 'korea') return batchSchedules.filter(s => s.language === 'Bahasa Korea')
-  return batchSchedules
-})
+// 02. About Us stats
+const aboutStats = [
+  { icon: 'mdi-account-group', value: '5,000+', label: 'Siswa Aktif', color: 'primary' },
+  { icon: 'mdi-certificate', value: '3', label: 'Bahasa Tersedia', color: 'accent' },
+  { icon: 'mdi-star', value: '4.9', label: 'Rating Kepuasan', color: 'amber-darken-2' },
+  { icon: 'mdi-briefcase-check', value: '500+', label: 'Alumni Berkarier', color: 'teal' }
+]
+
+// 04. Why Wordish benefits
+const whyWordish = [
+  {
+    icon: 'mdi-emoticon-happy-outline',
+    title: 'Fun Learning',
+    desc: 'Belajar dengan suasana yang menyenangkan dan interaktif.',
+    bgColor: 'amber-lighten-4',
+    iconColor: 'amber-darken-3'
+  },
+  {
+    icon: 'mdi-forum-outline',
+    title: 'Real Conversations',
+    desc: 'Bukan sekadar teori, tetapi bahasa yang bisa kamu gunakan sehari-hari.',
+    bgColor: 'blue-lighten-4',
+    iconColor: 'blue-darken-2'
+  },
+  {
+    icon: 'mdi-stairs-up',
+    title: 'Step by Step',
+    desc: 'Mulai dari dasar dan berkembang sesuai kemampuanmu.',
+    bgColor: 'teal-lighten-4',
+    iconColor: 'teal-darken-2'
+  },
+  {
+    icon: 'mdi-arm-flex-outline',
+    title: 'Build Confidence',
+    desc: 'Lebih berani berbicara tanpa takut salah.',
+    bgColor: 'deep-purple-lighten-4',
+    iconColor: 'deep-purple-darken-1'
+  },
+  {
+    icon: 'mdi-earth',
+    title: 'Explore Cultures',
+    desc: 'Kenali cerita dan budaya di balik setiap bahasa.',
+    bgColor: 'pink-lighten-4',
+    iconColor: 'pink-darken-2'
+  },
+  {
+    icon: 'mdi-rocket-launch-outline',
+    title: 'Future Ready',
+    desc: 'Persiapkan kemampuan bahasa untuk sekolah, karier, dan kehidupan.',
+    bgColor: 'green-lighten-4',
+    iconColor: 'green-darken-2'
+  }
+]
+
+// 05. Who Can Join audiences
+const whoCanJoin = [
+  {
+    icon: 'mdi-school-outline',
+    title: 'School Students',
+    desc: 'Belajar bahasa baru, tingkatkan kemampuan akademis, dan temukan pengalaman seru di luar sekolah.',
+    bgColor: 'blue-lighten-4',
+    iconColor: 'blue-darken-2'
+  },
+  {
+    icon: 'mdi-account-school',
+    title: 'College Students',
+    desc: 'Persiapkan studi, beasiswa, dan langkah pertama menuju dunia profesional.',
+    bgColor: 'deep-purple-lighten-4',
+    iconColor: 'deep-purple-darken-1'
+  },
+  {
+    icon: 'mdi-briefcase-outline',
+    title: 'Professionals',
+    desc: 'Upgrade skill komunikasi, tingkatkan kepercayaan diri, dan buka peluang karier yang lebih luas.',
+    bgColor: 'teal-lighten-4',
+    iconColor: 'teal-darken-2'
+  },
+  {
+    icon: 'mdi-heart-outline',
+    title: 'Language Lovers',
+    desc: 'Belajar karena hobi, traveling, atau sekadar ingin mencoba sesuatu yang baru.',
+    bgColor: 'pink-lighten-4',
+    iconColor: 'pink-darken-2'
+  }
+]
+
+function scrollToPrograms() {
+  const el = document.getElementById('language-programs')
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
 
 function bookScheduleSlot(slot) {
   const msg = `Halo LPK Wordish, saya ingin konsultasi/booking jadwal kelas ${slot.className} jam ${slot.time} (${slot.days}). Mohon info ketersediaan slotnya.`
@@ -1062,8 +987,8 @@ function submitDiscount() {
 }
 
 const filteredPrograms = computed(() => {
-  if (activeLanguageFilter.value === 'all') return programs
-  return programs.filter(p => p.languageId === activeLanguageFilter.value)
+  if (activeLanguageFilter.value === 'all') return classesStore.activePrograms
+  return classesStore.activePrograms.filter(p => p.languageId === activeLanguageFilter.value)
 })
 
 function scrollToLanguage(langId) {
@@ -1079,7 +1004,12 @@ function formatRupiah(val) {
 }
 
 function enrollHero() {
-  const epsProgram = programs.find(p => p.id === 'korean-eps') || programs[0]
+  const list = classesStore.activePrograms
+  const epsProgram = list.find(p => p.id === 'korean-eps') || list[0]
+  if (!epsProgram) {
+    router.push('/products')
+    return
+  }
   cartStore.addToCart(epsProgram)
   router.push('/checkout')
 }
@@ -1125,127 +1055,46 @@ function enrollDirect(prog) {
   pointer-events: none;
 }
 
+.hero-eyebrow {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .hero-title {
-  font-size: 2.35rem;
+  font-size: 2.75rem;
   font-weight: 900;
-  line-height: 1.22;
+  line-height: 1.15;
   letter-spacing: -0.5px;
   color: #ffffff;
 }
 
 @media (max-width: 960px) {
   .hero-title {
-    font-size: 1.85rem;
+    font-size: 2.1rem;
   }
 }
 
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 1.45rem;
+    font-size: 1.65rem;
   }
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #ffffff;
-  opacity: 0.95;
-}
-
-/* Phone input pill */
-.hero-phone-pill-wrapper {
+  opacity: 0.93;
+  line-height: 1.65;
   max-width: 520px;
-  width: 100%;
 }
 
-.hero-phone-pill {
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 9999px;
-  padding: 5px 6px 5px 22px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.hero-phone-pill:focus-within {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
-  transform: translateY(-1px);
-}
-
-.phone-prefix {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #1e293b;
-  user-select: none;
-}
-
-.phone-separator {
-  width: 1px;
-  height: 24px;
-  background: #e2e8f0;
-  margin: 0 12px;
-}
-
-.phone-input {
-  flex: 1;
-  min-width: 0;
-  border: none;
-  outline: none;
-  font-size: 1.05rem;
-  color: #0f172a;
-  font-weight: 500;
-  background: transparent;
-}
-
-.phone-input::placeholder {
-  color: #94a3b8;
-  font-weight: 400;
-}
-
-.hero-discount-btn {
-  background: #FF6E02;
-  color: #ffffff;
-  border: none;
-  outline: none;
-  border-radius: 9999px;
-  padding: 13px 24px;
-  font-size: 0.96rem;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(255, 110, 2, 0.35);
-}
-
-.hero-discount-btn:hover {
-  background: #e66200;
-  box-shadow: 0 6px 18px rgba(255, 110, 2, 0.45);
-}
-
-.hero-discount-btn:active {
-  transform: scale(0.98);
-}
-
-@media (max-width: 520px) {
-  .hero-phone-pill {
-    padding: 6px 8px;
-    flex-wrap: wrap;
-    border-radius: 20px;
-  }
-  .phone-separator {
-    margin: 0 8px;
-  }
-  .hero-discount-btn {
-    width: 100%;
-    justify-content: center;
-    margin-top: 8px;
-    padding: 10px 18px;
-  }
+.hero-cta-btn {
+  border-radius: 12px !important;
+  letter-spacing: 0.3px;
 }
 
 /* Student Illustration */
@@ -1270,202 +1119,41 @@ function enrollDirect(prog) {
   }
 }
 
-/* Floating ribbon card */
-.floating-ribbon-wrapper {
-  position: relative;
-  z-index: 10;
-  margin-top: -46px;
-}
-
-.floating-ribbon-card {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 14px 18px;
-  box-shadow: 0 12px 35px rgba(0, 78, 178, 0.09);
-  border: 1px solid rgba(226, 232, 240, 0.85);
-}
-
-.ribbon-items-grid {
+/* About stats grid */
+.about-stats-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
-.ribbon-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  border: 1.5px solid #e2e8f0;
-  background: #ffffff;
-  text-decoration: none;
-  transition: all 0.22s ease;
-  min-height: 64px;
+/* Language cards */
+.lang-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-.ribbon-item:hover {
-  border-color: #004eb2;
-  background: #f8fafc;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 78, 178, 0.08);
+.lang-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
-.ribbon-icon {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ribbon-text {
+.lang-card-header {
+  min-height: 140px;
   display: flex;
   flex-direction: column;
-  line-height: 1.25;
+  justify-content: flex-end;
 }
 
-.ribbon-line1 {
-  font-size: 0.78rem;
-  color: #4b5563;
-  font-weight: 500;
-}
-
-.ribbon-line2 {
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-@media (max-width: 1200px) {
-  .ribbon-items-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .floating-ribbon-wrapper {
-    margin-top: -24px;
-  }
-  .floating-ribbon-card {
-    border-radius: 18px;
-    padding: 12px;
-  }
-  .ribbon-items-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 10px;
-    padding-bottom: 6px;
-    -webkit-overflow-scrolling: touch;
-  }
-  .ribbon-item {
-    flex: 0 0 auto;
-    min-width: 180px;
-    scroll-snap-align: start;
-  }
-}
-
-/* Promo star badge */
-.promo-star-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #ffffff;
-  border: 1.5px solid #ff6e02;
-  border-radius: 8px;
-  padding: 4px 10px;
-  box-shadow: 0 3px 8px rgba(255, 110, 2, 0.15);
-}
-
-.promo-text {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #ff6e02;
-  letter-spacing: 0.5px;
-}
-
-/* Schedule Blueprint Card (Matching User Image) */
-.schedule-blueprint-card {
-  background-color: #004eb2;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px);
-  background-size: 38px 38px;
-  border-radius: 24px;
-  color: #ffffff;
-  padding: 32px 28px;
-  box-shadow: 0 16px 36px rgba(0, 78, 178, 0.22);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  position: relative;
-  overflow: hidden;
-}
-
-.blueprint-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
-  padding-bottom: 14px;
-  margin-bottom: 14px;
-}
-
-.blueprint-col-title {
-  font-size: 1.85rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-}
-
-.blueprint-rows-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.blueprint-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  border-radius: 12px;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.blueprint-row:hover {
-  background: rgba(255, 255, 255, 0.18);
-  transform: translateX(4px);
-}
-
-.blueprint-time {
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.2px;
-}
-
-.blueprint-class {
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.2px;
-}
-
-.blueprint-footnote {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.25);
-  font-style: italic;
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.92);
-  text-align: center;
-  font-weight: 500;
+/* Schedule table */
+.schedule-table-row {
+  transition: background-color 0.2s ease;
 }
 
 .schedule-table-row:hover {
   background-color: #f8fafc;
+}
+
+.faq-accordion :deep(.v-expansion-panel::after) {
+  display: none;
 }
 
 .overflow-x-auto {

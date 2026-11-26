@@ -161,10 +161,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { languages, placementTests, programs } from '../data/wordishData'
+import { languages, placementTests } from '../data/wordishData'
+import { useClassesStore } from '../stores/classes'
 import { useCartStore } from '../stores/cart'
 
 const router = useRouter()
+const classesStore = useClassesStore()
 const cartStore = useCartStore()
 
 const availableLangs = languages
@@ -202,7 +204,7 @@ const scoreResult = computed(() => {
     if (userAnswers.value[idx] === q.correct) correct++
   })
 
-  const langPrograms = programs.filter(p => p.languageId === selectedLang.value)
+  const langPrograms = classesStore.activePrograms.filter(p => p.languageId === selectedLang.value)
   const recommendedCourse = correct >= 2 && langPrograms.length > 1
     ? langPrograms[1]
     : langPrograms[0]

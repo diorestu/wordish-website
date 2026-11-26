@@ -252,14 +252,16 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { useCartStore } from '../stores/cart'
-import { programs } from '../data/wordishData'
+import { useClassesStore } from '../stores/classes'
 import CheckoutDialog from '../components/CheckoutDialog.vue'
 
 const cartStore = useCartStore()
+const classesStore = useClassesStore()
 
 // If cart empty, default to the popular Korean EPS program
-if (cartStore.items.length === 0) {
-  cartStore.items.push({ ...programs[2] })
+if (cartStore.items.length === 0 && classesStore.activePrograms.length > 0) {
+  const defaultProgram = classesStore.activePrograms[2] || classesStore.activePrograms[0]
+  cartStore.items.push({ ...defaultProgram })
   cartStore.applyVoucher('RUANGJUARA')
 }
 

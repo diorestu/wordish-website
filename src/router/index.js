@@ -38,6 +38,13 @@ const routes = [
     meta: { title: 'Pendaftaran Kelas & Pembayaran - LPK Wordish' }
   },
   {
+    path: '/admin',
+    alias: '/admin/kelas',
+    name: 'AdminClasses',
+    component: () => import('../views/AdminClassesView.vue'),
+    meta: { title: 'Admin Panel Kelola Kelas - LPK Wordish' }
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/'
   }

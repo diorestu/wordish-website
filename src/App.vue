@@ -22,10 +22,18 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import AppNavbar from './components/AppNavbar.vue'
 import AppFooter from './components/AppFooter.vue'
 import AuthDialog from './components/AuthDialog.vue'
 import CartDrawer from './components/CartDrawer.vue'
+import { useClassesStore } from './stores/classes'
+
+const classesStore = useClassesStore()
+
+onMounted(() => {
+  classesStore.fetchAll()
+})
 </script>
 
 <style>

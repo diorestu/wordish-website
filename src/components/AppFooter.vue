@@ -90,6 +90,7 @@
             <li class="mb-2"><router-link to="/elearning" class="footer-link">Portal E-Learning</router-link></li>
             <li class="mb-2"><router-link to="/books" class="footer-link">Buku Pelajaran Resmi</router-link></li>
             <li class="mb-2"><a href="#jadwal" class="footer-link">Jadwal Kelas (Senin - Sabtu)</a></li>
+            <li class="mb-2"><router-link to="/admin" class="footer-link">Admin Kelola Kelas</router-link></li>
           </ul>
         </v-col>
 

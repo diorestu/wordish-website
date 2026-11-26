@@ -153,11 +153,12 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { programs } from '../data/wordishData'
+import { useClassesStore } from '../stores/classes'
 import { useCartStore } from '../stores/cart'
 
 const route = useRoute()
 const router = useRouter()
+const classesStore = useClassesStore()
 const cartStore = useCartStore()
 
 const searchQuery = ref('')
@@ -170,7 +171,7 @@ onMounted(() => {
 })
 
 const filteredPrograms = computed(() => {
-  return programs.filter(item => {
+  return classesStore.activePrograms.filter(item => {
     const matchesSearch = !searchQuery.value ||
       item.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
       item.summary.toLowerCase().includes(searchQuery.value.toLowerCase()) ||

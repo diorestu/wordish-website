@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Main Navigation Bar with #004EB2 Background -->
-    <v-app-bar flat height="70" class="border-b" color="#004EB2">
+    <v-app-bar flat height="70" class="navbar-shadow" color="#004EB2">
       <v-container class="d-flex align-center pa-0 max-width-xl px-4 px-sm-6">
         <!-- Logo (White Variant on #004EB2) -->
         <router-link to="/" class="d-flex align-center text-decoration-none mr-6">
@@ -23,6 +23,9 @@
           </v-btn>
           <v-btn to="/tryout" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
             Tes Level
+          </v-btn>
+          <v-btn to="/admin" variant="text" prepend-icon="mdi-shield-crown-outline" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
+            Admin Kelas
           </v-btn>
         </div>
 
@@ -79,6 +82,7 @@
         <v-list-item prepend-icon="mdi-school-outline" title="Program & Format Kelas" to="/products" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-book-open-page-variant-outline" title="Buku Pelajaran (Shopee/Tokopedia)" to="/books" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-clipboard-check-outline" title="Tes Level Gratis" to="/tryout" @click="mobileDrawer = false"></v-list-item>
+        <v-list-item prepend-icon="mdi-shield-crown-outline" title="Admin Kelola Kelas" to="/admin" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-cart-outline" title="Keranjang" @click="cartStore.drawerOpen = true; mobileDrawer = false"></v-list-item>
 
         <v-divider class="my-3"></v-divider>
@@ -119,6 +123,10 @@ const mobileDrawer = ref(false)
 </script>
 
 <style scoped>
+.navbar-shadow {
+  box-shadow: 0 4px 12px rgba(0, 20, 60, 0.16) !important;
+}
+
 .wordish-logo-img {
   object-fit: contain;
   display: block;
