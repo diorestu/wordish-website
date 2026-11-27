@@ -58,7 +58,7 @@
               size="small"
               variant="tonal"
               color="white"
-              href="https://wa.me/6287864734308?text=Halo%20Wordish"
+              href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kursus%20[KODE:FOOTER-ICON]"
               target="_blank"
               title="WhatsApp: 0878-6473-4308"
             >
@@ -118,7 +118,7 @@
           <!-- WhatsApp -->
           <div class="text-caption text-grey-lighten-2 mb-2 d-flex align-center">
             <v-icon icon="mdi-whatsapp" size="18" color="success" class="mr-2"></v-icon>
-            <a href="https://wa.me/6287864734308?text=Halo%20Wordish" target="_blank" class="footer-link">
+            <a href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20tanya%20info%20kelas%20[KODE:FOOTER-LINK]" target="_blank" class="footer-link">
               0878-6473-4308
             </a>
           </div>
@@ -134,7 +134,7 @@
             size="small"
             class="text-none font-weight-bold"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas%20[KODE:FOOTER-BTN]"
             target="_blank"
           >
             Chat WhatsApp Sekarang

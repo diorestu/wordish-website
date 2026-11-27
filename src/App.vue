@@ -39,7 +39,7 @@
         color="#25D366"
         size="large"
         class="whatsapp-fab text-white shadow-xl"
-        href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan%20bahasa"
+        href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan%20bahasa%20[KODE:FLOAT-WA]"
         target="_blank"
         title="Chat WhatsApp Wordish"
         aria-label="Chat WhatsApp"

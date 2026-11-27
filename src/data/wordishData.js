@@ -447,7 +447,7 @@ export const officialPricingSystem = {
   }
 }
 
-// KATALOG BUKU PELAJARAN (LINKED TO SHOPEE & TOKOPEDIA)
+// KATALOG BUKU PELAJARAN (LINKED TO TOKOPEDIA / TIKTOK SHOP)
 export const books = [
   {
     id: 'book-junior-coursebook',
@@ -461,7 +461,6 @@ export const books = [
     price: 150000,
     coverImage: '/junior-coursebook.png',
     description: 'Paket coursebook Wordish Junior (6 buku) untuk siswa SD. Materi bahasa Inggris bertahap, latihan soal terstruktur, dan aktivitas interaktif menyenangkan.',
-    shopeeUrl: 'https://shopee.co.id/search?keyword=wordish%20junior%20coursebook',
     tokopediaUrl: 'https://vt.tokopedia.com/t/ZS9P4T45rc6KB-BoQL5/'
   },
   {
@@ -476,7 +475,6 @@ export const books = [
     price: 140000,
     coverImage: '/teen-coursebook.png',
     description: 'Paket coursebook Wordish Teens (3 buku) untuk siswa SMP. Pendalaman grammar, pengayaan vocabulary, dan percakapan kontekstual sehari-hari.',
-    shopeeUrl: 'https://shopee.co.id/search?keyword=wordish%20teens%20coursebook',
     tokopediaUrl: 'https://vt.tokopedia.com/t/ZS9P4TWNd9BV3-vHtN4/'
   }
 ]

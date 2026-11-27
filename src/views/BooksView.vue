@@ -2,60 +2,21 @@
   <div class="py-10 bg-grey-lighten-5 min-vh-100">
     <v-container class="max-width-xl px-4 px-sm-6">
       <!-- Breadcrumb & Header -->
-      <div class="mb-8">
+      <div class="mb-10 text-center">
         <v-breadcrumbs
           :items="[
             { title: 'Beranda', disabled: false, href: '/' },
             { title: 'Buku Pelajaran Resmi', disabled: true }
           ]"
-          class="pa-0 mb-2 text-caption"
+          class="pa-0 mb-3 justify-center text-caption"
         ></v-breadcrumbs>
-        <h1 class="text-h4 font-weight-bold text-secondary mb-2">
+        <h1 class="text-h4 text-sm-h3 font-weight-bold text-secondary mb-3">
           Buku Pelajaran Bahasa Asing Resmi Wordish
         </h1>
-        <p class="text-body-1 text-grey-darken-1 max-width-md">
-          Modul cetak fisik berkualitas tinggi yang disusun oleh instruktur ahli Wordish. Dapatkan sekarang melalui Official Store kami di <strong>Shopee</strong> dan <strong>Tokopedia</strong>.
+        <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
+          Modul cetak fisik berkualitas tinggi yang disusun langsung oleh instruktur ahli Wordish. Dapatkan sekarang melalui Official Store kami di <strong>Tokopedia / TikTok Shop</strong>.
         </p>
       </div>
-
-      <!-- Marketplace Guarantee Strip -->
-      <v-card class="pa-4 rounded-2xl border bg-white shadow-sm mb-10">
-        <v-row align="center" justify="space-between">
-          <v-col cols="12" md="7">
-            <div class="d-flex align-center ga-3">
-              <v-icon icon="mdi-shield-check" color="success" size="32"></v-icon>
-              <div>
-                <div class="font-weight-bold text-body-1 text-secondary">
-                  Jaminan 100% Produk Original & Ready Stock
-                </div>
-                <div class="text-caption text-grey">
-                  Pengiriman ke seluruh Indonesia dengan packing aman bubble wrap & bonus akses audio listening.
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="5" class="d-flex justify-md-end align-center ga-3">
-            <v-btn
-              color="#EE4D2D"
-              class="text-none font-weight-bold text-white"
-              prepend-icon="mdi-shopping"
-              href="https://shopee.co.id"
-              target="_blank"
-            >
-              Kunjungi Toko Shopee
-            </v-btn>
-            <v-btn
-              color="#03AC0E"
-              class="text-none font-weight-bold text-white"
-              prepend-icon="mdi-store"
-              href="https://tokopedia.com"
-              target="_blank"
-            >
-              Kunjungi Tokopedia
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-card>
 
       <!-- Books Cards Grid -->
       <v-row justify="center">
@@ -100,9 +61,9 @@
                   {{ book.description }}
                 </p>
 
-                <!-- Pricing -->
+                <!-- Pricing with font weight +100 (font-weight: 900) -->
                 <div class="d-flex align-baseline ga-2 mb-4">
-                  <span class="text-h5 font-weight-extrabold text-primary">
+                  <span class="text-h5 font-weight-black text-primary" style="font-weight: 900 !important;">
                     {{ formatRupiah(book.price) }}
                   </span>
                   <span class="text-caption text-grey text-decoration-line-through">
@@ -115,26 +76,16 @@
             <!-- Marketplace Buy Buttons -->
             <div class="px-5 pb-5 pt-0 d-flex flex-column ga-2">
               <v-btn
-                color="#EE4D2D"
-                variant="flat"
-                block
-                class="text-none font-weight-bold text-white py-2"
-                prepend-icon="mdi-shopping"
-                :href="book.shopeeUrl"
-                target="_blank"
-              >
-                Beli di Shopee
-              </v-btn>
-              <v-btn
                 color="#03AC0E"
                 variant="flat"
                 block
+                size="large"
                 class="text-none font-weight-bold text-white py-2"
                 prepend-icon="mdi-storefront"
                 :href="book.tokopediaUrl"
                 target="_blank"
               >
-                Beli di Tokopedia
+                Beli di Tokopedia / TikTok Shop
               </v-btn>
             </div>
           </v-card>

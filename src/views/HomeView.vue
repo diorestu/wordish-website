@@ -446,7 +446,7 @@
             Buku Pelajaran Bahasa Asing Resmi Wordish
           </h2>
           <p class="text-body-1 text-grey-darken-1 max-width-md mx-auto">
-            Tersedia dan dapat langsung dipesan melalui Official Store kami di <strong>Shopee</strong> dan <strong>Tokopedia</strong>.
+            Tersedia dan dapat langsung dipesan melalui Official Store kami di <strong>Tokopedia / TikTok Shop</strong>.
           </p>
         </div>
 
@@ -491,7 +491,7 @@
                   </p>
 
                   <div class="d-flex align-baseline ga-2 mb-2">
-                    <span class="text-h6 font-weight-extrabold text-primary">
+                    <span class="text-h6 font-weight-black text-primary" style="font-weight: 900 !important;">
                       {{ formatRupiah(book.price) }}
                     </span>
                     <span class="text-caption text-grey text-decoration-line-through">
@@ -504,18 +504,6 @@
               <!-- Action Marketplace Buttons -->
               <div class="px-5 pb-5 pt-0 d-flex flex-column ga-2">
                 <v-btn
-                  color="#EE4D2D"
-                  variant="flat"
-                  block
-                  size="small"
-                  class="text-none font-weight-bold text-white py-2"
-                  prepend-icon="mdi-shopping"
-                  :href="book.shopeeUrl"
-                  target="_blank"
-                >
-                  Beli di Shopee
-                </v-btn>
-                <v-btn
                   color="#03AC0E"
                   variant="flat"
                   block
@@ -525,7 +513,7 @@
                   :href="book.tokopediaUrl"
                   target="_blank"
                 >
-                  Beli di Tokopedia
+                  Beli di Tokopedia / TikTok Shop
                 </v-btn>
               </div>
             </v-card>
@@ -695,7 +683,7 @@
             size="large"
             class="text-none font-weight-bold px-6 shadow-sm"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20jadwal%20dan%20pendaftaran%20kelas"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20jadwal%20dan%20pendaftaran%20kelas%20[KODE:HM-JADWAL]"
             target="_blank"
           >
             Konsultasi Jadwal via WhatsApp
@@ -806,7 +794,7 @@
             size="large"
             class="text-primary font-weight-bold text-none px-8"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan%20[KODE:HM-BANNER]"
             target="_blank"
           >
             Konsultasi WhatsApp
@@ -853,7 +841,7 @@
             size="large"
             class="text-none font-weight-bold text-white shadow-sm"
             prepend-icon="mdi-whatsapp"
-            :href="`https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20sudah%20mendaftarkan%20nomor%20%2B62${heroPhone}%20dan%20ingin%20klaim%20Diskon%20Spesial%2030%25%20Kode%20WORDISH30`"
+            :href="`https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20sudah%20mendaftarkan%20nomor%20%2B62${heroPhone}%20dan%20ingin%20klaim%20Diskon%20Spesial%2030%25%20Kode%20WORDISH30%20[KODE:HM-PROMO30]`"
             target="_blank"
             @click="discountDialog = false"
           >
@@ -1017,7 +1005,7 @@ function scrollToPrograms() {
 }
 
 function bookScheduleSlot(slot) {
-  const msg = `Halo Wordish, saya ingin konsultasi/booking jadwal kelas ${slot.className} jam ${slot.time} (${slot.days}). Mohon info ketersediaan slotnya.`
+  const msg = `Halo Wordish, saya ingin konsultasi/booking jadwal kelas ${slot.className} jam ${slot.time} (${slot.days}). Mohon info ketersediaan slotnya. [KODE:HM-SLOT]`
   window.open(`https://wa.me/6287864734308?text=${encodeURIComponent(msg)}`, '_blank')
 }
 

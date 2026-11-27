@@ -194,9 +194,6 @@
           <v-btn to="/books" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
             Buku Pelajaran
           </v-btn>
-          <v-btn to="/tryout" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
-            Tes Level
-          </v-btn>
           <v-btn to="/about" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
             Tentang Kami
           </v-btn>
@@ -231,9 +228,9 @@
 
               <div class="d-flex flex-column ga-3 mb-5">
                 <a
-                  href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas%20bahasa%20asing"
+                  href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas%20bahasa%20asing%20[KODE:NAV-MODAL]"
                   target="_blank"
-                  class="contact-option pa-3 rounded-2xl border text-decoration-none d-flex align-center ga-3"
+                  class="contact-option pa-3 rounded-2xl text-decoration-none d-flex align-center ga-3"
                 >
                   <v-avatar color="green-lighten-5" size="42">
                     <v-icon icon="mdi-whatsapp" color="#16A34A" size="24"></v-icon>
@@ -247,7 +244,7 @@
 
                 <a
                   href="mailto:wordish.id@gmail.com"
-                  class="contact-option pa-3 rounded-2xl border text-decoration-none d-flex align-center ga-3"
+                  class="contact-option pa-3 rounded-2xl text-decoration-none d-flex align-center ga-3"
                 >
                   <v-avatar color="amber-lighten-5" size="42">
                     <v-icon icon="mdi-email-outline" color="#D97706" size="22"></v-icon>
@@ -262,7 +259,7 @@
                 <a
                   href="https://instagram.com/wordish.id"
                   target="_blank"
-                  class="contact-option pa-3 rounded-2xl border text-decoration-none d-flex align-center ga-3"
+                  class="contact-option pa-3 rounded-2xl text-decoration-none d-flex align-center ga-3"
                 >
                   <v-avatar color="pink-lighten-5" size="42">
                     <v-icon icon="mdi-instagram" color="#E11D48" size="22"></v-icon>
@@ -274,7 +271,7 @@
                   <v-chip color="pink" size="x-small" variant="tonal" class="font-weight-bold">Follow</v-chip>
                 </a>
 
-                <div class="pa-3 rounded-2xl bg-grey-lighten-5 border d-flex align-center ga-3">
+                <div class="pa-3 rounded-2xl bg-white d-flex align-center ga-3">
                   <v-avatar color="grey-lighten-4" size="42">
                     <v-icon icon="mdi-clock-outline" color="grey-darken-2" size="22"></v-icon>
                   </v-avatar>
@@ -289,7 +286,7 @@
                 block
                 color="primary"
                 class="text-none font-weight-bold text-white"
-                href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
+                href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas%20[KODE:NAV-MODAL-CTA]"
                 target="_blank"
                 prepend-icon="mdi-whatsapp"
               >
@@ -297,6 +294,11 @@
               </v-btn>
             </v-card>
           </v-dialog>
+
+          <!-- Menu Tes Level (Pindah paling kanan setelah Kontak) -->
+          <v-btn to="/tryout" variant="text" class="text-none font-weight-medium text-body-2 text-white nav-link-btn">
+            Tes Level
+          </v-btn>
         </div>
 
         <v-spacer></v-spacer>
@@ -324,7 +326,7 @@
             color="white"
             class="text-none font-weight-bold px-3 d-none d-sm-flex"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20tanya%20info%20pendaftaran%20kelas%20bahasa%20asing"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20tanya%20info%20pendaftaran%20kelas%20bahasa%20asing%20[KODE:NAV-KONSUL]"
             target="_blank"
           >
             Konsultasi
@@ -366,9 +368,9 @@
         </v-list-group>
 
         <v-list-item prepend-icon="mdi-book-open-page-variant-outline" title="Buku Pelajaran" to="/books" @click="mobileDrawer = false"></v-list-item>
-        <v-list-item prepend-icon="mdi-clipboard-check-outline" title="Tes Level Gratis" to="/tryout" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-information-outline" title="Tentang Kami" to="/about" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-phone-outline" title="Kontak" @click="contactDialogOpen = true; mobileDrawer = false"></v-list-item>
+        <v-list-item prepend-icon="mdi-clipboard-check-outline" title="Tes Level Gratis" to="/tryout" @click="mobileDrawer = false"></v-list-item>
         <v-list-item prepend-icon="mdi-cart-outline" title="Keranjang" @click="cartStore.drawerOpen = true; mobileDrawer = false"></v-list-item>
 
         <v-divider class="my-3"></v-divider>
@@ -380,7 +382,7 @@
             variant="outlined"
             prepend-icon="mdi-whatsapp"
             class="text-none font-weight-bold mb-2"
-            href="https://wa.me/6287864734308"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20pendaftaran%20kelas%20[KODE:MBL-DRAWER]"
             target="_blank"
           >
             Konsultasi WhatsApp
@@ -444,7 +446,7 @@ const contactDialogOpen = ref(false)
 
 .contact-option {
   transition: all 0.2s ease;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
 }
 
 .contact-option:hover {

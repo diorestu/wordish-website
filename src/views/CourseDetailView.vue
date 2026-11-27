@@ -27,13 +27,6 @@
 
           <v-row align="center">
             <v-col cols="12" md="7" class="pr-md-8">
-              <div class="d-flex align-center ga-2 mb-3">
-                <v-chip color="white" size="small" variant="flat" :style="{ color: service.color }" class="font-weight-bold">
-                  {{ service.shortBadge }}
-                </v-chip>
-                <span class="text-caption text-white opacity-90">Format Pelatihan Resmi Wordish</span>
-              </div>
-
               <h1 class="text-h4 text-sm-h3 font-weight-extrabold mb-3 text-white letter-spacing-tight">
                 {{ service.name }}
               </h1>
@@ -42,24 +35,11 @@
                 {{ service.fullOverview }}
               </p>
 
-              <!-- Quick spec chips -->
-              <div class="d-flex flex-wrap ga-2 mb-6">
-                <v-chip color="white" variant="outlined" size="small" prepend-icon="mdi-account-multiple">
-                  {{ service.person }}
-                </v-chip>
-                <v-chip color="white" variant="outlined" size="small" prepend-icon="mdi-clock-outline">
-                  {{ service.schedule }}
-                </v-chip>
-                <v-chip color="white" variant="outlined" size="small" prepend-icon="mdi-map-marker-outline">
-                  {{ service.location }}
-                </v-chip>
-              </div>
-
               <div class="d-flex flex-wrap ga-3">
                 <v-btn
                   size="large"
-                  color="accent"
-                  class="text-none font-weight-bold text-white px-6 shadow-sm"
+                  color="#002D62"
+                  class="text-none font-weight-bold text-white px-6 shadow-sm navy-cta-btn"
                   prepend-icon="mdi-whatsapp"
                   :href="consultationWaLink"
                   target="_blank"
@@ -102,72 +82,16 @@
       <!-- 02. MAIN CONTENT & SIDEBAR -->
       <v-container class="max-width-xl px-4 px-sm-6 py-8 py-md-12">
         <v-row>
-          <!-- Left Column: Curriculum, Keunggulan, Fasilitas -->
+          <!-- Left Column: Pricing -->
           <v-col cols="12" lg="8">
-            <!-- Box: Cocok Untuk Siapa -->
-            <v-card class="pa-6 rounded-3xl border bg-white mb-8 shadow-sm">
-              <div class="d-flex align-center ga-3 mb-3">
-                <v-avatar :color="`${service.color}15`" size="44">
-                  <v-icon icon="mdi-account-check" :color="service.color" size="24"></v-icon>
-                </v-avatar>
-                <div>
-                  <h3 class="text-h6 font-weight-bold text-secondary mb-0">Format Ini Paling Cocok Untuk:</h3>
-                  <div class="text-caption text-grey">Target peserta dan efektivitas pembelajaran</div>
-                </div>
-              </div>
-              <p class="text-body-1 text-grey-darken-1 mb-0" style="line-height: 1.7;">
-                {{ service.idealFor }}
-              </p>
-            </v-card>
-
-            <!-- Box: Alur Pembelajaran & Kurikulum -->
-            <div class="mb-8">
-              <div class="d-flex align-center justify-space-between mb-4">
-                <div>
-                  <h2 class="text-h5 font-weight-bold text-secondary mb-1">Tahapan &amp; Silabus Pembelajaran</h2>
-                  <p class="text-caption text-grey mb-0">Struktur materi terukur untuk hasil belajar optimal</p>
-                </div>
-                <v-chip color="primary" size="small" variant="tonal" class="font-weight-bold">
-                  {{ service.durationTotal }}
-                </v-chip>
-              </div>
-
-              <div class="d-flex flex-column ga-4">
-                <v-card
-                  v-for="(step, sIdx) in service.curriculum"
-                  :key="sIdx"
-                  class="pa-5 rounded-2xl border bg-white shadow-sm"
-                >
-                  <div class="d-flex align-start ga-4">
-                    <div
-                      class="stage-badge rounded-xl pa-2 text-center flex-shrink-0"
-                      :style="{ backgroundColor: `${service.color}15`, color: service.color }"
-                    >
-                      <div class="text-caption font-weight-bold text-uppercase">{{ step.week }}</div>
-                    </div>
-                    <div>
-                      <div class="text-subtitle-1 font-weight-bold text-secondary mb-1">{{ step.title }}</div>
-                      <p class="text-body-2 text-grey-darken-1 mb-0" style="line-height: 1.6;">{{ step.desc }}</p>
-                    </div>
-                  </div>
-                </v-card>
-              </div>
-            </div>
-
             <!-- Box: Tabel Sistem Harga Resmi Berdasarkan Bahasa -->
             <v-card class="pa-6 rounded-3xl border bg-white mb-8 shadow-sm">
               <div class="d-flex align-center justify-space-between flex-wrap ga-2 mb-4">
                 <div>
-                  <h2 class="text-h5 font-weight-bold text-secondary mb-1">
-                    Sistem &amp; Rincian Harga Resmi
+                  <h2 class="text-h5 font-weight-bold text-secondary mb-0">
+                    Rincian Biaya
                   </h2>
-                  <p class="text-caption text-grey mb-0">
-                    Transparan, terjangkau, dan dapat disesuaikan dengan kebutuhan belajar Anda
-                  </p>
                 </div>
-                <v-chip color="success" size="small" variant="flat" class="font-weight-bold">
-                  Update Resmi 2026
-                </v-chip>
               </div>
 
               <!-- Filter Bahasa pada Rincian Harga -->
@@ -194,7 +118,7 @@
               <v-window v-model="pricingLangTab">
                 <!-- Tab Mandarin -->
                 <v-window-item value="mandarin">
-                  <v-table hover class="rounded-xl border overflow-hidden">
+                  <v-table hover class="rounded-0 overflow-hidden">
                     <thead class="bg-grey-lighten-4">
                       <tr>
                         <th class="font-weight-bold text-secondary">Layanan &amp; Lokasi</th>
@@ -205,9 +129,8 @@
                     </thead>
                     <tbody>
                       <tr
-                        v-for="(rate, rIdx) in officialPricingSystem.mandarin.rates"
+                        v-for="(rate, rIdx) in filteredRates.mandarin"
                         :key="rIdx"
-                        :class="{ 'bg-amber-lighten-5': isCurrentService(rate.service) }"
                       >
                         <td class="py-3">
                           <div class="font-weight-bold text-secondary">{{ rate.service }}</div>
@@ -225,13 +148,18 @@
                           </v-chip>
                         </td>
                       </tr>
+                      <tr v-if="filteredRates.mandarin.length === 0">
+                        <td colspan="4" class="text-center py-6 text-grey text-caption">
+                          Tidak ada daftar harga {{ service.name }} untuk Bahasa Mandarin.
+                        </td>
+                      </tr>
                     </tbody>
                   </v-table>
                 </v-window-item>
 
                 <!-- Tab English -->
                 <v-window-item value="english">
-                  <v-table hover class="rounded-xl border overflow-hidden">
+                  <v-table hover class="rounded-0 overflow-hidden">
                     <thead class="bg-grey-lighten-4">
                       <tr>
                         <th class="font-weight-bold text-secondary">Layanan &amp; Lokasi</th>
@@ -242,9 +170,8 @@
                     </thead>
                     <tbody>
                       <tr
-                        v-for="(rate, rIdx) in officialPricingSystem.english.rates"
+                        v-for="(rate, rIdx) in filteredRates.english"
                         :key="rIdx"
-                        :class="{ 'bg-amber-lighten-5': isCurrentService(rate.service) }"
                       >
                         <td class="py-3">
                           <div class="font-weight-bold text-secondary">{{ rate.service }}</div>
@@ -262,13 +189,18 @@
                           </v-chip>
                         </td>
                       </tr>
+                      <tr v-if="filteredRates.english.length === 0">
+                        <td colspan="4" class="text-center py-6 text-grey text-caption">
+                          Tidak ada daftar harga {{ service.name }} untuk Bahasa Inggris.
+                        </td>
+                      </tr>
                     </tbody>
                   </v-table>
                 </v-window-item>
 
                 <!-- Tab Korea -->
                 <v-window-item value="korean">
-                  <v-table hover class="rounded-xl border overflow-hidden">
+                  <v-table hover class="rounded-0 overflow-hidden">
                     <thead class="bg-grey-lighten-4">
                       <tr>
                         <th class="font-weight-bold text-secondary">Layanan &amp; Lokasi</th>
@@ -279,9 +211,8 @@
                     </thead>
                     <tbody>
                       <tr
-                        v-for="(rate, rIdx) in officialPricingSystem.korean.rates"
+                        v-for="(rate, rIdx) in filteredRates.korean"
                         :key="rIdx"
-                        :class="{ 'bg-amber-lighten-5': isCurrentService(rate.service) }"
                       >
                         <td class="py-3">
                           <div class="font-weight-bold text-secondary">{{ rate.service }}</div>
@@ -299,63 +230,15 @@
                           </v-chip>
                         </td>
                       </tr>
+                      <tr v-if="filteredRates.korean.length === 0">
+                        <td colspan="4" class="text-center py-6 text-grey text-caption">
+                          Tidak ada daftar harga {{ service.name }} untuk Bahasa Korea.
+                        </td>
+                      </tr>
                     </tbody>
                   </v-table>
                 </v-window-item>
               </v-window>
-            </v-card>
-
-            <!-- Box: Fasilitas yang Didapatkan -->
-            <v-card class="pa-6 rounded-3xl border bg-white mb-8 shadow-sm">
-              <h2 class="text-h5 font-weight-bold text-secondary mb-4">Fasilitas Lengkap Peserta</h2>
-              <v-row>
-                <v-col
-                  v-for="(facility, fIdx) in service.facilities"
-                  :key="fIdx"
-                  cols="12"
-                  sm="6"
-                >
-                  <div class="d-flex align-start ga-3">
-                    <v-icon icon="mdi-check-decagram" color="teal" size="20" class="mt-0-5 flex-shrink-0"></v-icon>
-                    <span class="text-body-2 text-grey-darken-2" style="line-height: 1.5;">{{ facility }}</span>
-                  </div>
-                </v-col>
-              </v-row>
-            </v-card>
-
-            <!-- Box: Pilihan Bahasa yang Tersedia -->
-            <v-card class="pa-6 rounded-3xl border bg-white shadow-sm">
-              <h2 class="text-h5 font-weight-bold text-secondary mb-2">Bahasa yang Tersedia di Format Ini</h2>
-              <p class="text-body-2 text-grey mb-4">Kamu dapat memilih format {{ service.name }} untuk bahasa berikut:</p>
-              <div class="d-flex flex-wrap ga-3">
-                <v-btn
-                  to="/products?lang=mandarin"
-                  variant="outlined"
-                  color="red-darken-1"
-                  class="text-none font-weight-bold rounded-xl"
-                  prepend-icon="mdi-translate"
-                >
-                  Bahasa Mandarin (HSK &amp; Kerja)
-                </v-btn>
-                <v-btn
-                  to="/products?lang=korean"
-                  variant="outlined"
-                  color="blue-darken-2"
-                  class="text-none font-weight-bold rounded-xl"
-                  prepend-icon="mdi-bullseye-arrow"
-                >
-                  Bahasa Korea (EPS-TOPIK)
-                </v-btn>
-                <v-btn
-                  to="/products?lang=english"
-                  variant="outlined"
-                  color="amber-darken-3"
-                  class="text-none font-weight-bold rounded-xl"
-                  prepend-icon="mdi-account-voice"
-                >
-                  Bahasa Inggris (Speaking &amp; TOEFL)
-                </v-btn>
-              </div>
             </v-card>
           </v-col>
 
@@ -397,8 +280,8 @@
                 <v-btn
                   block
                   size="large"
-                  color="accent"
-                  class="text-none font-weight-bold text-white mb-3 shadow-sm"
+                  color="#002D62"
+                  class="text-none font-weight-bold text-white mb-3 shadow-sm navy-cta-btn"
                   prepend-icon="mdi-whatsapp"
                   :href="consultationWaLink"
                   target="_blank"
@@ -417,9 +300,9 @@
                   Ikuti Tes Level Online Gratis
                 </v-btn>
 
-                <div class="pa-3 rounded-2xl bg-grey-lighten-5 border text-center">
-                  <div class="d-flex align-center justify-center ga-1 text-caption text-grey-darken-2 font-weight-medium">
-                    <v-icon icon="mdi-shield-check" color="teal" size="18"></v-icon>
+                <div class="pa-2 px-3 rounded-2xl bg-grey-lighten-5 border text-center">
+                  <div class="d-flex align-center justify-center ga-1 text-caption font-italic text-grey-darken-2" style="font-size: 0.72rem !important; white-space: nowrap;">
+                    <v-icon icon="mdi-shield-check" color="teal" size="15" class="flex-shrink-0"></v-icon>
                     <span>Garansi tutor tersertifikasi &amp; berpengalaman</span>
                   </div>
                 </div>
@@ -490,10 +373,34 @@ const formatRupiah = (val) => {
 // Deteksi apakah baris rate cocok dengan format layanan yang sedang dilihat
 const isCurrentService = (rateServiceName) => {
   if (!service.value) return false
-  const sName = service.value.name.toLowerCase()
-  const rName = rateServiceName.toLowerCase()
+  const sId = (service.value.id || '').toLowerCase()
+  const sName = (service.value.name || '').toLowerCase()
+  const rName = (rateServiceName || '').toLowerCase()
+
+  if (sId === 'regular') {
+    return rName.includes('regular')
+  }
+  if (sId === 'semi-private') {
+    return rName.includes('semi-private') || rName.includes('semi private')
+  }
+  if (sId === 'private') {
+    // Private tapi bukan semi-private
+    return (rName.includes('private') || rName.includes('privat')) && !rName.includes('semi')
+  }
+  if (sId === 'online') {
+    return rName.includes('online')
+  }
   return rName.includes(sName) || sName.includes(rName)
 }
+
+// Hanya tampilkan list harga sesuai format produk yang sedang aktif/dipilih
+const filteredRates = computed(() => {
+  return {
+    mandarin: officialPricingSystem.mandarin.rates.filter(rate => isCurrentService(rate.service)),
+    english: officialPricingSystem.english.rates.filter(rate => isCurrentService(rate.service)),
+    korean: officialPricingSystem.korean.rates.filter(rate => isCurrentService(rate.service))
+  }
+})
 
 // Link WhatsApp konsultasi terisi pesan dinamis
 const consultationWaLink = computed(() => {
@@ -525,5 +432,18 @@ const consultationWaLink = computed(() => {
 .other-service-item:hover {
   background-color: #f0f4ff;
   transform: translateX(3px);
+}
+
+.navy-cta-btn {
+  background-color: #002D62 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 45, 98, 0.3) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.navy-cta-btn:hover {
+  background-color: #001f44 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 45, 98, 0.45) !important;
 }
 </style>
