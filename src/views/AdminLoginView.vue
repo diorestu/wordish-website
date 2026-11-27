@@ -6,7 +6,7 @@
           <v-card class="rounded-3xl pa-6 pa-sm-8 border bg-white shadow-sm">
             <div class="text-center mb-6">
               <img
-                src="/wordish-logo.jpg"
+                src="/wordish-logo.webp"
                 alt="Wordish Logo"
                 height="48"
                 class="mx-auto mb-3 d-block"

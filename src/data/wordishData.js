@@ -35,7 +35,7 @@ export const languages = [
   }
 ]
 
-// 4 FORMAT LAYANAN KELAS WORDISH
+// 4 FORMAT LAYANAN KELAS WORDISH (DETAIL SERVICES)
 export const classModes = [
   {
     id: 'regular',
@@ -44,16 +44,54 @@ export const classModes = [
     shortBadge: 'Maks. 6 Orang',
     icon: 'mdi-account-group',
     color: '#004EB2',
-    bannerImage: '/mode-private.jpg',
+    bannerImage: '/mode-private.webp',
+    heroImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
     person: 'Grup (maks. 6 orang)',
     schedule: 'Mengikuti jadwal yang tersedia',
     location: 'Khusus di Wordish Center',
+    priceStarting: 500000,
+    priceNote: 'per bulan (8x pertemuan)',
+    durationTotal: '2-3 Bulan per Level (24 Sesi)',
+    sessionLength: '90 Menit / Pertemuan',
+    idealFor: 'Pelajar, mahasiswa, dan individu yang menyukai diskusi aktif, bertukar pengalaman, dan belajar bersama teman sekelas dengan biaya paling terjangkau.',
     desc: 'Belajar interaktif bersama teman sekelas dengan kuota terbatas agar pendampingan tutor tetap optimal.',
+    fullOverview: 'Regular Class di Wordish dirancang untuk menciptakan lingkungan belajar yang dinamis, interaktif, dan penuh semangat kompetitif positif. Dengan membatasi jumlah murid maksimal 6 orang per kelas, tutor kami dapat memantau pelafalan nada, pemahaman tata bahasa, serta keaktifan berbicara setiap peserta secara individual tanpa mengorbankan keseruan belajar dalam kelompok.',
     highlights: [
       'Grup kecil kompak & kompetitif positif',
       'Kurikulum terstruktur per level',
       'Fasilitas ruang multimedia Wordish Center'
-    ]
+    ],
+    curriculum: [
+      {
+        week: 'Minggu 1 - 2',
+        title: 'Fondasi Bahasa & Pengucapan Alami',
+        desc: 'Penguasaan sistem fonetik (Pinyin / Hangeul / Phonics), pelafalan artikulasi dasar, dan perkenalan diri yang luwes.'
+      },
+      {
+        week: 'Minggu 3 - 5',
+        title: 'Tata Bahasa Esensial & Percakapan Harian',
+        desc: 'Konstruksi kalimat praktis, kosakata sehari-hari (belanja, arah, waktu, hobi), serta latihan dialog berpasangan interaktif.'
+      },
+      {
+        week: 'Minggu 6 - 8',
+        title: 'Penerapan Praktis & Diskusi Kelompok',
+        desc: 'Studi kasus simulasi situasi nyata (pesan makanan, negosiasi, presentasi singkat), serta latihan mendengar (listening).'
+      },
+      {
+        week: 'Minggu 9 - 10',
+        title: 'Evaluasi Komprehensif & Sertifikasi',
+        desc: 'Ujian evaluasi tertulis dan tes percakapan lisan 1-on-1 bersama tutor, diakhiri dengan penerbitan sertifikat kelulusan resmi.'
+      }
+    ],
+    facilities: [
+      'Ruang kelas ber-AC dengan layar multimedia HD & sound system audio listening',
+      'Buku modul cetak resmi Wordish + lembar latihan berkala',
+      'Akses gratis ke portal Video E-Learning Wordish seumur hidup',
+      'Grup diskusi WhatsApp kelas bersama tutor pendamping',
+      'Sertifikat kelulusan fisik & digital ber-SK Kemenaker/Diknas',
+      'Free refill air minum, kopi, dan camilan di student lounge'
+    ],
+    availableLanguages: ['Bahasa Mandarin', 'Bahasa Korea', 'Bahasa Inggris']
   },
   {
     id: 'semi-private',
@@ -62,16 +100,54 @@ export const classModes = [
     shortBadge: '2–3 Orang',
     icon: 'mdi-account-multiple',
     color: '#0D9488',
-    bannerImage: '/mode-home.jpg',
+    bannerImage: '/mode-home.webp',
+    heroImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
     person: 'Mini Grup (2–3 orang)',
     schedule: 'Fleksibel (menyesuaikan murid)',
     location: 'Wordish Center / Home Visit / Online',
+    priceStarting: 200000,
+    priceNote: 'per pertemuan (min. 10x pertemuan)',
+    durationTotal: 'Fleksibel (Paket 16 - 24 Sesi)',
+    sessionLength: '90 - 120 Menit / Pertemuan',
+    idealFor: 'Sahabat, rekan sekantor, pasangan, atau anggota keluarga yang ingin belajar bersama dalam suasana santai, privat, dan jadwal yang dapat diatur sendiri.',
     desc: 'Cocok untuk belajar bareng sahabat atau rekan kerja dengan ritme dan target yang disepakati bersama.',
+    fullOverview: 'Semi-Private Class memberikan perpaduan sempurna antara fleksibilitas kelas privat dan kehangatan belajar bersama partner pilihanmu. Kamu dan rekan belajarmu dapat menentukan sendiri jadwal pertemuan, memilih tutor favorit, dan bahkan memilih lokasi kelas: ingin datang ke Training Center Wordish, tutor datang ke rumah (Home Visit), atau tatap maya via Zoom interaktif.',
     highlights: [
       'Belajar nyaman bareng partner pilihan',
       'Waktu sesi bebas disepakati bersama tutor',
       'Pilihan lokasi offline maupun virtual'
-    ]
+    ],
+    curriculum: [
+      {
+        week: 'Tahap 1 (Sesi 1 - 6)',
+        title: 'Penyelarasan Level & Target Bersama',
+        desc: 'Pre-assessment kemampuan kedua murid, penyusunan target bersama (misal: persiapan tes kerja, traveling, atau bisnis).'
+      },
+      {
+        week: 'Tahap 2 (Sesi 7 - 14)',
+        title: 'Intensif Kosakata Spesifik & Dialog Nyata',
+        desc: 'Latihan roleplay dua arah sesuai konteks riil, koreksi langsung pengucapan intonasi dan tata bahasa spesifik.'
+      },
+      {
+        week: 'Tahap 3 (Sesi 15 - 20)',
+        title: 'Penerapan Praktis Lintas Topik',
+        desc: 'Studi kasus percakapan profesional, presentasi berpasangan, dan adaptasi nuansa budaya penutur asli.'
+      },
+      {
+        week: 'Tahap 4 (Sesi 21 - 24)',
+        title: 'Final Mastery & Review Target Belajar',
+        desc: 'Simulasi ujian akhir sesuai target (HSK / EPS-TOPIK / IELTS), feedback mendalam dari tutor, dan penerbitan sertifikat.'
+      }
+    ],
+    facilities: [
+      'Kebebasan memilih lokasi: Wordish Center, Home Visit (tutor ke rumah), atau Online Meet',
+      'Jadwal belajar fleksibel, bisa reschedule dengan pemberitahuan tutor H-1',
+      'Materi cetak dibawakan langsung oleh tutor atau dikirim ke rumah',
+      'Pendampingan intensif dengan rasio tutor ke murid sangat rendah (1:2 atau 1:3)',
+      'Free akses E-learning portal Wordish selama masa belajar',
+      'Sertifikat kelulusan resmi Wordish berstandar industri'
+    ],
+    availableLanguages: ['Bahasa Mandarin', 'Bahasa Korea', 'Bahasa Inggris']
   },
   {
     id: 'private',
@@ -80,16 +156,54 @@ export const classModes = [
     shortBadge: '1 on 1',
     icon: 'mdi-account-star',
     color: '#FF6E02',
-    bannerImage: '/mode-private.jpg',
+    bannerImage: '/mode-private.webp',
+    heroImage: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80',
     person: '1 on 1 (Private)',
     schedule: 'Fleksibel (menyesuaikan murid)',
     location: 'Wordish Center / Home Visit / Online',
+    priceStarting: 150000,
+    priceNote: 'per pertemuan / bulan (min. 10x)',
+    durationTotal: 'Fleksibel (Paket 12, 20, atau 30 Sesi)',
+    sessionLength: '90 - 120 Menit / Pertemuan',
+    idealFor: 'Eksekutif, profesional bisnis, ekspatriat, atau calon pekerja ke luar negeri yang membutuhkan percepatan belajar dengan kurikulum khusus 100% personal.',
     desc: 'Pendampingan privat penuh untuk akselerasi belajar tercepat sesuai target karier atau sertifikasi.',
+    fullOverview: 'Private Class adalah layanan pelatihan bahasa paling eksklusif dan terarah di Wordish. 100% perhatian instruktur tercurah khusus untukmu. Kurikulum belajar, materi pengajaran, dan kecepatan kelas dirancang mengikuti kemampuan dan tujuan spesifikmu—mulai dari persiapan ujian sertifikasi kilat, wawancara kerja ekspatriat, hingga negosiasi kontrak bisnis internasional.',
     highlights: [
       'Fokus 100% pada satu murid',
       'Materi & ritme disesuaikan kebutuhan',
       'Bebas atur sesi kapan saja dan di mana saja'
-    ]
+    ],
+    curriculum: [
+      {
+        week: 'Modul Kustom A',
+        title: 'Diagnostic Test & Desain Silabus Pribadi',
+        desc: 'Pemetaan kekuatan dan kelemahan linguistik personal. Penyesuaian silabus khusus sesuai tenggat waktu yang kamu miliki.'
+      },
+      {
+        week: 'Modul Kustom B',
+        title: 'Intensive Drills & Daily Active Immersion',
+        desc: 'Fokus intensif pada target utama: drilling pola kalimat, aksentuasi, listening teknis, atau penulisan dokumen resmi.'
+      },
+      {
+        week: 'Modul Kustom C',
+        title: 'Simulasi Wawancara / Ujian Sertifikasi',
+        desc: 'Mock test berkala dengan sistem skoring resmi. Pelatihan respon spontan menghadapi penutur asli (native speaker).'
+      },
+      {
+        week: 'Modul Kustom D',
+        title: 'Review Akhir & Garansi Pemahaman',
+        desc: 'Uji kompetensi akhir menyeluruh, pendampingan berkas kerja / pendaftaran ujian resmi, dan penerbitan sertifikat.'
+      }
+    ],
+    facilities: [
+      'Pendampingan bimbingan 1-on-1 privat penuh tanpa distraksi',
+      'Bebas memilih format: Ruang Privat VIP Wordish Center, Guru ke Rumah, atau Zoom Live',
+      'Waktu sesi super fleksibel (Pagi, Siang, Sore, atau Malam) termasuk weekend',
+      'Konsultasi langsung dengan konselor kurikulum & laporan progres mingguan',
+      'Modul belajar eksklusif, buku fisik, dan akses VIP E-Learning seumur hidup',
+      'Garansi pengulangan materi jika belum mencapai target kompetensi yang disepakati'
+    ],
+    availableLanguages: ['Bahasa Mandarin', 'Bahasa Korea', 'Bahasa Inggris']
   },
   {
     id: 'online',
@@ -98,18 +212,240 @@ export const classModes = [
     shortBadge: 'Live Virtual',
     icon: 'mdi-laptop-account',
     color: '#7C3AED',
-    bannerImage: '/mode-online.jpg',
+    bannerImage: '/mode-online.webp',
+    heroImage: 'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1200&q=80',
     person: 'Private / Grup Online',
     schedule: 'Fleksibel & Sesi Terjadwal',
     location: 'Online Meet (Zoom / G-Meet)',
+    priceStarting: 150000,
+    priceNote: 'per pertemuan (min. 10x pertemuan)',
+    durationTotal: '2 Bulan (16 - 20 Sesi Virtual)',
+    sessionLength: '75 - 90 Menit / Sesi',
+    idealFor: 'Siswa, mahasiswa, dan pekerja di luar kota/luar negeri yang ingin belajar bahasa asing berkualitas dari kenyamanan rumah tanpa kendala jarak.',
     desc: 'Solusi praktis belajar dari mana saja lewat sesi tatap maya langsung, hemat mobilitas tanpa mengurangi kualitas.',
+    fullOverview: 'Online Class Wordish menghadirkan pengalaman belajar jarak jauh dengan standar interaktivitas tatap muka. Menggunakan platform Zoom Pro / Google Meet berdefinisi tinggi, sesi pengajaran dilengkapi whiteboard interaktif, breakout rooms untuk latihan bicara, serta rekaman video otomatis dari setiap pertemuan yang dapat diputar ulang kapan saja.',
     highlights: [
       'Akses dari mana saja tanpa kendala jarak',
       'Dapat rekaman sesi kelas & modul digital',
       'Tanya jawab langsung dua arah via video call'
-    ]
+    ],
+    curriculum: [
+      {
+        week: 'Tahap 1 (Sesi 1 - 4)',
+        title: 'Virtual Onboarding & Intonasi Alami',
+        desc: 'Penguasaan dasar bahasa secara visual dan interaktif melalui slide multimedia dan materi audio digital interaktif.'
+      },
+      {
+        week: 'Tahap 2 (Sesi 5 - 10)',
+        title: 'Live Speaking Drills & Real-time Feedback',
+        desc: 'Latihan percakapan dua arah via video call dengan koreksi instan pada artikulasi dan susunan kalimat.'
+      },
+      {
+        week: 'Tahap 3 (Sesi 11 - 16)',
+        title: 'Quiz Interaktif & Pemahaman Mendengar (Listening)',
+        desc: 'Latihan soal digital via kuis interaktif berwaktu, pemutaran audio penutur asli, dan diskusi topik hangat terkini.'
+      },
+      {
+        week: 'Tahap 4 (Sesi 17 - 20)',
+        title: 'Ujian Akhir Online & Digital Certificate',
+        desc: 'Evaluasi akhir lewat platform CBT Wordish, review hasil secara komprehensif, dan penerbitan E-Certificate resmi terverifikasi.'
+      }
+    ],
+    facilities: [
+      'Bisa diikuti dari seluruh kota di Indonesia bahkan dari luar negeri',
+      'Rekaman kelas kualitas HD otomatis tersimpan di student dashboard seumur hidup',
+      'Bahan tayang PDF lengkap, ringkasan rumus tata bahasa, dan file audio MP3',
+      'Grup diskusi WhatsApp 24 jam bersama pengajar untuk tanya jawab di luar jam kelas',
+      'Simulasi tes online berbasis komputer (CBT) berkala',
+      'E-Certificate resmi ber-QR Code verifikasi keaslian'
+    ],
+    availableLanguages: ['Bahasa Mandarin', 'Bahasa Korea', 'Bahasa Inggris']
   }
 ]
+
+// ==========================================
+// 3. SISTEM HARGA RESMI WORDISH PER BAHASA
+// ==========================================
+export const officialPricingSystem = {
+  mandarin: {
+    language: 'Bahasa Mandarin',
+    badgeColor: '#DC2626',
+    bgColor: 'red-lighten-5',
+    icon: 'mdi-translate',
+    rates: [
+      {
+        service: 'Regular Class',
+        location: 'Khusus di Wordish Center',
+        format: 'Grup (maks. 6 orang)',
+        price: 500000,
+        priceDisplay: 'Rp 500.000',
+        unit: '/ Bulan',
+        term: '8x pertemuan, 2x dalam 1 minggu',
+        minOrder: 'Bulanan',
+        highlight: false
+      },
+      {
+        service: 'Semi-Private',
+        location: 'di Wordish Center',
+        format: 'Mini Grup (2–3 orang)',
+        price: 200000,
+        priceDisplay: 'Rp 200.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 2.000.000)',
+        highlight: false
+      },
+      {
+        service: 'Private',
+        location: 'di Wordish Center',
+        format: '1 on 1 Eksklusif',
+        price: 150000,
+        priceDisplay: 'Rp 150.000',
+        unit: '/ Bulan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi',
+        highlight: true
+      },
+      {
+        service: 'Semi-Private',
+        location: 'Visit Home (Tutor ke Rumah)',
+        format: 'Mini Grup (2–3 orang)',
+        price: 400000,
+        priceDisplay: 'Rp 400.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 4.000.000)',
+        highlight: false
+      },
+      {
+        service: 'Private',
+        location: 'Visit Home (Tutor ke Rumah)',
+        format: '1 on 1 Eksklusif',
+        price: 250000,
+        priceDisplay: 'Rp 250.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 2.500.000)',
+        highlight: true
+      },
+      {
+        service: 'Online Private',
+        location: 'Online Meet (Zoom / G-Meet)',
+        format: '1 on 1 Virtual',
+        price: 150000,
+        priceDisplay: 'Rp 150.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 1.500.000)',
+        highlight: false
+      }
+    ]
+  },
+  english: {
+    language: 'Bahasa Inggris',
+    badgeColor: '#D97706',
+    bgColor: 'amber-lighten-5',
+    icon: 'mdi-account-voice',
+    rates: [
+      {
+        service: 'Regular Class',
+        location: 'Khusus di Wordish Center',
+        format: 'Grup (maks. 6 orang)',
+        price: 500000,
+        priceDisplay: 'Rp 500.000',
+        unit: '/ Bulan',
+        term: '8x pertemuan, 2x dalam 1 minggu',
+        minOrder: 'Bulanan',
+        highlight: false
+      },
+      {
+        service: 'Semi-Private',
+        location: 'di Wordish Center',
+        format: 'Mini Grup (2–3 orang)',
+        price: 200000,
+        priceDisplay: 'Rp 200.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 2.000.000)',
+        highlight: false
+      },
+      {
+        service: 'Private',
+        location: 'di Wordish Center',
+        format: '1 on 1 Eksklusif',
+        price: 150000,
+        priceDisplay: 'Rp 150.000',
+        unit: '/ Bulan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi',
+        highlight: true
+      },
+      {
+        service: 'Semi-Private',
+        location: 'Visit Home (Tutor ke Rumah)',
+        format: 'Mini Grup (2–3 orang)',
+        price: 300000,
+        priceDisplay: 'Rp 300.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 3.000.000)',
+        highlight: false
+      },
+      {
+        service: 'Private',
+        location: 'Visit Home (Tutor ke Rumah)',
+        format: '1 on 1 Eksklusif',
+        price: 200000,
+        priceDisplay: 'Rp 200.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 2.000.000)',
+        highlight: true
+      },
+      {
+        service: 'Online Private',
+        location: 'Online Meet (Zoom / G-Meet)',
+        format: '1 on 1 Virtual',
+        price: 150000,
+        priceDisplay: 'Rp 150.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 1.500.000)',
+        highlight: false
+      }
+    ]
+  },
+  korean: {
+    language: 'Bahasa Korea',
+    badgeColor: '#2563EB',
+    bgColor: 'blue-lighten-5',
+    icon: 'mdi-bullseye-arrow',
+    rates: [
+      {
+        service: 'Online Private',
+        location: 'Online Meet (Zoom / G-Meet)',
+        format: '1 on 1 Virtual',
+        price: 200000,
+        priceDisplay: 'Rp 200.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 2.000.000)',
+        highlight: true
+      },
+      {
+        service: 'Offline Private',
+        location: 'Wordish Center / Visit Home',
+        format: '1 on 1 Eksklusif',
+        price: 250000,
+        priceDisplay: 'Rp 250.000',
+        unit: '/ pertemuan',
+        term: 'Minimal bayar 10x pertemuan',
+        minOrder: 'Min. 10x Sesi (Total Rp 2.500.000)',
+        highlight: true
+      }
+    ]
+  }
+}
 
 // KATALOG BUKU PELAJARAN (LINKED TO SHOPEE & TOKOPEDIA)
 export const books = [
@@ -172,6 +508,36 @@ export const books = [
     description: 'Dapatkan ketiga buku pelajaran unggulan Wordish dalam 1 paket hemat. Bonus akses latihan audio listening & e-book modul selamanya.',
     shopeeUrl: 'https://shopee.co.id/search?keyword=bundle%20buku%20bahasa%20wordish',
     tokopediaUrl: 'https://www.tokopedia.com/search?q=bundle%20buku%20bahasa%20wordish'
+  },
+  {
+    id: 'book-junior-coursebook',
+    title: 'Wordish Junior Coursebook',
+    language: 'Bahasa Inggris (SD)',
+    author: 'Tim Akademik Wordish',
+    pages: '6 Buku',
+    rating: 4.9,
+    soldCount: 'Baru',
+    originalPrice: 180000,
+    price: 150000,
+    coverImage: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80',
+    description: 'Paket coursebook Wordish Junior (6 buku) untuk siswa SD. Materi bahasa Inggris bertahap, latihan soal, dan aktivitas interaktif.',
+    shopeeUrl: 'https://shopee.co.id/search?keyword=wordish%20junior%20coursebook',
+    tokopediaUrl: 'https://vt.tokopedia.com/t/ZS9P4T45rc6KB-BoQL5/'
+  },
+  {
+    id: 'book-teens-coursebook',
+    title: 'Wordish Teens Coursebook',
+    language: 'Bahasa Inggris (SMP)',
+    author: 'Tim Akademik Wordish',
+    pages: '3 Buku',
+    rating: 4.9,
+    soldCount: 'Baru',
+    originalPrice: 170000,
+    price: 140000,
+    coverImage: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80',
+    description: 'Paket coursebook Wordish Teens (3 buku) untuk siswa SMP. Fokus grammar, vocabulary, dan conversation sehari-hari.',
+    shopeeUrl: 'https://shopee.co.id/search?keyword=wordish%20teens%20coursebook',
+    tokopediaUrl: 'https://vt.tokopedia.com/t/ZS9P4TWNd9BV3-vHtN4/'
   }
 ]
 

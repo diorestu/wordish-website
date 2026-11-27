@@ -34,7 +34,7 @@
                 Pilih Program Kelas
               </v-btn>
               <v-btn
-                href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
+                href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
                 target="_blank"
                 variant="outlined"
                 color="success"

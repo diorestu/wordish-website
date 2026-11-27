@@ -37,7 +37,7 @@
           size="large"
           class="text-none font-weight-bold text-white shadow-sm"
           prepend-icon="mdi-whatsapp"
-          :href="`https://wa.me/6281234567890?text=Halo%20Admin%20Wordish,%20saya%20sudah%20mendaftar%20dengan%20No%20Registrasi%20${cartStore.lastOrder?.orderId}`"
+          :href="`https://wa.me/6287864734308?text=Halo%20Admin%20Wordish,%20saya%20sudah%20mendaftar%20dengan%20No%20Registrasi%20${cartStore.lastOrder?.orderId}`"
           target="_blank"
         >
           Konfirmasi ke WhatsApp Admin

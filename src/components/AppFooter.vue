@@ -5,14 +5,12 @@
         <!-- Brand & Info Lembaga -->
         <v-col cols="12" md="5" class="pr-md-6">
           <div class="mb-4">
-            <div class="bg-white px-3 py-2 rounded-xl d-inline-block shadow-sm">
-              <img
-                src="/wordish-logo.jpg"
-                alt="Wordish Logo"
-                height="38"
-                style="display: block; object-fit: contain;"
-              />
-            </div>
+            <img
+              src="/logo-footer.webp"
+              alt="Wordish Logo"
+              height="100"
+              style="display: block; object-fit: contain;"
+            />
             <div class="text-subtitle-2 font-weight-bold text-white mt-3" style="letter-spacing: 0.3px;">
               Connecting World with Words
             </div>
@@ -60,9 +58,9 @@
               size="small"
               variant="tonal"
               color="white"
-              href="https://wa.me/6281234567890?text=Halo%20Wordish"
+              href="https://wa.me/6287864734308?text=Halo%20Wordish"
               target="_blank"
-              title="WhatsApp: 0812-3456-7890"
+              title="WhatsApp: 0878-6473-4308"
             >
               <v-icon icon="mdi-whatsapp" size="18"></v-icon>
             </v-btn>
@@ -85,6 +83,7 @@
           <div class="text-subtitle-2 font-weight-bold text-accent mb-3 text-uppercase">Layanan Kursus</div>
           <ul class="list-unstyled text-body-2 pa-0 ma-0">
             <li class="mb-2"><router-link to="/about" class="footer-link">Tentang Kami</router-link></li>
+            <li class="mb-2"><router-link to="/contact" class="footer-link">Kontak & Lokasi</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Regular Class</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Semi-Private Class</router-link></li>
             <li class="mb-2"><router-link to="/products" class="footer-link">Private Class</router-link></li>
@@ -119,8 +118,8 @@
           <!-- WhatsApp -->
           <div class="text-caption text-grey-lighten-2 mb-2 d-flex align-center">
             <v-icon icon="mdi-whatsapp" size="18" color="success" class="mr-2"></v-icon>
-            <a href="https://wa.me/6281234567890?text=Halo%20Wordish" target="_blank" class="footer-link">
-              0812-3456-7890
+            <a href="https://wa.me/6287864734308?text=Halo%20Wordish" target="_blank" class="footer-link">
+              0878-6473-4308
             </a>
           </div>
 
@@ -135,7 +134,7 @@
             size="small"
             class="text-none font-weight-bold"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
             target="_blank"
           >
             Chat WhatsApp Sekarang

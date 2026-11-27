@@ -26,7 +26,7 @@
           color="success"
           class="text-none font-weight-bold"
           prepend-icon="mdi-whatsapp"
-          href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20mau%20konsultasi%20penempatan%20level%20bahasa"
+          href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20mau%20konsultasi%20penempatan%20level%20bahasa"
           target="_blank"
         >
           Konsultasi via WhatsApp

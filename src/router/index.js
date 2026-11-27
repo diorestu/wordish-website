@@ -33,6 +33,16 @@ const routes = [
     }
   },
   {
+    path: '/services/:id',
+    name: 'CourseDetail',
+    component: () => import('../views/CourseDetailView.vue'),
+    meta: {
+      title: 'Detail Format Layanan Kelas - Wordish',
+      description: 'Detail lengkap kurikulum, fasilitas, kapasitas murid, dan biaya format layanan Regular, Semi-Private, Private, dan Online Class di Wordish.',
+      robots: 'index, follow'
+    }
+  },
+  {
     path: '/elearning',
     name: 'Elearning',
     component: () => import('../views/ElearningView.vue'),
@@ -84,6 +94,16 @@ const routes = [
     name: 'AdminClasses',
     component: () => import('../views/AdminClassesView.vue'),
     meta: { title: 'Admin Panel Kelola Kelas - Wordish', requiresAdmin: true, robots: 'noindex, nofollow' }
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/ContactView.vue'),
+    meta: {
+      title: 'Kontak & Lokasi - Wordish',
+      description: 'Kontak dan lokasi Training Center Wordish di Jakarta Timur. Hubungi via WhatsApp, email, atau kunjungi langsung.',
+      robots: 'index, follow'
+    }
   },
   {
     path: '/:pathMatch(.*)*',

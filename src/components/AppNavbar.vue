@@ -6,9 +6,9 @@
         <!-- Logo (White Variant on #004EB2) -->
         <router-link to="/" class="d-flex align-center text-decoration-none mr-6">
           <img
-            src="/wordish-logo-white.png"
+            src="/logo-header.webp"
             alt="Wordish Logo"
-            height="55"
+            height="73"
             class="wordish-logo-img"
           />
         </router-link>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="d-flex flex-column ga-2">
                       <router-link
-                        to="/#format-layanan"
+                        to="/services/regular"
                         class="mega-menu-item text-decoration-none pa-2 rounded-xl d-flex align-center ga-3"
                         @click="megaMenuOpen = false"
                       >
@@ -126,7 +126,7 @@
                       </router-link>
 
                       <router-link
-                        to="/#format-layanan"
+                        to="/services/semi-private"
                         class="mega-menu-item text-decoration-none pa-2 rounded-xl d-flex align-center ga-3"
                         @click="megaMenuOpen = false"
                       >
@@ -140,7 +140,7 @@
                       </router-link>
 
                       <router-link
-                        to="/#format-layanan"
+                        to="/services/private"
                         class="mega-menu-item text-decoration-none pa-2 rounded-xl d-flex align-center ga-3"
                         @click="megaMenuOpen = false"
                       >
@@ -154,7 +154,7 @@
                       </router-link>
 
                       <router-link
-                        to="/#format-layanan"
+                        to="/services/online"
                         class="mega-menu-item text-decoration-none pa-2 rounded-xl d-flex align-center ga-3"
                         @click="megaMenuOpen = false"
                       >
@@ -231,7 +231,7 @@
 
               <div class="d-flex flex-column ga-3 mb-5">
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas%20bahasa%20asing"
+                  href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas%20bahasa%20asing"
                   target="_blank"
                   class="contact-option pa-3 rounded-2xl border text-decoration-none d-flex align-center ga-3"
                 >
@@ -240,7 +240,7 @@
                   </v-avatar>
                   <div class="flex-grow-1">
                     <div class="text-subtitle-2 font-weight-bold text-secondary">WhatsApp Official</div>
-                    <div class="text-caption text-grey">0812-3456-7890 &bull; Respon Cepat</div>
+                    <div class="text-caption text-grey">0878-6473-4308 &bull; Respon Cepat</div>
                   </div>
                   <v-chip color="success" size="x-small" variant="tonal" class="font-weight-bold">Chat</v-chip>
                 </a>
@@ -289,7 +289,7 @@
                 block
                 color="primary"
                 class="text-none font-weight-bold text-white"
-                href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
+                href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20kelas"
                 target="_blank"
                 prepend-icon="mdi-whatsapp"
               >
@@ -324,7 +324,7 @@
             color="white"
             class="text-none font-weight-bold px-3 d-none d-sm-flex"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20tanya%20info%20pendaftaran%20kelas%20bahasa%20asing"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20tanya%20info%20pendaftaran%20kelas%20bahasa%20asing"
             target="_blank"
           >
             Konsultasi
@@ -341,7 +341,7 @@
     <!-- Mobile Drawer -->
     <v-navigation-drawer v-model="mobileDrawer" temporary location="right" width="300">
       <div class="pa-4 bg-white border-b d-flex align-center justify-space-between">
-        <img src="/wordish-logo.jpg" alt="Wordish" height="32" />
+        <img src="/wordish-logo.webp" alt="Wordish" height="32" />
         <v-btn icon size="small" variant="text" @click="mobileDrawer = false">
           <v-icon icon="mdi-close"></v-icon>
         </v-btn>
@@ -358,7 +358,10 @@
           <v-list-item prepend-icon="mdi-translate" title="Bahasa Mandarin" to="/products?lang=mandarin" @click="mobileDrawer = false"></v-list-item>
           <v-list-item prepend-icon="mdi-bullseye-arrow" title="Bahasa Korea" to="/products?lang=korean" @click="mobileDrawer = false"></v-list-item>
           <v-list-item prepend-icon="mdi-account-voice" title="Bahasa Inggris" to="/products?lang=english" @click="mobileDrawer = false"></v-list-item>
-          <v-list-item prepend-icon="mdi-view-grid-outline" title="Format Layanan Kelas" to="/#format-layanan" @click="mobileDrawer = false"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-group" title="Regular Class" to="/services/regular" @click="mobileDrawer = false"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-multiple" title="Semi-Private Class" to="/services/semi-private" @click="mobileDrawer = false"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-star" title="Private Class" to="/services/private" @click="mobileDrawer = false"></v-list-item>
+          <v-list-item prepend-icon="mdi-laptop-account" title="Online Class" to="/services/online" @click="mobileDrawer = false"></v-list-item>
           <v-list-item prepend-icon="mdi-format-list-bulleted" title="Semua Program" to="/products" @click="mobileDrawer = false"></v-list-item>
         </v-list-group>
 
@@ -377,7 +380,7 @@
             variant="outlined"
             prepend-icon="mdi-whatsapp"
             class="text-none font-weight-bold mb-2"
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6287864734308"
             target="_blank"
           >
             Konsultasi WhatsApp

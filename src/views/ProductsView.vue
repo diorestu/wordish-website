@@ -18,6 +18,162 @@
         </p>
       </div>
 
+      <!-- SECTION: TABEL SISTEM HARGA RESMI WORDISH -->
+      <v-card class="pa-6 pa-md-8 rounded-3xl border mb-10 bg-white shadow-sm">
+        <div class="d-flex align-center justify-space-between flex-wrap ga-3 mb-4">
+          <div>
+            <div class="text-overline font-weight-bold text-primary mb-1" style="letter-spacing: 1.5px;">Sistem Harga</div>
+            <h2 class="text-h5 font-weight-bold text-secondary mb-1">
+              Rincian Tarif Format Belajar (Mandarin, English &amp; Korea)
+            </h2>
+            <p class="text-body-2 text-grey-darken-1 mb-0">
+              Pilihan fleksibel: Regular Class, Semi-Private, hingga Private (Wordish Center, Home Visit, &amp; Online).
+            </p>
+          </div>
+          <v-btn
+            color="success"
+            variant="flat"
+            class="text-none font-weight-bold text-white shadow-sm"
+            prepend-icon="mdi-whatsapp"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20biaya%20dan%20jadwal%20kelas"
+            target="_blank"
+          >
+            Konsultasi Biaya via WA
+          </v-btn>
+        </div>
+
+        <!-- Tab Bahasa Sistem Harga -->
+        <v-tabs
+          v-model="pricingActiveTab"
+          color="primary"
+          class="border-b mb-5"
+          align-tabs="start"
+        >
+          <v-tab value="mandarin" class="text-none font-weight-bold">
+            <v-icon icon="mdi-translate" color="#DC2626" class="mr-2"></v-icon>
+            Mandarin
+          </v-tab>
+          <v-tab value="english" class="text-none font-weight-bold">
+            <v-icon icon="mdi-account-voice" color="#D97706" class="mr-2"></v-icon>
+            English
+          </v-tab>
+          <v-tab value="korean" class="text-none font-weight-bold">
+            <v-icon icon="mdi-bullseye-arrow" color="#2563EB" class="mr-2"></v-icon>
+            Korea
+          </v-tab>
+        </v-tabs>
+
+        <v-window v-model="pricingActiveTab">
+          <!-- Window Mandarin -->
+          <v-window-item value="mandarin">
+            <v-table hover class="rounded-2xl border overflow-hidden">
+              <thead class="bg-grey-lighten-4">
+                <tr>
+                  <th class="font-weight-bold text-secondary py-3">Layanan &amp; Format</th>
+                  <th class="font-weight-bold text-secondary py-3">Lokasi</th>
+                  <th class="font-weight-bold text-secondary py-3">Biaya</th>
+                  <th class="font-weight-bold text-secondary py-3">Ketentuan Sesi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(rate, idx) in officialPricingSystem.mandarin.rates" :key="idx">
+                  <td class="py-3">
+                    <div class="font-weight-bold text-secondary">{{ rate.service }}</div>
+                    <div class="text-caption text-grey">{{ rate.format }}</div>
+                  </td>
+                  <td class="text-caption text-grey-darken-2 py-3">
+                    <v-icon icon="mdi-map-marker-outline" size="14" class="mr-1 text-grey"></v-icon>
+                    {{ rate.location }}
+                  </td>
+                  <td class="py-3">
+                    <span class="font-weight-black text-primary text-subtitle-1">{{ rate.priceDisplay }}</span>
+                    <span class="text-caption text-grey"> {{ rate.unit }}</span>
+                  </td>
+                  <td class="py-3">
+                    <div class="text-caption text-grey-darken-2 font-weight-medium">{{ rate.term }}</div>
+                    <v-chip size="x-small" color="primary" variant="tonal" class="mt-1 font-weight-bold">
+                      {{ rate.minOrder }}
+                    </v-chip>
+                  </td>
+                </tr>
+              </tbody>
+            </v-table>
+          </v-window-item>
+
+          <!-- Window English -->
+          <v-window-item value="english">
+            <v-table hover class="rounded-2xl border overflow-hidden">
+              <thead class="bg-grey-lighten-4">
+                <tr>
+                  <th class="font-weight-bold text-secondary py-3">Layanan &amp; Format</th>
+                  <th class="font-weight-bold text-secondary py-3">Lokasi</th>
+                  <th class="font-weight-bold text-secondary py-3">Biaya</th>
+                  <th class="font-weight-bold text-secondary py-3">Ketentuan Sesi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(rate, idx) in officialPricingSystem.english.rates" :key="idx">
+                  <td class="py-3">
+                    <div class="font-weight-bold text-secondary">{{ rate.service }}</div>
+                    <div class="text-caption text-grey">{{ rate.format }}</div>
+                  </td>
+                  <td class="text-caption text-grey-darken-2 py-3">
+                    <v-icon icon="mdi-map-marker-outline" size="14" class="mr-1 text-grey"></v-icon>
+                    {{ rate.location }}
+                  </td>
+                  <td class="py-3">
+                    <span class="font-weight-black text-amber-darken-3 text-subtitle-1">{{ rate.priceDisplay }}</span>
+                    <span class="text-caption text-grey"> {{ rate.unit }}</span>
+                  </td>
+                  <td class="py-3">
+                    <div class="text-caption text-grey-darken-2 font-weight-medium">{{ rate.term }}</div>
+                    <v-chip size="x-small" color="amber-darken-3" variant="tonal" class="mt-1 font-weight-bold">
+                      {{ rate.minOrder }}
+                    </v-chip>
+                  </td>
+                </tr>
+              </tbody>
+            </v-table>
+          </v-window-item>
+
+          <!-- Window Korea -->
+          <v-window-item value="korean">
+            <v-table hover class="rounded-2xl border overflow-hidden">
+              <thead class="bg-grey-lighten-4">
+                <tr>
+                  <th class="font-weight-bold text-secondary py-3">Layanan &amp; Format</th>
+                  <th class="font-weight-bold text-secondary py-3">Lokasi</th>
+                  <th class="font-weight-bold text-secondary py-3">Biaya</th>
+                  <th class="font-weight-bold text-secondary py-3">Ketentuan Sesi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(rate, idx) in officialPricingSystem.korean.rates" :key="idx">
+                  <td class="py-3">
+                    <div class="font-weight-bold text-secondary">{{ rate.service }}</div>
+                    <div class="text-caption text-grey">{{ rate.format }}</div>
+                  </td>
+                  <td class="text-caption text-grey-darken-2 py-3">
+                    <v-icon icon="mdi-map-marker-outline" size="14" class="mr-1 text-grey"></v-icon>
+                    {{ rate.location }}
+                  </td>
+                  <td class="py-3">
+                    <span class="font-weight-black text-blue-darken-2 text-subtitle-1">{{ rate.priceDisplay }}</span>
+                    <span class="text-caption text-grey"> {{ rate.unit }}</span>
+                  </td>
+                  <td class="py-3">
+                    <div class="text-caption text-grey-darken-2 font-weight-medium">{{ rate.term }}</div>
+                    <v-chip size="x-small" color="blue-darken-2" variant="tonal" class="mt-1 font-weight-bold">
+                      {{ rate.minOrder }}
+                    </v-chip>
+                  </td>
+                </tr>
+              </tbody>
+            </v-table>
+          </v-window-item>
+        </v-window>
+      </v-card>
+
       <!-- Language Filter Toolbar -->
       <v-card class="pa-4 rounded-2xl border mb-8 bg-white shadow-sm">
         <v-row align="center">
@@ -155,6 +311,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useClassesStore } from '../stores/classes'
 import { useCartStore } from '../stores/cart'
+import { officialPricingSystem } from '../data/wordishData'
 
 const route = useRoute()
 const router = useRouter()
@@ -163,6 +320,7 @@ const cartStore = useCartStore()
 
 const searchQuery = ref('')
 const selectedLanguage = ref('all')
+const pricingActiveTab = ref('mandarin')
 
 onMounted(() => {
   if (route.query.lang) {

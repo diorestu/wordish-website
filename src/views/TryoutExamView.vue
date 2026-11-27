@@ -349,6 +349,7 @@
 import { ref, computed } from 'vue'
 import { useTryoutStore } from '../stores/tryout'
 import { tryoutsList } from '../data/tryoutData'
+import { trackEvent } from '../utils/analytics'
 
 const tryoutStore = useTryoutStore()
 const confirmSubmitDialog = ref(false)
@@ -376,6 +377,7 @@ function getNumberCellClass(qId, index) {
 function handleConfirmSubmit() {
   confirmSubmitDialog.value = false
   tryoutStore.submitExam()
+  trackEvent('tryout_submit', { exam: tryoutStore.currentExam?.title || 'placement_test' })
 }
 
 function retakeExam() {

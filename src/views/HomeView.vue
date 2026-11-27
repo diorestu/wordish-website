@@ -44,10 +44,10 @@
 
           <v-col cols="12" md="5" lg="6" class="d-flex justify-center justify-md-end align-end">
             <img
-              src="/hero-students.png"
+              src="/hero-students.webp"
               alt="Siswa Berprestasi Wordish"
-              width="1536"
-              height="1024"
+              width="1024"
+              height="682"
               class="hero-students-img"
               loading="eager"
               fetchpriority="high"
@@ -165,7 +165,7 @@
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
               <div class="lang-card-media position-relative overflow-hidden">
                 <v-img
-                  src="/lang-mandarin.jpg"
+                  src="/lang-mandarin.webp"
                   alt="Belajar Bahasa Mandarin - Wordish"
                   height="210"
                   cover
@@ -175,7 +175,6 @@
               <div class="pa-6 d-flex flex-column flex-grow-1">
                 <div class="d-flex align-center justify-space-between mb-2">
                   <div class="d-flex align-center ga-2">
-                    <span class="text-h5">🇨🇳</span>
                     <span class="text-h5 font-weight-bold text-secondary">Mandarin</span>
                   </div>
                   <v-chip color="#E63946" size="small" variant="tonal" class="font-weight-bold">
@@ -205,7 +204,7 @@
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
               <div class="lang-card-media position-relative overflow-hidden">
                 <v-img
-                  src="/lang-english.jpg"
+                  src="/lang-english.webp"
                   alt="Belajar Bahasa Inggris - Wordish"
                   height="210"
                   cover
@@ -215,7 +214,6 @@
               <div class="pa-6 d-flex flex-column flex-grow-1">
                 <div class="d-flex align-center justify-space-between mb-2">
                   <div class="d-flex align-center ga-2">
-                    <span class="text-h5">🇬🇧</span>
                     <span class="text-h5 font-weight-bold text-secondary">English</span>
                   </div>
                   <v-chip color="#0077B6" size="small" variant="tonal" class="font-weight-bold">
@@ -245,7 +243,7 @@
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column overflow-hidden shadow-sm lang-card">
               <div class="lang-card-media position-relative overflow-hidden">
                 <v-img
-                  src="/lang-korean.jpg"
+                  src="/lang-korean.webp"
                   alt="Belajar Bahasa Korea - Wordish"
                   height="210"
                   cover
@@ -255,7 +253,6 @@
               <div class="pa-6 d-flex flex-column flex-grow-1">
                 <div class="d-flex align-center justify-space-between mb-2">
                   <div class="d-flex align-center ga-2">
-                    <span class="text-h5">🇰🇷</span>
                     <span class="text-h5 font-weight-bold text-secondary">Korean</span>
                   </div>
                   <v-chip color="#1D4ED8" size="small" variant="tonal" class="font-weight-bold">
@@ -427,9 +424,9 @@
                     :color="mode.color"
                     block
                     class="text-none font-weight-bold text-white text-no-wrap"
-                    to="/products"
+                    :to="`/services/${mode.id}`"
                   >
-                    Pilih Kelas
+                    Detail Layanan
                     <v-icon icon="mdi-arrow-right" class="ml-1" size="small"></v-icon>
                   </v-btn>
                 </div>
@@ -804,7 +801,7 @@
             size="large"
             class="text-none font-weight-bold px-6 shadow-sm"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20jadwal%20dan%20pendaftaran%20kelas"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20jadwal%20dan%20pendaftaran%20kelas"
             target="_blank"
           >
             Konsultasi Jadwal via WhatsApp
@@ -915,7 +912,7 @@
             size="large"
             class="text-primary font-weight-bold text-none px-8"
             prepend-icon="mdi-whatsapp"
-            href="https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan"
+            href="https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20ingin%20konsultasi%20program%20pelatihan"
             target="_blank"
           >
             Konsultasi WhatsApp
@@ -962,7 +959,7 @@
             size="large"
             class="text-none font-weight-bold text-white shadow-sm"
             prepend-icon="mdi-whatsapp"
-            :href="`https://wa.me/6281234567890?text=Halo%20Wordish,%20saya%20sudah%20mendaftarkan%20nomor%20%2B62${heroPhone}%20dan%20ingin%20klaim%20Diskon%20Spesial%2030%25%20Kode%20WORDISH30`"
+            :href="`https://wa.me/6287864734308?text=Halo%20Wordish,%20saya%20sudah%20mendaftarkan%20nomor%20%2B62${heroPhone}%20dan%20ingin%20klaim%20Diskon%20Spesial%2030%25%20Kode%20WORDISH30`"
             target="_blank"
             @click="discountDialog = false"
           >
@@ -1127,7 +1124,7 @@ function scrollToPrograms() {
 
 function bookScheduleSlot(slot) {
   const msg = `Halo Wordish, saya ingin konsultasi/booking jadwal kelas ${slot.className} jam ${slot.time} (${slot.days}). Mohon info ketersediaan slotnya.`
-  window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`, '_blank')
+  window.open(`https://wa.me/6287864734308?text=${encodeURIComponent(msg)}`, '_blank')
 }
 
 function submitDiscount() {

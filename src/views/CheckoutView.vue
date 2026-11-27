@@ -254,6 +254,7 @@ import { ref, reactive } from 'vue'
 import { useCartStore } from '../stores/cart'
 import { useClassesStore } from '../stores/classes'
 import CheckoutDialog from '../components/CheckoutDialog.vue'
+import { trackEvent } from '../utils/analytics'
 
 const cartStore = useCartStore()
 const classesStore = useClassesStore()
@@ -285,13 +286,24 @@ function formatRupiah(val) {
 
 function applyVoucher() {
   cartStore.applyVoucher(voucherInput.value)
+  trackEvent('apply_voucher', { voucher: voucherInput.value })
 }
 
 function submitRegistration() {
+  trackEvent('begin_checkout', {
+    value: cartStore.totalPrice || 0,
+    currency: 'IDR',
+    items: cartStore.items?.length || 0
+  })
   isProcessing.value = true
   setTimeout(() => {
     isProcessing.value = false
     cartStore.processCheckout(customerForm)
+    trackEvent('purchase', {
+      value: cartStore.totalPrice || 0,
+      currency: 'IDR',
+      transaction_id: cartStore.lastOrder?.orderId
+    })
   }, 900)
 }
 </script>

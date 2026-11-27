@@ -11,7 +11,7 @@
       <v-card-text class="pt-0 px-6 pb-6">
         <div class="text-center mb-6">
           <img
-            src="/wordish-logo.jpg"
+            src="/wordish-logo.webp"
             alt="Wordish Logo"
             height="46"
             class="mx-auto mb-2 d-block"
