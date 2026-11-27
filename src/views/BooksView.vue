@@ -58,21 +58,22 @@
       </v-card>
 
       <!-- Books Cards Grid -->
-      <v-row>
+      <v-row justify="center">
         <v-col
           v-for="book in books"
           :key="book.id"
           cols="12"
-          md="6"
-          lg="3"
+          sm="6"
+          md="5"
+          lg="4"
         >
           <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column justify-space-between shadow-sm rg-card-border overflow-hidden">
             <div>
               <!-- Book Cover Image -->
-              <div class="book-cover-container position-relative bg-grey-lighten-3">
+              <div class="book-cover-container position-relative bg-blue-darken-3">
                 <v-img
                   :src="book.coverImage"
-                  height="220"
+                  height="240"
                   cover
                   class="align-end text-white"
                 >
@@ -84,24 +85,24 @@
 
               <div class="pa-5">
                 <div class="d-flex align-center justify-space-between text-caption text-grey mb-1">
-                  <span>{{ book.pages }}</span>
+                  <span class="font-weight-medium">{{ book.pages }}</span>
                   <span class="text-amber-darken-3 font-weight-bold d-flex align-center">
                     <v-icon icon="mdi-star" size="14" class="mr-1"></v-icon>
                     {{ book.rating }} ({{ book.soldCount }})
                   </span>
                 </div>
 
-                <div class="text-subtitle-1 font-weight-bold text-secondary mb-2" style="line-height: 1.35; min-height: 48px;">
+                <div class="text-h6 font-weight-bold text-secondary mb-2" style="line-height: 1.35;">
                   {{ book.title }}
                 </div>
 
-                <p class="text-caption text-grey-darken-1 mb-4" style="line-height: 1.5; min-height: 42px;" :title="book.description">
-                  {{ truncateText(book.description, 60) }}
+                <p class="text-body-2 text-grey-darken-1 mb-4" style="line-height: 1.55;" :title="book.description">
+                  {{ book.description }}
                 </p>
 
                 <!-- Pricing -->
                 <div class="d-flex align-baseline ga-2 mb-4">
-                  <span class="text-h6 font-weight-extrabold text-primary">
+                  <span class="text-h5 font-weight-extrabold text-primary">
                     {{ formatRupiah(book.price) }}
                   </span>
                   <span class="text-caption text-grey text-decoration-line-through">
@@ -117,7 +118,7 @@
                 color="#EE4D2D"
                 variant="flat"
                 block
-                class="text-none font-weight-bold text-white"
+                class="text-none font-weight-bold text-white py-2"
                 prepend-icon="mdi-shopping"
                 :href="book.shopeeUrl"
                 target="_blank"
@@ -128,8 +129,8 @@
                 color="#03AC0E"
                 variant="flat"
                 block
-                class="text-none font-weight-bold text-white"
-                prepend-icon="mdi-store"
+                class="text-none font-weight-bold text-white py-2"
+                prepend-icon="mdi-storefront"
                 :href="book.tokopediaUrl"
                 target="_blank"
               >

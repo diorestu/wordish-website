@@ -450,47 +450,48 @@
           </p>
         </div>
 
-        <v-row>
+        <v-row justify="center">
           <v-col
             v-for="book in books"
             :key="book.id"
             cols="12"
             sm="6"
-            lg="3"
+            md="5"
+            lg="4"
           >
             <v-card class="h-100 rounded-3xl border bg-white d-flex flex-column justify-space-between shadow-sm rg-card-border overflow-hidden">
               <div>
                 <!-- Book Cover -->
                 <v-img
                   :src="book.coverImage"
-                  height="200"
+                  height="220"
                   cover
-                  class="align-end text-white"
+                  class="align-end text-white bg-blue-darken-3"
                 >
                   <div class="pa-2 book-cover-overlay d-flex justify-space-between align-center w-100">
                     <span class="text-caption font-weight-bold text-white">{{ book.language }}</span>
                   </div>
                 </v-img>
 
-                <div class="pa-4">
+                <div class="pa-5">
                   <div class="d-flex align-center justify-space-between text-caption text-grey mb-1">
-                    <span>{{ book.pages }}</span>
+                    <span class="font-weight-medium">{{ book.pages }}</span>
                     <span class="text-amber-darken-3 font-weight-bold d-flex align-center">
                       <v-icon icon="mdi-star" size="14" class="mr-1"></v-icon>
                       {{ book.rating }}
                     </span>
                   </div>
 
-                  <div class="text-subtitle-2 font-weight-bold text-secondary mb-2" style="line-height: 1.35; min-height: 42px;">
+                  <div class="text-h6 font-weight-bold text-secondary mb-2" style="line-height: 1.35;">
                     {{ book.title }}
                   </div>
 
-                  <p class="text-caption text-grey-darken-1 mb-3" style="line-height: 1.4; min-height: 36px;" :title="book.description">
-                    {{ truncateText(book.description, 60) }}
+                  <p class="text-body-2 text-grey-darken-1 mb-4" style="line-height: 1.5;" :title="book.description">
+                    {{ book.description }}
                   </p>
 
-                  <div class="d-flex align-baseline ga-2 mb-3">
-                    <span class="text-subtitle-1 font-weight-extrabold text-primary">
+                  <div class="d-flex align-baseline ga-2 mb-2">
+                    <span class="text-h6 font-weight-extrabold text-primary">
                       {{ formatRupiah(book.price) }}
                     </span>
                     <span class="text-caption text-grey text-decoration-line-through">
@@ -501,13 +502,13 @@
               </div>
 
               <!-- Action Marketplace Buttons -->
-              <div class="px-4 pb-4 pt-0 d-flex flex-column ga-2">
+              <div class="px-5 pb-5 pt-0 d-flex flex-column ga-2">
                 <v-btn
                   color="#EE4D2D"
                   variant="flat"
                   block
                   size="small"
-                  class="text-none font-weight-bold text-white"
+                  class="text-none font-weight-bold text-white py-2"
                   prepend-icon="mdi-shopping"
                   :href="book.shopeeUrl"
                   target="_blank"
@@ -519,8 +520,8 @@
                   variant="flat"
                   block
                   size="small"
-                  class="text-none font-weight-bold text-white"
-                  prepend-icon="mdi-store"
+                  class="text-none font-weight-bold text-white py-2"
+                  prepend-icon="mdi-storefront"
                   :href="book.tokopediaUrl"
                   target="_blank"
                 >
